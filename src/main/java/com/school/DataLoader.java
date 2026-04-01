@@ -19,12 +19,12 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Seed Students
-        studentRepository.save(new Student(null, "Alice", "Johnson", "alice@edu.com", "12th Grade"));
-        studentRepository.save(new Student(null, "Bob", "Smith", "bob@edu.com", "11th Grade"));
-        studentRepository.save(new Student(null, "Charlie", "Brown", "charlie@edu.com", "10th Grade"));
-        studentRepository.save(new Student(null, "David", "Wilson", "david@edu.com", "9th Grade"));
-        studentRepository.save(new Student(null, "Eva", "Garcia", "eva@edu.com", "12th Grade"));
+        // Seed Students: null id, first, last, email, grade, gpa, attendance
+        studentRepository.save(new Student(null, "Alice", "Johnson", "alice@edu.com", "12th Grade", 3.8, 98));
+        studentRepository.save(new Student(null, "Bob", "Smith", "bob@edu.com", "11th Grade", 3.2, 95));
+        studentRepository.save(new Student(null, "Charlie", "Brown", "charlie@edu.com", "10th Grade", 3.5, 92));
+        studentRepository.save(new Student(null, "David", "Wilson", "david@edu.com", "9th Grade", 3.9, 99));
+        studentRepository.save(new Student(null, "Eva", "Garcia", "eva@edu.com", "12th Grade", 3.7, 96));
 
         // Seed Teachers
         teacherRepository.save(new Teacher(null, "John", "Doe", "Physics", "Science"));

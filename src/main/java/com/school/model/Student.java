@@ -17,4 +17,6 @@ public class Student {
 	private String lastName;
 	private String email;
 	private String grade;
+	private Double gpa;
+	private Integer attendance;
 }
