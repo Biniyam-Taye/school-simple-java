@@ -1,0 +1,22 @@
+# Target directory
+target/
+*.class
+
+# IDE files
+.idea/
+.settings/
+.classpath
+.project
+*.iml
+*.iws
+
+# Logs
+*.log
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+# External
+HELP.md
