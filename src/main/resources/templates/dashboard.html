@@ -3,85 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Hub Pro | School Management</title>
+    <title>Student Hub Pro | Unified Management</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .search-container {
-            position: relative;
-            width: 300px;
-        }
-        .search-container i {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-secondary);
-            width: 16px;
-        }
-        .search-input {
-            width: 100%;
-            padding: 0.6rem 1rem 0.6rem 2.5rem;
-            border-radius: 99px;
-            border: 1px solid #e2e8f0;
-            background: white;
-            font-size: 0.875rem;
-        }
-        .action-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #ef4444;
-            padding: 4px;
-            border-radius: 6px;
-            transition: background 0.2s;
-        }
-        .action-btn:hover {
-            background: #fef2f2;
-        }
-        tr.hidden {
-            display: none;
-        }
-    </style>
 </head>
-<body>
+<body id="body">
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="brand">
-            <div class="brand-icon"><i data-lucide="graduation-cap"></i></div>
+            <div class="brand-icon"><i data-lucide="sparkles"></i></div>
             <span class="brand-name">Student Hub Pro</span>
         </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
                 <li><a href="#" class="nav-item"><i data-lucide="users"></i> Students</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="user-check"></i> Teachers</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="book-open"></i> Courses</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="calendar"></i> Schedule</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="settings"></i> Settings</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="shield-check"></i> Teachers</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="book-heart"></i> Courses</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="calendar"></i> Term Schedule</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="bar-chart-3"></i> Reports</a></li>
             </ul>
         </nav>
+        <div style="margin-top: auto; padding: 1rem 0; border-top: 1px solid var(--border-color);">
+            <button class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer;" onclick="toggleDarkMode()">
+                <i id="theme-icon" data-lucide="moon"></i> 
+                <span id="theme-text">Dark Mode</span>
+            </button>
+        </div>
     </aside>
 
     <!-- Main Content -->
     <main class="main-content">
         <header>
             <div class="greeting">
-                <h1>Welcome Back, Admin</h1>
-                <p>Manage your students and teachers efficiently.</p>
+                <h1>Dashboard Overview</h1>
+                <p>Welcome back! Here's what's happening at your school today.</p>
             </div>
-            <div style="display: flex; align-items: center; gap: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
                 <div class="search-container">
                     <i data-lucide="search"></i>
-                    <input type="text" id="globalSearch" class="search-input" placeholder="Search anything...">
+                    <input type="text" id="globalSearch" class="search-input" placeholder="Search resources...">
                 </div>
-                <div class="user-profile" style="display: flex; align-items: center;">
-                    <i data-lucide="bell" style="margin-right: 1.5rem; color: #64748b; cursor: pointer;"></i>
-                    <div class="avatar">JD</div>
+                <div class="theme-toggle" onclick="toggleDarkMode()">
+                   <i id="header-theme-icon" data-lucide="moon" style="width: 20px;"></i>
                 </div>
+                <div class="avatar" style="margin-right: 0;">JD</div>
             </div>
         </header>
 
@@ -91,139 +60,110 @@
                 <div class="stats-icon stats-blue"><i data-lucide="users"></i></div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(students)}">0</h3>
-                    <p>Total Students</p>
+                    <p>Enrolled Students</p>
                 </div>
             </div>
             <div class="stats-card">
-                <div class="stats-icon stats-pink"><i data-lucide="user-check"></i></div>
+                <div class="stats-icon stats-pink"><i data-lucide="heart"></i></div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(teachers)}">0</h3>
-                    <p>Total Teachers</p>
+                    <p>Expert Educators</p>
                 </div>
             </div>
             <div class="stats-card">
-                <div class="stats-icon stats-green"><i data-lucide="activity"></i></div>
+                <div class="stats-icon stats-green"><i data-lucide="zap"></i></div>
                 <div class="stats-info">
-                    <h3>98.2%</h3>
-                    <p>Engagement</p>
+                    <h3>99.1%</h3>
+                    <p>System Uptime</p>
                 </div>
             </div>
         </div>
 
         <div class="dashboard-grid">
-            <!-- Student Management -->
-            <section>
-                <div class="card" style="margin-bottom: 2rem;">
-                    <div class="card-title">
-                        Add New Student
-                        <span class="badge">Quick Entry</span>
-                    </div>
-                    <form th:action="@{/add-student}" th:object="${student}" method="post">
-                        <div class="form-group">
-                            <label class="form-label">First Name</label>
-                            <input type="text" th:field="*{firstName}" class="form-input" placeholder="e.g. John" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" th:field="*{lastName}" class="form-input" placeholder="e.g. Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" th:field="*{email}" class="form-input" placeholder="e.g. john@student.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Grade</label>
-                            <input type="text" th:field="*{grade}" class="form-input" placeholder="e.g. 10th Grade" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary"><i data-lucide="plus"></i> Enrol Student</button>
-                    </form>
-                </div>
-
+            <!-- Table Section -->
+            <section style="display: flex; flex-direction: column; gap: 2rem;">
+                <!-- Students Card -->
                 <div class="card">
-                    <div class="card-title">Current Students</div>
+                    <div class="card-title">
+                        Students Registry
+                        <button class="btn btn-primary" style="width: auto; padding: 0.5rem 1rem;" onclick="openModal('addStudentModal')">
+                            <i data-lucide="plus"></i> Add
+                        </button>
+                    </div>
                     <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Student</th>
+                                    <th>Name</th>
                                     <th>Grade</th>
-                                    <th>Actions</th>
+                                    <th style="text-align: right;">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="studentTable">
-                                <tr th:each="s : ${students}" class="data-row">
+                            <tbody>
+                                <tr th:each="s : ${students}" class="data-row active-row">
                                     <td>
                                         <div style="display: flex; align-items: center;">
                                             <div class="avatar" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</div>
                                             <div>
-                                                <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 600;">John Doe</div>
+                                                <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 700;">John Doe</div>
                                                 <div th:text="${s.email}" style="font-size: 0.75rem; color: var(--text-secondary);">john@email.com</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td><span class="badge" th:text="${s.grade}">10th Grade</span></td>
-                                    <td>
-                                        <form th:action="@{/delete-student}" method="post" onsubmit="return confirm('Delete student?');">
-                                            <input type="hidden" name="id" th:value="${s.id}">
-                                            <button type="submit" class="action-btn"><i data-lucide="trash-2"></i></button>
-                                        </form>
+                                    <td style="text-align: right;">
+                                        <div style="display: inline-flex; gap: 0.5rem;">
+                                            <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}" th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}" onclick="openEditStudent(this)">
+                                                <i data-lucide="edit-3" style="width: 18px;"></i>
+                                            </button>
+                                            <form th:action="@{/delete-student}" method="post" onsubmit="return confirm('Delete?');">
+                                                <input type="hidden" name="id" th:value="${s.id}">
+                                                <button type="submit" class="action-btn" style="color: #ef4444;"><i data-lucide="trash-2" style="width: 18px;"></i></button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </section>
 
-            <!-- Teacher Management -->
-            <section>
-                <div class="card" style="margin-bottom: 2rem;">
-                    <div class="card-title">
-                        Hire New Teacher
-                        <span class="badge">Staffing</span>
-                    </div>
-                    <form th:action="@{/add-teacher}" th:object="${teacher}" method="post">
-                        <div class="form-group">
-                            <label class="form-label">First Name</label>
-                            <input type="text" th:field="*{firstName}" class="form-input" placeholder="e.g. Sarah" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" th:field="*{lastName}" class="form-input" placeholder="e.g. Smith" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Subject</label>
-                            <input type="text" th:field="*{subject}" class="form-input" placeholder="e.g. Mathematics" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="background-color: var(--accent);"><i data-lucide="user-plus"></i> Hire Teacher</button>
-                    </form>
-                </div>
-
+                <!-- Teachers Card -->
                 <div class="card">
-                    <div class="card-title">Teaching Staff</div>
+                    <div class="card-title">
+                        Faculty Staff
+                        <button class="btn btn-primary" style="width: auto; padding: 0.5rem 1rem; background-color: var(--accent);" onclick="openModal('addTeacherModal')">
+                            <i data-lucide="plus"></i> Add
+                        </button>
+                    </div>
                     <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Teacher</th>
                                     <th>Subject</th>
-                                    <th>Actions</th>
+                                    <th style="text-align: right;">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody id="teacherTable">
-                                <tr th:each="t : ${teachers}" class="data-row">
+                            <tbody>
+                                <tr th:each="t : ${teachers}" class="data-row active-row">
                                     <td>
                                         <div style="display: flex; align-items: center;">
-                                            <div class="avatar" style="color: var(--accent);" th:text="${#strings.substring(t.firstName,0,1) + #strings.substring(t.lastName,0,1)}">SS</div>
-                                            <span th:text="${t.firstName + ' ' + t.lastName}" style="font-weight: 600;">Sarah Smith</span>
+                                            <div class="avatar" style="color: var(--accent); background: rgba(236, 72, 153, 0.1);" th:text="${#strings.substring(t.firstName,0,1) + #strings.substring(t.lastName,0,1)}">SS</div>
+                                            <span th:text="${t.firstName + ' ' + t.lastName}" style="font-weight: 700;">Sarah Smith</span>
                                         </div>
                                     </td>
-                                    <td th:text="${t.subject}" style="color: #64748b;">Mathematics</td>
-                                    <td>
-                                        <form th:action="@{/delete-teacher}" method="post" onsubmit="return confirm('Delete teacher?');">
-                                            <input type="hidden" name="id" th:value="${t.id}">
-                                            <button type="submit" class="action-btn"><i data-lucide="trash-2"></i></button>
-                                        </form>
+                                    <td th:text="${t.subject}" style="color: var(--text-secondary); font-weight: 500;">Mathematics</td>
+                                    <td style="text-align: right;">
+                                        <div style="display: inline-flex; gap: 0.5rem;">
+                                            <button class="action-btn" th:data-id="${t.id}" th:data-fname="${t.firstName}" th:data-lname="${t.lastName}" th:data-subject="${t.subject}" onclick="openEditTeacher(this)">
+                                                <i data-lucide="edit-3" style="width: 18px;"></i>
+                                            </button>
+                                            <form th:action="@{/delete-teacher}" method="post" onsubmit="return confirm('Delete?');">
+                                                <input type="hidden" name="id" th:value="${t.id}">
+                                                <button type="submit" class="action-btn" style="color: #ef4444;"><i data-lucide="trash-2" style="width: 18px;"></i></button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -231,24 +171,194 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Quick Charts/Insights -->
+            <section style="display: flex; flex-direction: column; gap: 2rem;">
+                <div class="card">
+                    <div class="card-title">School Insights</div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem;">
+                                <span>Curriculum Progress</span>
+                                <span>82%</span>
+                            </div>
+                            <div style="height: 8px; background: var(--bg-main); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 82%; height: 100%; background: var(--primary);"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem;">
+                                <span>Student Satisfaction</span>
+                                <span>94%</span>
+                            </div>
+                            <div style="height: 8px; background: var(--bg-main); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 94%; height: 100%; background: var(--accent);"></div>
+                            </div>
+                        </div>
+                         <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem;">
+                                <span>Faculty Attendance</span>
+                                <span>98%</span>
+                            </div>
+                            <div style="height: 8px; background: var(--bg-main); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 98%; height: 100%; background: #10b981;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none;">
+                    <div class="card-title" style="color: white;">Smart Insights</div>
+                    <p style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 1.5rem;">You have 12 pending student applications and 2 faculty reviews scheduled for tomorrow.</p>
+                    <button class="btn" style="background: white; color: var(--primary); width: auto; padding: 0.6rem 1.2rem;">View Reports</button>
+                </div>
+            </section>
         </div>
     </main>
 
-    <script>
+    <!-- Modals -->
+    <!-- Add Student Modal -->
+    <div id="addStudentModal" class="modal" onclick="closeModalOnOuter(event, 'addStudentModal')">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;">Add New Student</h2>
+            <form th:action="@{/add-student}" th:object="${student}" method="post">
+                <div class="form-group"><label class="form-label">First Name</label><input type="text" th:field="*{firstName}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text" th:field="*{lastName}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" th:field="*{email}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Grade</label><input type="text" th:field="*{grade}" class="form-input" required></div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('addStudentModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Student Modal -->
+    <div id="editStudentModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;">Edit Student</h2>
+            <form th:action="@{/edit-student}" method="post">
+                <input type="hidden" name="id" id="editSId">
+                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName" id="editSFName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName" id="editSLName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" id="editSEmail" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Grade</label><input type="text" name="grade" id="editSGrade" class="form-input" required></div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('editStudentModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Teacher Modal -->
+    <div id="addTeacherModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;">Hire New Teacher</h2>
+            <form th:action="@{/add-teacher}" th:object="${teacher}" method="post">
+                <div class="form-group"><label class="form-label">First Name</label><input type="text" th:field="*{firstName}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text" th:field="*{lastName}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Subject</label><input type="text" th:field="*{subject}" class="form-input" required></div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('addTeacherModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="background: var(--accent);">Hire Faculty</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <!-- Edit Teacher Modal -->
+    <div id="editTeacherModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;">Edit Faculty Member</h2>
+            <form th:action="@{/edit-teacher}" method="post">
+                <input type="hidden" name="id" id="editTId">
+                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName" id="editTFName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName" id="editTLName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Subject</label><input type="text" name="subject" id="editTSubject" class="form-input" required></div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('editTeacherModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="background: var(--accent);">Update Faculty</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
         lucide.createIcons();
 
-        // Instant Search Logic
+        // Dark Mode Logic
+        function toggleDarkMode() {
+            const body = document.getElementById('body');
+            const hasDark = body.getAttribute('data-theme') === 'dark';
+            
+            if (hasDark) {
+                body.removeAttribute('data-theme');
+                updateIcons(false);
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                updateIcons(true);
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function updateIcons(isDark) {
+            const icons = ['theme-icon', 'header-theme-icon'];
+            icons.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+                }
+            });
+            const text = document.getElementById('theme-text');
+            if (text) text.innerText = isDark ? 'Light Mode' : 'Dark Mode';
+            lucide.createIcons();
+        }
+
+        // Initialize Theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.getElementById('body').setAttribute('data-theme', 'dark');
+            updateIcons(true);
+        }
+
+        // Modal Logic
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        function closeModalOnOuter(event, id) {
+            if (event.target.id === id) closeModal(id);
+        }
+
+        // Edit Data Parsing
+        function openEditStudent(btn) {
+            document.getElementById('editSId').value = btn.getAttribute('data-id');
+            document.getElementById('editSFName').value = btn.getAttribute('data-fname');
+            document.getElementById('editSLName').value = btn.getAttribute('data-lname');
+            document.getElementById('editSEmail').value = btn.getAttribute('data-email');
+            document.getElementById('editSGrade').value = btn.getAttribute('data-grade');
+            openModal('editStudentModal');
+        }
+
+        function openEditTeacher(btn) {
+            document.getElementById('editTId').value = btn.getAttribute('data-id');
+            document.getElementById('editTFName').value = btn.getAttribute('data-fname');
+            document.getElementById('editTLName').value = btn.getAttribute('data-lname');
+            document.getElementById('editTSubject').value = btn.getAttribute('data-subject');
+            openModal('editTeacherModal');
+        }
+
+        // Search logic
         document.getElementById('globalSearch').addEventListener('input', function(e) {
             const term = e.target.value.toLowerCase();
-            const rows = document.querySelectorAll('.data-row');
-            
-            rows.forEach(row => {
-                const text = row.innerText.toLowerCase();
-                if (text.includes(term)) {
-                    row.classList.remove('hidden');
-                } else {
-                    row.classList.add('hidden');
-                }
+            document.querySelectorAll('.data-row').forEach(row => {
+                row.style.display = row.innerText.toLowerCase().includes(term) ? '' : 'none';
             });
         });
     </script>

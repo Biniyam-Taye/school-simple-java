@@ -52,4 +52,16 @@ public class SchoolController {
         teacherRepository.deleteById(id);
         return "redirect:/";
     }
+
+    @PostMapping("/edit-student")
+    public String editStudent(@ModelAttribute Student student) {
+        studentRepository.save(student);
+        return "redirect:/";
+    }
+
+    @PostMapping("/edit-teacher")
+    public String editTeacher(@ModelAttribute Teacher teacher) {
+        teacherRepository.save(teacher);
+        return "redirect:/";
+    }
 }
