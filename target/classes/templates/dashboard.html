@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSmart | Premium School Management</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i data-lucide="graduation-cap"></i></div>
+            <span class="brand-name">EduSmart</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="users"></i> Students</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="user-check"></i> Teachers</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="book-open"></i> Courses</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="calendar"></i> Schedule</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="settings"></i> Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <div class="greeting">
+                <h1>Welcome Back, Admin</h1>
+                <p>Manage your students and teachers efficiently.</p>
+            </div>
+            <div class="user-profile">
+                <i data-lucide="bell" style="margin-right: 1.5rem; color: #64748b; cursor: pointer;"></i>
+                <div class="avatar">JD</div>
+            </div>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats-container">
+            <div class="stats-card">
+                <div class="stats-icon stats-blue"><i data-lucide="users"></i></div>
+                <div class="stats-info">
+                    <h3 th:text="${#lists.size(students)}">0</h3>
+                    <p>Total Students</p>
+                </div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-icon stats-pink"><i data-lucide="user-check"></i></div>
+                <div class="stats-info">
+                    <h3 th:text="${#lists.size(teachers)}">0</h3>
+                    <p>Total Teachers</p>
+                </div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-icon stats-green"><i data-lucide="trending-up"></i></div>
+                <div class="stats-info">
+                    <h3>98%</h3>
+                    <p>Attendance</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Student Management -->
+            <section>
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="card-title">
+                        Add New Student
+                        <span class="badge">Quick Entry</span>
+                    </div>
+                    <form th:action="@{/add-student}" th:object="${student}" method="post">
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" th:field="*{firstName}" class="form-input" placeholder="e.g. John" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" th:field="*{lastName}" class="form-input" placeholder="e.g. Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" th:field="*{email}" class="form-input" placeholder="e.g. john@student.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Grade</label>
+                            <input type="text" th:field="*{grade}" class="form-input" placeholder="e.g. 10th Grade" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i data-lucide="plus"></i> Enrol Student</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Current Students</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Email</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="s : ${students}">
+                                    <td>
+                                        <div class="avatar" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</div>
+                                        <span th:text="${s.firstName + ' ' + s.lastName}">John Doe</span>
+                                    </td>
+                                    <td th:text="${s.email}" style="color: #64748b;">john@email.com</td>
+                                    <td><span class="badge" th:text="${s.grade}">10th Grade</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teacher Management -->
+            <section>
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="card-title">
+                        Hire New Teacher
+                        <span class="badge">Staffing</span>
+                    </div>
+                    <form th:action="@{/add-teacher}" th:object="${teacher}" method="post">
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" th:field="*{firstName}" class="form-input" placeholder="e.g. Sarah" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" th:field="*{lastName}" class="form-input" placeholder="e.g. Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <input type="text" th:field="*{subject}" class="form-input" placeholder="e.g. Mathematics" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background-color: var(--accent);"><i data-lucide="user-plus"></i> Hire Teacher</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Teaching Staff</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Teacher</th>
+                                    <th>Subject</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="t : ${teachers}">
+                                    <td>
+                                        <div class="avatar" style="color: var(--accent);" th:text="${#strings.substring(t.firstName,0,1) + #strings.substring(t.lastName,0,1)}">SS</div>
+                                        <span th:text="${t.firstName + ' ' + t.lastName}">Sarah Smith</span>
+                                    </td>
+                                    <td th:text="${t.subject}" style="color: #64748b;">Mathematics</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
