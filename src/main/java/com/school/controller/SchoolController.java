@@ -40,4 +40,16 @@ public class SchoolController {
         teacherRepository.save(teacher);
         return "redirect:/";
     }
+
+    @PostMapping("/delete-student")
+    public String deleteStudent(Long id) {
+        studentRepository.deleteById(id);
+        return "redirect:/";
+    }
+
+    @PostMapping("/delete-teacher")
+    public String deleteTeacher(Long id) {
+        teacherRepository.deleteById(id);
+        return "redirect:/";
+    }
 }

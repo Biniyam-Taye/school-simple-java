@@ -9,6 +9,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+        .search-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            width: 16px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 0.6rem 1rem 0.6rem 2.5rem;
+            border-radius: 99px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            font-size: 0.875rem;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #ef4444;
+            padding: 4px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .action-btn:hover {
+            background: #fef2f2;
+        }
+        tr.hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Sidebar -->
@@ -36,9 +73,15 @@
                 <h1>Welcome Back, Admin</h1>
                 <p>Manage your students and teachers efficiently.</p>
             </div>
-            <div class="user-profile">
-                <i data-lucide="bell" style="margin-right: 1.5rem; color: #64748b; cursor: pointer;"></i>
-                <div class="avatar">JD</div>
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <div class="search-container">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="globalSearch" class="search-input" placeholder="Search anything...">
+                </div>
+                <div class="user-profile" style="display: flex; align-items: center;">
+                    <i data-lucide="bell" style="margin-right: 1.5rem; color: #64748b; cursor: pointer;"></i>
+                    <div class="avatar">JD</div>
+                </div>
             </div>
         </header>
 
@@ -59,10 +102,10 @@
                 </div>
             </div>
             <div class="stats-card">
-                <div class="stats-icon stats-green"><i data-lucide="trending-up"></i></div>
+                <div class="stats-icon stats-green"><i data-lucide="activity"></i></div>
                 <div class="stats-info">
-                    <h3>98%</h3>
-                    <p>Attendance</p>
+                    <h3>98.2%</h3>
+                    <p>Engagement</p>
                 </div>
             </div>
         </div>
@@ -103,18 +146,28 @@
                             <thead>
                                 <tr>
                                     <th>Student</th>
-                                    <th>Email</th>
                                     <th>Grade</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr th:each="s : ${students}">
+                            <tbody id="studentTable">
+                                <tr th:each="s : ${students}" class="data-row">
                                     <td>
-                                        <div class="avatar" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</div>
-                                        <span th:text="${s.firstName + ' ' + s.lastName}">John Doe</span>
+                                        <div style="display: flex; align-items: center;">
+                                            <div class="avatar" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</div>
+                                            <div>
+                                                <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 600;">John Doe</div>
+                                                <div th:text="${s.email}" style="font-size: 0.75rem; color: var(--text-secondary);">john@email.com</div>
+                                            </div>
+                                        </div>
                                     </td>
-                                    <td th:text="${s.email}" style="color: #64748b;">john@email.com</td>
                                     <td><span class="badge" th:text="${s.grade}">10th Grade</span></td>
+                                    <td>
+                                        <form th:action="@{/delete-student}" method="post" onsubmit="return confirm('Delete student?');">
+                                            <input type="hidden" name="id" th:value="${s.id}">
+                                            <button type="submit" class="action-btn"><i data-lucide="trash-2"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -154,15 +207,24 @@
                                 <tr>
                                     <th>Teacher</th>
                                     <th>Subject</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr th:each="t : ${teachers}">
+                            <tbody id="teacherTable">
+                                <tr th:each="t : ${teachers}" class="data-row">
                                     <td>
-                                        <div class="avatar" style="color: var(--accent);" th:text="${#strings.substring(t.firstName,0,1) + #strings.substring(t.lastName,0,1)}">SS</div>
-                                        <span th:text="${t.firstName + ' ' + t.lastName}">Sarah Smith</span>
+                                        <div style="display: flex; align-items: center;">
+                                            <div class="avatar" style="color: var(--accent);" th:text="${#strings.substring(t.firstName,0,1) + #strings.substring(t.lastName,0,1)}">SS</div>
+                                            <span th:text="${t.firstName + ' ' + t.lastName}" style="font-weight: 600;">Sarah Smith</span>
+                                        </div>
                                     </td>
                                     <td th:text="${t.subject}" style="color: #64748b;">Mathematics</td>
+                                    <td>
+                                        <form th:action="@{/delete-teacher}" method="post" onsubmit="return confirm('Delete teacher?');">
+                                            <input type="hidden" name="id" th:value="${t.id}">
+                                            <button type="submit" class="action-btn"><i data-lucide="trash-2"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -174,6 +236,21 @@
 
     <script>
         lucide.createIcons();
+
+        // Instant Search Logic
+        document.getElementById('globalSearch').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.data-row');
+            
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                if (text.includes(term)) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+        });
     </script>
 </body>
 </html>
