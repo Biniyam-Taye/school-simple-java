@@ -36,28 +36,32 @@
     </style>
 </head>
 <body id="body">
+    <!-- Background Decor -->
+    <div style="position: fixed; top: -10%; left: -5%; width: 500px; height: 500px; border-radius: 50%; background: var(--primary-glow); filter: blur(120px); z-index: -1;"></div>
+    <div style="position: fixed; bottom: -10%; right: -5%; width: 400px; height: 400px; border-radius: 50%; background: var(--accent-glow); filter: blur(100px); z-index: -1;"></div>
+
     <div id="toast" class="toast">Action completed successfully!</div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="brand">
-            <div class="brand-icon"><i data-lucide="sparkles"></i></div>
-            <span class="brand-name">Student Hub Pro</span>
+            <div class="brand-icon"><i data-lucide="sparkle" style="stroke-width: 3px;"></i></div>
+            <span class="brand-name">Hub Pro</span>
         </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Overview</a></li>
                 <li><a href="#" class="nav-item"><i data-lucide="users"></i> Academic Registry</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="shield-check"></i> Faculty Staff</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="book-heart"></i> Curriculum</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="calendar"></i> Master Schedule</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="bar-chart-3"></i> Analytics</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="building-2"></i> Faculty Staff</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="book-open-check"></i> Curriculum</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="calendar"></i> Master Plan</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="line-chart"></i> Intelligent Analytics</a></li>
             </ul>
         </nav>
-        <div style="margin-top: auto; padding: 1rem 0; border-top: 1px solid var(--border-color);">
+        <div style="margin-top: auto; padding: 1.5rem 0.5rem 0.5rem; border-top: 1px solid var(--border-color);">
             <button class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer;" onclick="toggleDarkMode()">
                 <i id="theme-icon" data-lucide="moon"></i> 
-                <span id="theme-text">Dark Mode</span>
+                <span id="theme-text">Dark Selection</span>
             </button>
         </div>
     </aside>
@@ -66,53 +70,63 @@
     <main class="main-content">
         <header>
             <div class="greeting">
-                <h1>Executive Overview</h1>
-                <p>Monitor institution-wide performance metrics and personnel analytics.</p>
+                <p style="font-weight: 800; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.5rem;">Institutional Intelligence</p>
+                <h1>Strategic Hub</h1>
             </div>
-            <div style="display: flex; align-items: center; gap: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 2rem;">
                 <div class="search-container">
-                    <i data-lucide="search"></i>
-                    <input type="text" id="globalSearch" class="search-input" placeholder="Quick find students, staff...">
+                    <i data-lucide="search" style="width: 20px; color: var(--text-secondary);"></i>
+                    <input type="text" id="globalSearch" class="search-input" placeholder="Search academics, staff, records...">
                 </div>
-                <div class="theme-toggle" onclick="toggleDarkMode()">
-                   <i id="header-theme-icon" data-lucide="moon" style="width: 20px;"></i>
+                <div style="display: flex; gap: 1rem;">
+                    <div class="theme-toggle" onclick="toggleDarkMode()">
+                       <i id="header-theme-icon" data-lucide="moon" style="width: 20px;"></i>
+                    </div>
+                    <div class="avatar" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; width: 44px; height: 44px;">AD</div>
                 </div>
-                <div class="avatar" style="margin-right: 0; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white;">AD</div>
             </div>
         </header>
 
-        <!-- Stats -->
+        <!-- Stats Section -->
         <div class="stats-container">
             <div class="stats-card">
-                <div class="stats-icon stats-blue"><i data-lucide="users"></i></div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="stats-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--primary);"><i data-lucide="graduation-cap"></i></div>
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">+14% Growth</span>
+                </div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(students)}">0</h3>
-                    <p>Total Students</p>
+                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Student Enrollment</p>
                 </div>
             </div>
             <div class="stats-card">
-                <div class="stats-icon stats-pink"><i data-lucide="award"></i></div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="stats-icon" style="background: rgba(244, 63, 94, 0.1); color: var(--accent);"><i data-lucide="briefcase"></i></div>
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">Active Status</span>
+                </div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(teachers)}">0</h3>
-                    <p>Active Faculty</p>
+                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Faculty Members</p>
                 </div>
             </div>
             <div class="stats-card">
-                <div class="stats-icon stats-green"><i data-lucide="check-circle-2"></i></div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="stats-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;"><i data-lucide="activity"></i></div>
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">Optimized</span>
+                </div>
                 <div class="stats-info">
-                    <h3>96%</h3>
-                    <p>Avg. Attendance</p>
+                    <h3>98.2%</h3>
+                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Attendance Velocity</p>
                 </div>
             </div>
         </div>
 
         <div class="dashboard-grid">
-            <!-- Table Section -->
-            <section style="display: flex; flex-direction: column; gap: 2.5rem;">
-                <div class="card">
+            <section>
+                <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
                     <div class="card-title">
-                        Academic Enrollment Registry
-                        <button class="btn btn-primary" style="width: auto; padding: 0.6rem 1.25rem;" onclick="openModal('addStudentModal')">
+                        Academic Registry
+                        <button class="btn btn-primary" onclick="openModal('addStudentModal')">
                             <i data-lucide="plus"></i> Enroll Student
                         </button>
                     </div>
@@ -120,30 +134,27 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Student</th>
+                                    <th>Candidate</th>
                                     <th>Academic Performance</th>
-                                    <th style="text-align: right;">Management</th>
+                                    <th style="text-align: right;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr th:each="s : ${students}" class="data-row active-row">
                                     <td>
-                                        <div style="display: flex; align-items: center; gap: 1rem;">
-                                            <div class="avatar" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</div>
+                                        <div style="display: flex; align-items: center; gap: 1.25rem;">
+                                            <div class="avatar" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}" style="background: var(--bg-main); color: var(--primary);">JD</div>
                                             <div>
-                                                <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 800; font-size: 1.05rem;">John Doe</div>
-                                                <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">
-                                                    <span th:text="${s.grade}">10th Grade</span> • <span th:text="${s.email}">email</span>
-                                                </div>
+                                                <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 900; font-size: 1.1rem; letter-spacing: -0.02em;">John Doe</div>
+                                                <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600;" th:text="${s.grade}">Grade Level</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div style="min-width: 140px;">
-                                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                                                <span class="score-badge score-high" th:if="${s.gpa >= 3.5}" th:text="${s.gpa + ' GPA'}">4.0 GPA</span>
-                                                <span class="score-badge score-mid" th:if="${s.gpa < 3.5}" th:text="${s.gpa + ' GPA'}">3.0 GPA</span>
-                                                <span style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;" th:text="${s.attendance + '% Att.'}">90%</span>
+                                        <div style="min-width: 180px;">
+                                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                                <span style="font-weight: 900; font-size: 0.85rem;" th:text="${s.gpa + ' GPA'}">4.0 GPA</span>
+                                                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);" th:text="${s.attendance + '% Record'}">100%</span>
                                             </div>
                                             <div class="progress-container">
                                                 <div class="progress-bar" th:style="'width: ' + (${s.gpa} / 4.0 * 100) + '%'"></div>
@@ -151,57 +162,11 @@
                                         </div>
                                     </td>
                                     <td style="text-align: right;">
-                                        <div style="display: inline-flex; gap: 0.75rem;">
-                                            <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}" th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}" th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}" onclick="openEditStudent(this)">
-                                                <i data-lucide="edit-3" style="width: 18px;"></i>
-                                            </button>
-                                            <form th:action="@{/delete-student}" method="post" onsubmit="return confirm('Archive student record?');" style="display:inline;">
+                                        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+                                             <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}" th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}" th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}" onclick="openEditStudent(this)" style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 12px; cursor: pointer;"><i data-lucide="edit-3" style="width: 18px; color: var(--text-secondary);"></i></button>
+                                             <form th:action="@{/delete-student}" method="post" onsubmit="return confirm('Archive record?');" style="display:inline;">
                                                 <input type="hidden" name="id" th:value="${s.id}">
-                                                <button type="submit" class="action-btn" style="color: #ef4444;"><i data-lucide="trash-2" style="width: 18px;"></i></button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">
-                        Administrative Personnel Directory
-                        <button class="btn btn-primary" style="width: auto; padding: 0.6rem 1.25rem; background: var(--accent); border: none;" onclick="openModal('addTeacherModal')">
-                            <i data-lucide="plus"></i> Appoint Faculty
-                        </button>
-                    </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Staff Member</th>
-                                    <th>Department</th>
-                                    <th style="text-align: right;">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr th:each="t : ${teachers}" class="data-row active-row">
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 1rem;">
-                                            <div class="avatar" style="color: var(--accent); background: rgba(236, 72, 153, 0.1);" th:text="${#strings.substring(t.firstName,0,1) + #strings.substring(t.lastName,0,1)}">SS</div>
-                                            <span th:text="${t.firstName + ' ' + t.lastName}" style="font-weight: 700;">Sarah Smith</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="badge" th:text="${t.subject}" style="background: rgba(236, 72, 153, 0.1); color: var(--accent);">Mathematics</span>
-                                    </td>
-                                    <td style="text-align: right;">
-                                        <div style="display: inline-flex; gap: 0.75rem;">
-                                            <button class="action-btn" th:data-id="${t.id}" th:data-fname="${t.firstName}" th:data-lname="${t.lastName}" th:data-subject="${t.subject}" onclick="openEditTeacher(this)">
-                                                <i data-lucide="edit-3" style="width: 18px;"></i>
-                                            </button>
-                                            <form th:action="@{/delete-teacher}" method="post" onsubmit="return confirm('Terminate faculty contract?');" style="display:inline;">
-                                                <input type="hidden" name="id" th:value="${t.id}">
-                                                <button type="submit" class="action-btn" style="color: #ef4444;"><i data-lucide="trash-2" style="width: 18px;"></i></button>
+                                                <button type="submit" style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i data-lucide="trash-2" style="width: 18px; color: #ef4444;"></i></button>
                                             </form>
                                         </div>
                                     </td>
@@ -212,37 +177,37 @@
                 </div>
             </section>
 
-            <!-- Sidebar Insights -->
             <section style="display: flex; flex-direction: column; gap: 2rem;">
-                <div class="card" style="border: 2px solid var(--primary); background: rgba(99, 102, 241, 0.02);">
-                    <div class="card-title">Academic Leaders</div>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
-                        <li th:each="s, iter : ${students}" th:if="${iter.index < 3}" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color);">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div class="avatar" style="width: 36px; height: 36px; font-size: 0.8rem; background: var(--primary); color: white;" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}"></div>
-                                <div style="display: flex; flex-direction: column;">
-                                    <span th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 700; font-size: 0.9rem;">Student</span>
-                                    <span style="font-size: 0.7rem; color: var(--text-secondary);" th:text="${s.grade}">Grade</span>
-                                </div>
-                            </div>
-                            <span class="badge" th:text="${s.gpa}" style="background: var(--primary); color: white;">3.9</span>
-                        </li>
-                    </ul>
+                <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--primary-deep)); border: none; color: white;">
+                    <div style="display: flex; font-size: 0.75rem; font-weight: 900; background: rgba(255,255,255,0.2); width: fit-content; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; margin-bottom: 2rem;">Strategic Intelligence</div>
+                    <h3 style="font-size: 1.75rem; font-weight: 950; letter-spacing: -0.05em; line-height: 1.2; margin-bottom: 1.5rem;">Institutional Analytics are peaking.</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.6; font-weight: 500;">Weekly engagement metrics indicate a <b>98.4%</b> retention rate across all primary departments.</p>
                 </div>
 
-                <div class="card">
-                    <div class="card-title">System Utilities</div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem;"><i data-lucide="mail"></i> Bulk Email</button>
-                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem;"><i data-lucide="file-text"></i> Records</button>
-                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem;"><i data-lucide="calendar"></i> Scheduler</button>
-                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem;"><i data-lucide="sliders"></i> Settings</button>
+                <div class="card" style="padding: 2.5rem;">
+                    <div class="card-title" style="margin-bottom: 2rem;">Academic Leaders</div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div th:each="s, iter : ${students}" th:if="${iter.index < 4}" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="avatar" style="width: 40px; height: 40px; border-radius: 12px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-size: 0.85rem;" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}"></div>
+                                <div>
+                                    <div th:text="${s.firstName}" style="font-weight: 800; font-size: 0.95rem;">Student</div>
+                                    <div th:text="${s.grade}" style="font-size: 0.75rem; opacity: 0.6; font-weight: 600;">Grade</div>
+                                </div>
+                            </div>
+                            <div th:text="${s.gpa}" style="font-weight: 900; font-size: 1rem; color: var(--primary);">4.0</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; box-shadow: 0 15px 30px -10px var(--primary-glow);">
-                    <div class="card-title" style="color: white;"><i data-lucide="zap"></i> Strategic Insight</div>
-                    <p style="font-size: 0.9rem; opacity: 0.9; line-height: 1.6; font-weight: 500;">Weekly engagement is at a record <b>98.4%</b>. Academic efficiency has improved by <b>12%</b> following current curriculum optimizations.</p>
+                <div class="card" style="padding: 2rem; border-color: var(--primary);">
+                    <div class="card-title" style="font-size: 1.1rem;">Quick Actions</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.75rem;"><i data-lucide="mail"></i> Bulk Mail</button>
+                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.75rem;"><i data-lucide="file-text"></i> Ledger</button>
+                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.75rem;"><i data-lucide="zap"></i> Fast Track</button>
+                        <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.75rem;"><i data-lucide="settings"></i> Config</button>
+                    </div>
                 </div>
             </section>
         </div>
