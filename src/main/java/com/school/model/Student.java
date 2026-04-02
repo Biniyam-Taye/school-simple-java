@@ -19,4 +19,8 @@ public class Student {
 	private String grade;
 	private Double gpa;
 	private Integer attendance;
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
