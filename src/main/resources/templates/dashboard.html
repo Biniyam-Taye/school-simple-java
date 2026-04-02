@@ -65,10 +65,17 @@
                 <li><a href="#" class="nav-item"><i data-lucide="line-chart"></i> Predictive Analytics</a></li>
             </ul>
         </nav>
-        <div style="margin-top: auto; padding: 1.5rem 0.5rem 0.5rem; border-top: 1px solid var(--border-color);">
-            <button class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer;" onclick="toggleDarkMode()">
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar" style="width: 36px; height: 36px; font-size: 0.8rem; background: var(--primary); color: white;">BT</div>
+                <div class="user-info">
+                    <h4>Biniyam Taye</h4>
+                    <p>Executive Admin</p>
+                </div>
+            </div>
+            <button class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;" onclick="toggleDarkMode()">
                 <i id="theme-icon" data-lucide="moon"></i> 
-                <span id="theme-text">Dark Selection</span>
+                <span id="theme-text">Modern Selection</span>
             </button>
         </div>
     </aside>
@@ -147,10 +154,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr th:each="s : ${students}" class="data-row active-row">
+                                <tr th:each="s, iter : ${students}" class="data-row active-row">
                                     <td>
                                         <div style="display: flex; align-items: center; gap: 1.25rem;">
-                                            <div class="avatar" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}" style="background: var(--bg-main); color: var(--primary);">JD</div>
+                                            <div class="avatar" style="background: var(--bg-main); color: var(--primary);">
+                                                <span th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</span>
+                                                <div class="status-dot" th:style="${iter.index % 3 == 0} ? 'background: #cbd5e1' : 'background: #10b981'"></div>
+                                            </div>
                                             <div>
                                                 <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 900; font-size: 1.1rem; letter-spacing: -0.02em;">John Doe</div>
                                                 <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600;" th:text="${s.grade}">Grade Level</div>
@@ -160,7 +170,10 @@
                                     <td>
                                         <div style="min-width: 180px;">
                                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                                <span style="font-weight: 900; font-size: 0.85rem;" th:text="${s.gpa + ' GPA'}">4.0 GPA</span>
+                                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                                    <span style="font-weight: 900; font-size: 0.85rem;" th:text="${s.gpa + ' GPA'}">4.0 GPA</span>
+                                                    <span th:class="${s.gpa >= 3.5} ? 'trend-up' : 'trend-down'" th:text="${s.gpa >= 3.5} ? '↑' : '↓'">↑</span>
+                                                </div>
                                                 <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);" th:text="${s.attendance + '% Record'}">100%</span>
                                             </div>
                                             <div class="progress-container">
