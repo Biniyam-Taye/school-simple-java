@@ -19,7 +19,7 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Seed Students: null id, first, last, email, grade, gpa, attendance
+        // Seed Students: id, first, last, email, grade, gpa, attendance
         studentRepository.save(new Student(null, "Alexander", "Sterling", "a.sterling@academy.edu", "Senior (12th)", 4.0, 99));
         studentRepository.save(new Student(null, "Elena", "Rodriguez", "e.rodriguez@academy.edu", "Senior (12th)", 3.9, 98));
         studentRepository.save(new Student(null, "Marcus", "Chen", "m.chen@academy.edu", "Junior (11th)", 3.5, 94));
@@ -28,13 +28,25 @@ public class DataLoader implements CommandLineRunner {
         studentRepository.save(new Student(null, "Aria", "Night", "a.night@academy.edu", "Freshman (9th)", 3.9, 99));
         studentRepository.save(new Student(null, "Dominic", "Frost", "d.frost@academy.edu", "Junior (11th)", 3.4, 93));
         studentRepository.save(new Student(null, "Isabella", "Mikaelson", "i.mikaelson@academy.edu", "Sophomore (10th)", 4.0, 100));
+        studentRepository.save(new Student(null, "Ethan", "Hunt", "e.hunt@academy.edu", "Senior (12th)", 3.7, 95));
+        studentRepository.save(new Student(null, "Olivia", "Pope", "o.pope@academy.edu", "Junior (11th)", 3.9, 97));
+        studentRepository.save(new Student(null, "Lucas", "Scott", "l.scott@academy.edu", "Freshman (9th)", 3.2, 88));
+        studentRepository.save(new Student(null, "Maya", "Hart", "m.hart@academy.edu", "Sophomore (10th)", 3.6, 92));
+        studentRepository.save(new Student(null, "Noah", "Flynn", "n.flynn@academy.edu", "Senior (12th)", 3.8, 94));
+        studentRepository.save(new Student(null, "Chloe", "Decker", "c.decker@academy.edu", "Junior (11th)", 3.5, 96));
+        studentRepository.save(new Student(null, "Liam", "Dunbar", "l.dunbar@academy.edu", "Sophomore (10th)", 3.1, 85));
+        studentRepository.save(new Student(null, "Zoe", "Benson", "z.benson@academy.edu", "Freshman (9th)", 4.0, 100));
 
-        // Seed Teachers: null id, first, last, subject, department
+        // Seed Teachers: id, first, last, subject, department
         teacherRepository.save(new Teacher(null, "Dr. Sebastian", "Wilde", "Advanced Physics", "Science"));
         teacherRepository.save(new Teacher(null, "Prof. Amara", "Vane", "Quantum Mechanics", "Science"));
         teacherRepository.save(new Teacher(null, "Ms. Evelyn", "Blackwood", "European History", "Humanities"));
         teacherRepository.save(new Teacher(null, "Mr. Silas", "Crane", "Applied Mathematics", "STEM"));
         teacherRepository.save(new Teacher(null, "Madam Clara", "Hale", "Classical Literature", "Arts"));
         teacherRepository.save(new Teacher(null, "Director Leo", "Drake", "Digital Innovation", "Technology"));
+        teacherRepository.save(new Teacher(null, "Dr. Victor", "Frank", "Biotechnology", "Science"));
+        teacherRepository.save(new Teacher(null, "Prof. Diana", "Prince", "Ethics & Philosophy", "Humanities"));
+        teacherRepository.save(new Teacher(null, "Mr. Bruce", "Wayne", "Strategic Management", "Business"));
+        teacherRepository.save(new Teacher(null, "Ms. Selina", "Kyle", "Cyber Security", "Technology"));
     }
 }
