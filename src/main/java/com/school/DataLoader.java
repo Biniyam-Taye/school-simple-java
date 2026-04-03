@@ -30,9 +30,9 @@ public class DataLoader implements CommandLineRunner {
         studentRepository.save(new Student(null, "Isabella", "Mikaelson", "i.mikaelson@academy.edu", "Sophomore (10th)", 4.0, 100));
         studentRepository.save(new Student(null, "Ethan", "Hunt", "e.hunt@academy.edu", "Senior (12th)", 3.7, 95));
         studentRepository.save(new Student(null, "Olivia", "Pope", "o.pope@academy.edu", "Junior (11th)", 3.9, 97));
-        studentRepository.save(new Student(null, "Lucas", "Scott", "l.scott@academy.edu", "Freshman (9th)", 3.2, 88));
+        studentRepository.save(new Student(null, "Lucas", "Scott", "l.scott@academy.edu", "Freshman (9th)", 2.8, 82));
         studentRepository.save(new Student(null, "Maya", "Hart", "m.hart@academy.edu", "Sophomore (10th)", 3.6, 92));
-        studentRepository.save(new Student(null, "Noah", "Flynn", "n.flynn@academy.edu", "Senior (12th)", 3.8, 94));
+        studentRepository.save(new Student(null, "Noah", "Flynn", "n.flynn@academy.edu", "Senior (12th)", 2.4, 75));
         studentRepository.save(new Student(null, "Chloe", "Decker", "c.decker@academy.edu", "Junior (11th)", 3.5, 96));
         studentRepository.save(new Student(null, "Liam", "Dunbar", "l.dunbar@academy.edu", "Sophomore (10th)", 3.1, 85));
         studentRepository.save(new Student(null, "Zoe", "Benson", "z.benson@academy.edu", "Freshman (9th)", 4.0, 100));

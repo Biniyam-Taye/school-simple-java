@@ -85,8 +85,8 @@
         <header>
             <div class="greeting">
                 <p style="font-weight: 800; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.2rem; margin-bottom: 0.5rem;">Academic Governance System</p>
-                <h1>Executive Oversight</h1>
-                <p style="font-size: 1rem; opacity: 0.7; margin-top: 0.25rem;">Welcome back, Administrator. Here's a brief overview of the institution's current health.</p>
+                <h1 id="time-greeting">Executive Oversight</h1>
+                <p style="font-size: 1rem; opacity: 0.7; margin-top: 0.25rem;">Administrator Taye, here is your real-time institutional status report.</p>
             </div>
             <div style="display: flex; align-items: center; gap: 2rem;">
                 <div class="search-container">
@@ -171,7 +171,12 @@
                                             </div>
                                             <div>
                                                 <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 900; font-size: 1.1rem; letter-spacing: -0.02em;">John Doe</div>
-                                                <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600;" th:text="${s.grade}">Grade Level</div>
+                                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                                    <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;" th:text="${s.grade}">Grade Level</div>
+                                                    <span th:if="${s.gpa >= 3.8}" style="font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; background: rgba(16, 185, 129, 0.1); color: #10b981; font-weight: 800;">ELITE</span>
+                                                    <span th:if="${s.gpa >= 3.0 && s.gpa < 3.8}" style="font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-weight: 800;">ADVANCED</span>
+                                                    <span th:if="${s.gpa < 3.0}" style="font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; background: rgba(244, 63, 94, 0.1); color: var(--accent); font-weight: 800;">REVIEW</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -432,11 +437,18 @@
             });
         });
 
-        // Real-time Clock
+        // Real-time Clock & Greeting
         function updateTime() {
             const now = new Date();
             const timeStr = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
             document.getElementById('current-time').innerText = timeStr;
+
+            const hour = now.getHours();
+            let greet = "Executive Oversight";
+            if (hour < 12) greet = "Good Morning, Executive";
+            else if (hour < 18) greet = "Good Afternoon, Executive";
+            else greet = "Good Evening, Executive";
+            document.getElementById('time-greeting').innerText = greet;
         }
         setInterval(updateTime, 1000);
         updateTime();
