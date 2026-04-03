@@ -137,7 +137,7 @@
                     <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">Optimized</span>
                 </div>
                 <div class="stats-info">
-                    <h3>98.2%</h3>
+                    <h3 th:text="${avgAttendance + '%'}">0%</h3>
                     <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Attendance Velocity</p>
                 </div>
             </div>
@@ -147,9 +147,9 @@
             <section>
                 <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
                     <div class="card-title">
-                        Global Academic Registry
-                        <button class="btn btn-primary" onclick="openModal('addStudentModal')">
-                            <i data-lucide="user-plus"></i> Onboard Scholar
+                        Academic Registry (Global)
+                        <button class="btn btn-primary" onclick="openModal('addStudentModal')" style="font-size: 0.8rem; padding: 0.6rem 1.25rem;">
+                            <i data-lucide="user-plus"></i> Register Scholar
                         </button>
                     </div>
                     <div class="table-container">
@@ -203,6 +203,54 @@
                         </table>
                     </div>
                 </div>
+
+                <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
+                    <div class="card-title">
+                        Faculty Governance & Strategy
+                        <button class="btn btn-primary" onclick="openModal('addTeacherModal')" style="background: var(--accent); font-size: 0.8rem; padding: 0.6rem 1.25rem;">
+                            <i data-lucide="briefcase"></i> Secure Faculty
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Faculty Profile</th>
+                                    <th>Expertise Range</th>
+                                    <th style="text-align: right;">Operations</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="t : ${teachers}" class="data-row">
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 1.25rem;">
+                                            <div class="avatar" style="background: rgba(244, 63, 94, 0.1); color: var(--accent); width: 44px; height: 44px; font-size: 0.9rem; border-radius: 14px;">
+                                                <i data-lucide="shield-check" style="width: 18px;"></i>
+                                            </div>
+                                            <div>
+                                                <div th:text="${t.firstName + ' ' + t.lastName}" style="font-weight: 800; font-size: 1rem;">Dr. Sebastian Wilde</div>
+                                                <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;" th:text="${t.department}">Science Department</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div style="font-weight: 700; color: var(--text-primary);" th:text="${t.subject}">Advanced Physics</div>
+                                        <div style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Primary Discipline</div>
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+                                             <button class="action-btn" th:data-id="${t.id}" th:data-fname="${t.firstName}" th:data-lname="${t.lastName}" th:data-subject="${t.subject}" onclick="openEditTeacher(this)" style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 8px; border-radius: 10px; cursor: pointer;"><i data-lucide="settings-2" style="width: 16px; color: var(--text-secondary);"></i></button>
+                                             <form th:action="@{/delete-teacher}" method="post" onsubmit="return confirm('Terminate record?');" style="display:inline;">
+                                                <input type="hidden" name="id" th:value="${t.id}">
+                                                <button type="submit" style="background: #fffafa; border: 1px solid #fee2e2; padding: 8px; border-radius: 10px; cursor: pointer;"><i data-lucide="user-minus" style="width: 16px; color: #ef4444;"></i></button>
+                                             </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
 
             <section style="display: flex; flex-direction: column; gap: 2rem;">
@@ -213,9 +261,9 @@
                 </div>
 
                 <div class="card" style="padding: 2.5rem;">
-                    <div class="card-title" style="margin-bottom: 2rem;">Top Performers</div>
+                    <div class="card-title" style="margin-bottom: 2rem;">Elite Scholars</div>
                     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <div th:each="s, iter : ${students}" th:if="${iter.index < 4}" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div th:each="s : ${topScholars}" style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="display: flex; align-items: center; gap: 1rem;">
                                 <div class="avatar" style="width: 40px; height: 40px; border-radius: 12px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-size: 0.85rem;" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}"></div>
                                 <div>
@@ -223,7 +271,10 @@
                                     <div th:text="${s.grade}" style="font-size: 0.75rem; opacity: 0.6; font-weight: 600;">Grade</div>
                                 </div>
                             </div>
-                            <div th:text="${s.gpa}" style="font-weight: 900; font-size: 1rem; color: var(--primary);">4.0</div>
+                            <div style="text-align: right;">
+                                <div th:text="${s.gpa}" style="font-weight: 900; font-size: 1rem; color: var(--primary);">4.0</div>
+                                <div style="font-size: 0.6rem; color: #10b981; font-weight: 900;">ALPHA RANK</div>
+                            </div>
                         </div>
                     </div>
                 </div>
