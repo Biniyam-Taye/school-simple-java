@@ -73,6 +73,7 @@
                     <p>Executive Admin</p>
                 </div>
             </div>
+            <div style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; opacity: 0.5;">LICENSE: ADX-7742-SUPREME</div>
             <button class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;" onclick="toggleDarkMode()">
                 <i id="theme-icon" data-lucide="moon"></i> 
                 <span id="theme-text">Modern Selection</span>
@@ -234,7 +235,12 @@
                                             </div>
                                             <div>
                                                 <div th:text="${t.firstName + ' ' + t.lastName}" style="font-weight: 800; font-size: 1rem;">Dr. Sebastian Wilde</div>
-                                                <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;" th:text="${t.department}">Science Department</div>
+                                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                                    <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;" th:text="${t.department}">Science Department</div>
+                                                    <span th:if="${t.id % 4 == 0}" style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-weight: 900; letter-spacing: 1px;">LEAD</span>
+                                                    <span th:if="${t.id % 4 == 1}" style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(244, 63, 94, 0.1); color: var(--accent); font-weight: 900; letter-spacing: 1px;">SENIOR</span>
+                                                    <span th:if="${t.id % 4 > 1}" style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: #f1f5f9; color: #64748b; font-weight: 900; letter-spacing: 1px;">ASSOCIATE</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -294,6 +300,21 @@
                                 <div th:text="${s.gpa}" style="font-weight: 900; font-size: 1rem; color: var(--primary);">4.0</div>
                                 <div style="font-size: 0.6rem; color: #10b981; font-weight: 900;">ALPHA RANK</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2.5rem; border-color: rgba(139, 92, 246, 0.1);">
+                    <div class="card-title" style="margin-bottom: 2rem;">Registry Overview</div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div th:each="entry : ${gradeCounts}" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); width: 120px;" th:text="${entry.key}">Grade</span>
+                            <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
+                                <div style="height: 6px; background: var(--border-color); border-radius: 10px; width: 100%; position: relative; overflow: hidden;">
+                                    <div th:style="'height: 100%; background: var(--primary); width: ' + (${entry.value} * 10) + '%'" style="border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                            <span style="font-size: 0.9rem; font-weight: 900; color: var(--text-primary); margin-left:1rem;" th:text="${entry.value}">0</span>
                         </div>
                     </div>
                 </div>

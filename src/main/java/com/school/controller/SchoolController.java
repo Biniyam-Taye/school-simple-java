@@ -21,10 +21,16 @@ public class SchoolController {
     @GetMapping("/")
     public String dashboard(Model model) {
         log.info("Interfacing with Executive Command Center...");
-        model.addAttribute("students", studentService.getAllStudents());
+        var students = studentService.getAllStudents();
+        model.addAttribute("students", students);
         model.addAttribute("teachers", teacherService.getAllTeachers());
         model.addAttribute("topScholars", studentService.getTopScholars(5));
         model.addAttribute("avgAttendance", studentService.getAverageAttendance());
+        
+        var gradeCounts = students.stream()
+            .collect(java.util.stream.Collectors.groupingBy(Student::getGrade, java.util.stream.Collectors.counting()));
+        model.addAttribute("gradeCounts", gradeCounts);
+        
         model.addAttribute("student", new Student());
         model.addAttribute("teacher", new Teacher());
         return "dashboard";
