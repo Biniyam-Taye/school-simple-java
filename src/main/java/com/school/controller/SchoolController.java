@@ -30,6 +30,9 @@ public class SchoolController {
         var gradeCounts = students.stream()
             .collect(java.util.stream.Collectors.groupingBy(Student::getGrade, java.util.stream.Collectors.counting()));
         model.addAttribute("gradeCounts", gradeCounts);
+
+        double ratio = teachers.isEmpty() ? 0 : (double) students.size() / teachers.size();
+        model.addAttribute("facultyRatio", String.format("%.1f", ratio));
         
         model.addAttribute("student", new Student());
         model.addAttribute("teacher", new Teacher());
