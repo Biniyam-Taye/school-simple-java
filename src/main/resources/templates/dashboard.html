@@ -112,30 +112,30 @@
 
         <!-- Stats Section -->
         <div class="stats-container">
-            <div class="stats-card">
+            <div class="stats-card" style="border-bottom: 4px solid var(--primary);">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div class="stats-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--primary);"><i data-lucide="graduation-cap"></i></div>
-                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">+14% Growth</span>
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">+14% GROWTH</span>
                 </div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(students)}">0</h3>
                     <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Student Enrollment</p>
                 </div>
             </div>
-            <div class="stats-card">
+            <div class="stats-card" style="border-bottom: 4px solid var(--accent);">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div class="stats-icon" style="background: rgba(244, 63, 94, 0.1); color: var(--accent);"><i data-lucide="briefcase"></i></div>
-                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">Active Status</span>
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">ACTIVE STATUS</span>
                 </div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(teachers)}">0</h3>
-                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Faculty Members</p>
+                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Faculty Governance</p>
                 </div>
             </div>
-            <div class="stats-card">
+            <div class="stats-card" style="border-bottom: 4px solid #10b981;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div class="stats-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;"><i data-lucide="activity"></i></div>
-                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">Optimized</span>
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">OPTIMIZED</span>
                 </div>
                 <div class="stats-info">
                     <h3 th:text="${avgAttendance + '%'}">0%</h3>
@@ -280,6 +280,13 @@
                             <div>
                                 <div style="font-weight: 800;">Academic Excellence</div>
                                 <div style="font-size: 0.8rem; opacity: 0.8;">99.2% retention velocity across all core departments.</div>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: start; gap: 1rem;">
+                            <i data-lucide="zap" style="width: 18px; margin-top: 4px; opacity: 0.8; color: #fbbf24;"></i>
+                            <div>
+                                <div style="font-weight: 800;">Predictive Foresight</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Projected 12% enrollment increase next academic cycle.</div>
                             </div>
                         </li>
                     </ul>
