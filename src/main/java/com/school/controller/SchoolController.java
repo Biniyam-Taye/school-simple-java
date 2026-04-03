@@ -20,24 +20,11 @@ public class SchoolController {
 
     @GetMapping("/")
     public String dashboard(Model model) {
-        log.info("Accessing Executive Command Center...");
-        var students = studentService.getAllStudents();
-        var teachers = teacherService.getAllTeachers();
-        
-        // Sorting for the 'Top Scholars' widget
-        var topScholars = students.stream()
-            .sorted((s1, s2) -> s2.getGpa().compareTo(s1.getGpa()))
-            .limit(5)
-            .toList();
-
-        // Calculate average attendance
-        double avgAttendance = students.isEmpty() ? 0 : 
-            students.stream().mapToInt(Student::getAttendance).average().orElse(0.0);
-
-        model.addAttribute("students", students);
-        model.addAttribute("teachers", teachers);
-        model.addAttribute("topScholars", topScholars);
-        model.addAttribute("avgAttendance", String.format("%.1f", avgAttendance));
+        log.info("Interfacing with Executive Command Center...");
+        model.addAttribute("students", studentService.getAllStudents());
+        model.addAttribute("teachers", teacherService.getAllTeachers());
+        model.addAttribute("topScholars", studentService.getTopScholars(5));
+        model.addAttribute("avgAttendance", studentService.getAverageAttendance());
         model.addAttribute("student", new Student());
         model.addAttribute("teacher", new Teacher());
         return "dashboard";
