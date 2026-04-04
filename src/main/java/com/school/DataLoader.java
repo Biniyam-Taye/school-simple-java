@@ -22,12 +22,12 @@ public class DataLoader implements CommandLineRunner {
         String[] firstNames = {"Alexander", "Elena", "Marcus", "Sophia", "Julian", "Aria", "Dominic", "Isabella", "Ethan", "Olivia", "Lucas", "Maya", "Noah", "Chloe", "Liam", "Zoe", "Benjamin", "Catherine", "Daniel", "Elizabeth", "Finn", "Gabriel", "Hailey", "Isaac", "Jada", "Kaleb", "Lia", "Milo", "Nora", "Owen"};
         String[] lastNames = {"Sterling", "Rodriguez", "Chen", "Laurent", "Vance", "Night", "Frost", "Mikaelson", "Hunt", "Pope", "Scott", "Hart", "Flynn", "Decker", "Dunbar", "Benson", "Franklin", "Zeta", "Craig", "Windsor", "Hudson", "Knight", "Bieber", "Newton", "Pinkett", "Mendes", "Cabello", "Puth", "Eilish", "Grande"};
 
-        for (int i = 0; i < 30; i++) {
-            String f = firstNames[i];
-            String l = lastNames[i];
+        for (int i = 0; i < 100; i++) {
+            String f = firstNames[i % firstNames.length] + (i > 29 ? i : "");
+            String l = lastNames[i % lastNames.length];
             String g = grades[i % grades.length];
-            double gpa = 3.2 + (Math.random() * 0.8);
-            int attendance = 88 + (int)(Math.random() * 12);
+            double gpa = 2.4 + (Math.random() * 1.6);
+            int attendance = 65 + (int)(Math.random() * 35);
             studentRepository.save(new Student(null, f, l, f.toLowerCase() + "." + l.toLowerCase() + "@academy.edu", g, Math.round(gpa * 100.0) / 100.0, attendance));
         }
 
