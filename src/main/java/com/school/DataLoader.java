@@ -18,31 +18,18 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // Seed Students: id, first, last, email, grade, gpa, attendance
-        studentRepository.save(new Student(null, "Alexander", "Sterling", "a.sterling@academy.edu", "Senior (12th)", 4.0, 99));
-        studentRepository.save(new Student(null, "Elena", "Rodriguez", "e.rodriguez@academy.edu", "Senior (12th)", 3.9, 98));
-        studentRepository.save(new Student(null, "Marcus", "Chen", "m.chen@academy.edu", "Junior (11th)", 3.5, 94));
-        studentRepository.save(new Student(null, "Sophia", "Laurent", "s.laurent@academy.edu", "Sophomore (10th)", 3.8, 96));
-        studentRepository.save(new Student(null, "Julian", "Vance", "j.vance@academy.edu", "Senior (12th)", 3.2, 91));
-        studentRepository.save(new Student(null, "Aria", "Night", "a.night@academy.edu", "Freshman (9th)", 3.9, 99));
-        studentRepository.save(new Student(null, "Dominic", "Frost", "d.frost@academy.edu", "Junior (11th)", 3.4, 93));
-        studentRepository.save(new Student(null, "Isabella", "Mikaelson", "i.mikaelson@academy.edu", "Sophomore (10th)", 4.0, 100));
-        studentRepository.save(new Student(null, "Ethan", "Hunt", "e.hunt@academy.edu", "Senior (12th)", 3.7, 95));
-        studentRepository.save(new Student(null, "Olivia", "Pope", "o.pope@academy.edu", "Junior (11th)", 3.9, 97));
-        studentRepository.save(new Student(null, "Lucas", "Scott", "l.scott@academy.edu", "Freshman (9th)", 2.8, 82));
-        studentRepository.save(new Student(null, "Maya", "Hart", "m.hart@academy.edu", "Sophomore (10th)", 3.6, 92));
-        studentRepository.save(new Student(null, "Noah", "Flynn", "n.flynn@academy.edu", "Senior (12th)", 2.4, 75));
-        studentRepository.save(new Student(null, "Chloe", "Decker", "c.decker@academy.edu", "Junior (11th)", 3.5, 96));
-        studentRepository.save(new Student(null, "Liam", "Dunbar", "l.dunbar@academy.edu", "Sophomore (10th)", 3.1, 85));
-        studentRepository.save(new Student(null, "Zoe", "Benson", "z.benson@academy.edu", "Freshman (9th)", 4.0, 100));
-        studentRepository.save(new Student(null, "Benjamin", "Franklin", "b.franklin@academy.edu", "Senior (12th)", 3.95, 98));
-        studentRepository.save(new Student(null, "Catherine", "Zeta", "c.zeta@academy.edu", "Junior (11th)", 3.82, 95));
-        studentRepository.save(new Student(null, "Daniel", "Craig", "d.craig@academy.edu", "Sophomore (10th)", 3.65, 92));
-        studentRepository.save(new Student(null, "Elizabeth", "Windsor", "e.windsor@academy.edu", "Freshman (9th)", 4.0, 100));
-        studentRepository.save(new Student(null, "Finn", "Hudson", "f.hudson@academy.edu", "Junior (11th)", 2.9, 88));
-        studentRepository.save(new Student(null, "Gabriel", "Knight", "g.knight@academy.edu", "Senior (12th)", 3.42, 94));
-        studentRepository.save(new Student(null, "Hailey", "Bieber", "h.bieber@academy.edu", "Junior (11th)", 3.1, 89));
-        studentRepository.save(new Student(null, "Isaac", "Newton", "i.newton@academy.edu", "Senior (12th)", 4.0, 100));
-        studentRepository.save(new Student(null, "Jada", "Pinkett", "j.pinkett@academy.edu", "Sophomore (10th)", 3.55, 93));
+        String[] grades = {"Freshman (9th)", "Sophomore (10th)", "Junior (11th)", "Senior (12th)"};
+        String[] firstNames = {"Alexander", "Elena", "Marcus", "Sophia", "Julian", "Aria", "Dominic", "Isabella", "Ethan", "Olivia", "Lucas", "Maya", "Noah", "Chloe", "Liam", "Zoe", "Benjamin", "Catherine", "Daniel", "Elizabeth", "Finn", "Gabriel", "Hailey", "Isaac", "Jada"};
+        String[] lastNames = {"Sterling", "Rodriguez", "Chen", "Laurent", "Vance", "Night", "Frost", "Mikaelson", "Hunt", "Pope", "Scott", "Hart", "Flynn", "Decker", "Dunbar", "Benson", "Franklin", "Zeta", "Craig", "Windsor", "Hudson", "Knight", "Bieber", "Newton", "Pinkett"};
+
+        for (int i = 0; i < 40; i++) {
+            String f = firstNames[i % firstNames.length] + (i > 25 ? i : "");
+            String l = lastNames[i % lastNames.length];
+            String g = grades[i % grades.length];
+            double gpa = 2.5 + (Math.random() * 1.5);
+            int attendance = 70 + (int)(Math.random() * 30);
+            studentRepository.save(new Student(null, f, l, f.toLowerCase() + "." + l.toLowerCase() + "@academy.edu", g, Math.round(gpa * 100.0) / 100.0, attendance));
+        }
 
         // Seed Teachers: id, first, last, subject, department
         teacherRepository.save(new Teacher(null, "Dr. Sebastian", "Wilde", "Advanced Physics", "Science"));
@@ -61,5 +48,8 @@ public class DataLoader implements CommandLineRunner {
         teacherRepository.save(new Teacher(null, "Mr. Tony", "Stark", "Robotics & AI", "Technology"));
         teacherRepository.save(new Teacher(null, "Dr. Stephen", "Strange", "Theoretical Geometry", "STEM"));
         teacherRepository.save(new Teacher(null, "Madam Wanda", "Maximoff", "Mind & Cognition", "Humanities"));
+        teacherRepository.save(new Teacher(null, "Prof. Hank", "Pym", "Micro-Engineering", "Science"));
+        teacherRepository.save(new Teacher(null, "Dr. Reed", "Richards", "Interdimensional Physics", "Science"));
+        teacherRepository.save(new Teacher(null, "Ms. Susan", "Storm", "Applied Optics", "Science"));
     }
 }

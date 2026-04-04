@@ -22,8 +22,9 @@ public class SchoolController {
     public String dashboard(Model model) {
         log.info("Interfacing with Executive Command Center...");
         var students = studentService.getAllStudents();
+        var teachers = teacherService.getAllTeachers();
         model.addAttribute("students", students);
-        model.addAttribute("teachers", teacherService.getAllTeachers());
+        model.addAttribute("teachers", teachers);
         model.addAttribute("topScholars", studentService.getTopScholars(5));
         model.addAttribute("avgAttendance", studentService.getAverageAttendance());
         
