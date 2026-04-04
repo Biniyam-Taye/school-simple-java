@@ -34,6 +34,11 @@ public class DataLoader implements CommandLineRunner {
         studentRepository.save(new Student(null, "Chloe", "Decker", "c.decker@academy.edu", "Junior (11th)", 3.5, 96));
         studentRepository.save(new Student(null, "Liam", "Dunbar", "l.dunbar@academy.edu", "Sophomore (10th)", 3.1, 85));
         studentRepository.save(new Student(null, "Zoe", "Benson", "z.benson@academy.edu", "Freshman (9th)", 4.0, 100));
+        studentRepository.save(new Student(null, "Benjamin", "Franklin", "b.franklin@academy.edu", "Senior (12th)", 3.95, 98));
+        studentRepository.save(new Student(null, "Catherine", "Zeta", "c.zeta@academy.edu", "Junior (11th)", 3.82, 95));
+        studentRepository.save(new Student(null, "Daniel", "Craig", "d.craig@academy.edu", "Sophomore (10th)", 3.65, 92));
+        studentRepository.save(new Student(null, "Elizabeth", "Windsor", "e.windsor@academy.edu", "Freshman (9th)", 4.0, 100));
+        studentRepository.save(new Student(null, "Finn", "Hudson", "f.hudson@academy.edu", "Junior (11th)", 2.9, 88));
 
         // Seed Teachers: id, first, last, subject, department
         teacherRepository.save(new Teacher(null, "Dr. Sebastian", "Wilde", "Advanced Physics", "Science"));
@@ -46,5 +51,9 @@ public class DataLoader implements CommandLineRunner {
         teacherRepository.save(new Teacher(null, "Prof. Diana", "Prince", "Ethics & Philosophy", "Humanities"));
         teacherRepository.save(new Teacher(null, "Mr. Bruce", "Wayne", "Strategic Management", "Business"));
         teacherRepository.save(new Teacher(null, "Ms. Selina", "Kyle", "Cyber Security", "Technology"));
+        teacherRepository.save(new Teacher(null, "Dr. Alfred", "Pennyworth", "Advanced Sociology", "Humanities"));
+        teacherRepository.save(new Teacher(null, "Prof. Charles", "Xavier", "Neurobiology", "Science"));
+        teacherRepository.save(new Teacher(null, "Ms. Natasha", "Romanoff", "Global Intelligence", "International Relations"));
+        teacherRepository.save(new Teacher(null, "Mr. Tony", "Stark", "Robotics & AI", "Technology"));
     }
 }
