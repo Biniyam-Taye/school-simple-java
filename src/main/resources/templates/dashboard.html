@@ -83,9 +83,12 @@
 
     <!-- Main Content -->
     <main class="main-content">
-                <p style="font-weight: 800; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.2rem; margin-bottom: 0.5rem;">Elite Institutional Control</p>
+                <p style="font-weight: 800; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.2rem; margin-bottom: 0.5rem; opacity: 0.8;">Institutional Control Panel</p>
                 <h1 id="time-greeting">Strategic Oversight</h1>
-                <p style="font-size: 1.1rem; opacity: 0.7; margin-top: 0.25rem;">Administrator Taye: Institutional synchronization is currently optimal.</p>
+                <p style="font-size: 1rem; opacity: 0.7; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i data-lucide="refresh-cw" style="width: 14px; animation: spin 4s linear infinite;"></i>
+                    Administrator Taye: Live synchronization active. Last update: Just now.
+                </p>
             </div>
             <div style="display: flex; align-items: center; gap: 2rem;">
                 <div class="search-container">
@@ -342,7 +345,31 @@
                     </div>
                 </div>
 
-                <div class="card" style="padding: 2.5rem; border-radius: 32px; background: #020617; color: white; border: none; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.3);">
+                <div class="card" style="padding: 2.25rem; border-radius: 28px; border: 1px solid var(--border-color); background: #fdfdfd;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                         <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 10px; height: 10px; background: var(--primary); border-radius: 50%;"></div>
+                            <span style="font-size: 0.75rem; font-weight: 850; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.15em;">VITALITY MATRIX</span>
+                        </div>
+                        <i data-lucide="trending-up" style="width: 18px; color: var(--primary);"></i>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; font-weight: 700;">Academic Velocity</span>
+                            <span style="font-weight: 950; color: #10b981;">+4.2%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; font-weight: 700;">Institutional Sync</span>
+                            <span style="font-weight: 950; color: #3b82f6;">Optimal</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; font-weight: 700;">Global Node Rank</span>
+                            <span style="font-weight: 950; color: var(--primary);">ALPHA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2.5rem; border-radius: 28px; background: #020617; color: white; border: none; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.3);">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
                          <div style="display: flex; align-items: center; gap: 0.75rem;">
                             <div style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite;"></div>
@@ -351,9 +378,9 @@
                         <i data-lucide="activity" style="width: 18px; color: #10b981;"></i>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <div style="font-size: 0.85rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Registry encryption verified & synchronized.</div>
-                        <div style="font-size: 0.85rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Faculty allocation balanced automatically.</div>
-                        <div style="font-size: 0.85rem;">System performance optimized for peak load.</div>
+                        <div style="font-size: 0.85rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1;">Registry encryption verified & synchronized.</div>
+                        <div style="font-size: 0.85rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1;">Faculty allocation balanced automatically.</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">System performance optimized for peak load.</div>
                     </div>
                 </div>
             </section>
