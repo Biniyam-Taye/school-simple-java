@@ -159,7 +159,7 @@
                 </div>
                 <div class="stats-info">
                     <h3>98.2</h3>
-                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Intel Engine Score</p>
+                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">System Velocity</p>
                 </div>
             </div>
         </div>
@@ -169,14 +169,20 @@
                 <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
                     <div class="card-title">
                         Global Scholar Registry
-                        <button class="btn btn-primary" onclick="openModal('addStudentModal')" style="font-size: 0.8rem; padding: 0.6rem 1.25rem;">
-                            <i data-lucide="user-plus"></i> Onboard Scholar
-                        </button>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <button class="btn btn-primary" onclick="openModal('addStudentModal')" style="font-size: 0.8rem; padding: 0.6rem 1.25rem;">
+                                <i data-lucide="user-plus"></i> Onboard Scholar
+                            </button>
+                            <div class="dropdown" style="position: relative;">
+                                <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;" onclick="showToast('Initiating bulk protocol...')"><i data-lucide="layers"></i> Bulk Actions</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
+                                    <th style="width: 40px;"><input type="checkbox" id="selectAll" onclick="toggleAll(this)" style="cursor: pointer;"></th>
                                     <th>Scholar Identity</th>
                                     <th>Strategic Performance</th>
                                     <th style="text-align: right;">Operations</th>
@@ -184,6 +190,7 @@
                             </thead>
                             <tbody>
                                 <tr th:each="s, iter : ${students}" class="data-row active-row">
+                                    <td><input type="checkbox" class="row-check" onclick="event.stopPropagation()" style="cursor: pointer;"></td>
                                     <td>
                                         <div style="display: flex; align-items: center; gap: 1.25rem;">
                                             <div class="avatar" style="background: var(--bg-main); color: var(--primary);">
@@ -609,6 +616,13 @@
                 document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
             }
         });
+
+        function toggleAll(source) {
+            checkboxes = document.getElementsByClassName('row-check');
+            for(var i=0, n=checkboxes.length;i<n;i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
     </script>
 </body>
 </html>
