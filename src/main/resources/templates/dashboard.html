@@ -355,6 +355,16 @@
                             <div style="font-size: 0.7rem; opacity: 0.7; margin-top: 0.5rem;">Phase 2: Digital Transition Complete</div>
                         </li>
                         <li style="margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
+                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                                <div style="font-weight: 850; font-size: 0.85rem;">Regional Hub Expansion</div>
+                                <div style="font-size: 0.65rem; color: #fff; font-weight: 900; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px;">ACTIVE</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.8;"><span>North Sector (Hub A)</span> <span>42% Load</span></div>
+                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.8;"><span>East Core (Hub B)</span> <span>58% Load</span></div>
+                            </div>
+                        </li>
+                        <li style="margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
                              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                                 <div style="font-weight: 850; font-size: 0.85rem;">Attendance Velocity Trend</div>
                                 <div style="font-size: 0.75rem; color: #10b981; font-weight: 900;">↑ 2.4%</div>
@@ -488,7 +498,40 @@
     </main>
 
     <!-- Modals -->
-    <div id="addStudentModal" class="modal" onclick="closeModalOnOuter(event, 'addStudentModal')">
+    <div id="systemSettingsModal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <h2 style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="settings-2" style="color: var(--primary);"></i> Institutional Overrides</h2>
+                <button onclick="closeModal('systemSettingsModal')" style="background: none; border: none; cursor: pointer; color: var(--text-secondary);"><i data-lucide="x"></i></button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 850; font-size: 0.95rem;">Real-time Synchronization</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Direct access to central registry database.</div>
+                    </div>
+                    <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;"><div style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;"></div></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 850; font-size: 0.95rem;">AI Insight Generation</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Automated strategic recommendations engine.</div>
+                    </div>
+                    <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;"><div style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;"></div></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 850; font-size: 0.95rem;">Global Search Protocol</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Advanced fuzzy matching for scholar registry.</div>
+                    </div>
+                    <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;"><div style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;"></div></div>
+                </div>
+            </div>
+            <div style="margin-top: 2.5rem; display: flex; gap: 1rem;">
+                <button class="btn btn-primary" style="width: 100%; border-radius: 12px;" onclick="showToast('Synchronizing overrides...'); closeModal('systemSettingsModal')">Commit All Protocols</button>
+            </div>
+        </div>
+    </div>
         <div class="modal-content">
             <h2 style="margin-bottom: 1.5rem;">New Student Registration</h2>
             <form th:action="@{/add-student}" th:object="${student}" method="post" onsubmit="showToast('Student enrolled!')">
