@@ -111,6 +111,9 @@
                     </div>
                 </div>
                 <div style="display: flex; gap: 1rem;">
+                    <div class="theme-toggle" onclick="openModal('systemSettingsModal')" style="background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.1);">
+                       <i data-lucide="settings" style="width: 20px; color: var(--primary);"></i>
+                    </div>
                     <div class="theme-toggle" onclick="toggleDarkMode()">
                        <i id="header-theme-icon" data-lucide="moon" style="width: 20px;"></i>
                     </div>
@@ -532,6 +535,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Modals -->
+    <div id="addStudentModal" class="modal" onclick="closeModalOnOuter(event, 'addStudentModal')">
         <div class="modal-content">
             <h2 style="margin-bottom: 1.5rem;">New Student Registration</h2>
             <form th:action="@{/add-student}" th:object="${student}" method="post" onsubmit="showToast('Student enrolled!')">
