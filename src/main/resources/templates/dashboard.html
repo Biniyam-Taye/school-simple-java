@@ -70,10 +70,10 @@
                     <p>Executive Admin</p>
                 </div>
             </div>
-            <div style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; opacity: 0.5;">LICENSE: LMX-9981-PREMIUM</div>
+            <div style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; opacity: 0.5;">LICENSE: LMX-9981-ULTRA-SECURE</div>
             <button class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;" onclick="toggleDarkMode()">
                 <i id="theme-icon" data-lucide="moon"></i> 
-                <span id="theme-text">Modern Selection</span>
+                <span id="theme-text">Toggle Perspective</span>
             </button>
         </div>
     </aside>
@@ -269,7 +269,7 @@
                             <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i data-lucide="target" style="width: 18px; color: #fff;"></i></div>
                             <div>
                                 <div style="font-weight: 850; font-size: 1rem;">Efficiency Index</div>
-                                <div style="font-size: 0.85rem; opacity: 0.85;">Operational throughput increased by 8.4% since last sync.</div>
+                                <div style="font-size: 0.85rem; opacity: 0.85;">Operational throughput increased by 12.4% since last sync.</div>
                             </div>
                         </li>
                         <li style="display: flex; align-items: start; gap: 1.25rem;">
@@ -283,7 +283,14 @@
                             <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i data-lucide="zap" style="width: 18px; color: #fbbf24;"></i></div>
                             <div>
                                 <div style="font-weight: 850; font-size: 1rem;">Growth Forecast</div>
-                                <div style="font-size: 0.85rem; opacity: 0.85;">Predicting 14% influx for the upcoming academic cycle.</div>
+                                <div style="font-size: 0.85rem; opacity: 0.85;">Predicting 18% influx for the upcoming academic cycle.</div>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: start; gap: 1.25rem;">
+                            <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i data-lucide="globe" style="width: 18px; color: #fff;"></i></div>
+                            <div>
+                                <div style="font-weight: 850; font-size: 1rem;">Global Footprint</div>
+                                <div style="font-size: 0.85rem; opacity: 0.85;">Affiliated with 42 global research institutions.</div>
                             </div>
                         </li>
                     </ul>
@@ -291,7 +298,7 @@
 
                 <div class="card" style="padding: 2.5rem; border-radius: 28px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.1);">
                     <div class="card-title" style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                        <span>Elite Archetypes</span>
+                        <span>Alpha Archetypes</span>
                         <div style="font-size: 0.65rem; color: #10b981; font-weight: 900; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 30px;">TOP 1%</div>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 1.75rem;">
@@ -332,10 +339,10 @@
                         Tactical Operations
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"><i data-lucide="mail"></i> Bulk Sync</button>
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"><i data-lucide="file-text"></i> Archive</button>
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"><i data-lucide="zap"></i> Fast Track</button>
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"><i data-lucide="settings"></i> Advanced</button>
+                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Registry synchronized with central vault.')"><i data-lucide="refresh-cw"></i> Sync Registry</button>
+                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Generating encrypted report...')"><i data-lucide="file-text"></i> Intel Report</button>
+                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Fast-track protocols active.')"><i data-lucide="zap"></i> Fast-Track</button>
+                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Opening advanced protocols panel...')"><i data-lucide="sliders"></i> Protocols</button>
                     </div>
                 </div>
 
@@ -348,8 +355,18 @@
                         <i data-lucide="activity" style="width: 16px; color: #10b981;"></i>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                        <div style="font-size: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cbd5e1;">Global Registry Synchronized.</div>
-                        <div style="font-size: 0.85rem; color: #cbd5e1;">System Intelligence Optimal.</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
+                            <div style="font-size: 0.85rem; color: #cbd5e1;">Registry Sync Complete</div>
+                            <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">14:10</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
+                            <div style="font-size: 0.85rem; color: #cbd5e1;">Intelligence Core Active</div>
+                            <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">12:05</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="font-size: 0.85rem; color: #cbd5e1;">Security Protocol V4</div>
+                            <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">09:00</div>
+                        </div>
                     </div>
                 </div>
             </section>
