@@ -772,3 +772,83 @@ tr:hover td {
     border-radius: 4px;
     border: 1px solid var(--border-color);
 }
+/* Initialization Overlay */
+.boot-sequence {
+    position: fixed;
+    inset: 0;
+    background: #020617;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-family: 'JetBrains Mono', monospace;
+    animation: fadeOut 1.5s forwards 2.5s;
+}
+
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+.boot-loader {
+    width: 200px;
+    height: 2px;
+    background: rgba(139, 92, 246, 0.1);
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.boot-loader::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: var(--primary);
+    animation: loading 2s infinite linear;
+}
+
+@keyframes loading { 100% { left: 100%; } }
+
+/* Live Intel Ticker */
+.ticker-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border-color);
+    padding: 0.25rem 0;
+    z-index: 900;
+    overflow: hidden;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation: ticker 40s linear infinite;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+}
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* Map Connection Paths */
+.map-link {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 1;
+    stroke-dasharray: 4;
+    opacity: 0.2;
+    animation: map-pulse 3s infinite linear;
+}
+
+@keyframes map-pulse { to { stroke-dashoffset: -20; } }
