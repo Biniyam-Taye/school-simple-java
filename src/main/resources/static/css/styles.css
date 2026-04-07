@@ -590,4 +590,87 @@ tr:hover td {
     50% { transform: translate(10px, -10px); opacity: 0.8; }
 }
 
+/* Lumina AI Assistant */
+.ai-bubble {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 15px 30px -5px var(--primary-glow);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.ai-bubble:hover { transform: scale(1.1) rotate(15deg); }
+
+.ai-panel {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    width: 320px;
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 40px 100px -30px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+    animation: slideInUp 0.4s ease;
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Strategic Timeline */
+.timeline {
+    position: relative;
+    padding-left: 24px;
+    border-left: 1px dashed var(--border-color);
+    margin-left: 10px;
+}
+.timeline-item { position: relative; margin-bottom: 2rem; }
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background: var(--bg-main);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+}
+
+/* Radar Chart Mock */
+.radar-chart {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, transparent 0, transparent 15px, var(--border-color) 16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radar-polygon {
+    position: absolute;
+    background: var(--primary-glow);
+    clip-path: polygon(50% 10%, 90% 40%, 70% 90%, 30% 90%, 10% 40%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--primary);
+}
+
+
 

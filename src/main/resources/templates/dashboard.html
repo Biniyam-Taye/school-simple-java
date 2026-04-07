@@ -82,11 +82,27 @@
                 <i id="theme-icon" data-lucide="moon"></i> 
                 <span id="theme-text">Toggle Perspective</span>
             </button>
+                <div style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                    <span>INSTITUTIONAL MILESTONES</span>
+                </div>
+                <div class="timeline" style="margin-bottom: 3rem;">
+                    <div class="timeline-item">
+                        <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">Q2 PROTOCOL SYNC</div>
+                        <div style="font-size: 0.6rem; color: #10b981; font-weight: 800; margin-top: 4px;">12 APRIL 2026 | SECTOR A</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">FACULTY SUMMIT</div>
+                        <div style="font-size: 0.6rem; color: #3b82f6; font-weight: 800; margin-top: 4px;">18 APRIL 2026 | MAIN HUB</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">AI CORE UPGRADE</div>
+                        <div style="font-size: 0.6rem; color: var(--accent); font-weight: 800; margin-top: 4px;">24 APRIL 2026 | V3.0</div>
+                    </div>
+                </div>
                 <div style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 12px; display: flex; justify-content: space-between;">
                     <span>DEPLOYMENT HEATMAP</span>
-                    <span style="color: #10b981;">98.4% LOAD</span>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-bottom: 2rem; opacity: 0.6;">
                     <div class="heatmap-cell level-ultra"></div>
                     <div class="heatmap-cell level-high"></div>
                     <div class="heatmap-cell level-ultra"></div>
@@ -97,16 +113,6 @@
                     <div class="heatmap-cell level-mid"></div>
                     <div class="heatmap-cell level-high"></div>
                     <div class="heatmap-cell level-low"></div>
-                    <div class="heatmap-cell level-high"></div>
-                    <div class="heatmap-cell level-low"></div>
-                    <div class="heatmap-cell level-ultra"></div>
-                    <div class="heatmap-cell level-mid"></div>
-                    <div class="heatmap-cell level-high"></div>
-                    <div class="heatmap-cell level-ultra"></div>
-                    <div class="heatmap-cell level-low"></div>
-                    <div class="heatmap-cell level-high"></div>
-                    <div class="heatmap-cell level-mid"></div>
-                    <div class="heatmap-cell level-ultra"></div>
                 </div>
                 <div style="font-size: 0.5rem; font-weight: 700; color: #10b981; display: flex; align-items: center; gap: 4px;">
                     <div class="pulse-animation" style="width: 4px; height: 4px; background: #10b981; border-radius: 50%;"></div>
@@ -470,17 +476,31 @@
                                 <div style="flex: 1; background: rgba(255,255,255,0.2); height: 40%; border-radius: 2px;"></div>
                                 <div style="flex: 1; background: rgba(255,255,255,0.2); height: 60%; border-radius: 2px;"></div>
                                 <div style="flex: 1; background: rgba(255,255,255,0.2); height: 55%; border-radius: 2px;"></div>
-                                <div style="flex: 1; background: rgba(255,255,255,0.2); height: 80%; border-radius: 2px;"></div>
+                                                    <div style="flex: 1; background: rgba(255,255,255,0.2); height: 80%; border-radius: 2px;"></div>
                                 <div style="flex: 1; background: #fff; height: 100%; border-radius: 2px; box-shadow: 0 0 10px rgba(255,255,255,0.5);"></div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.1);">
+                <div class="card" style="padding: 2.5rem; border-radius: 28px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.1); position: relative;">
                     <div class="card-title" style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
                         <span>Alpha Archetypes</span>
                         <div style="font-size: 0.65rem; color: #10b981; font-weight: 900; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 30px;">TOP 1%</div>
+                    </div>
+                    <div style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2.5rem; background: var(--bg-main); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--border-color);">
+                        <div class="radar-chart" style="flex-shrink: 0;">
+                            <div class="radar-polygon"></div>
+                            <div style="position: absolute; top: -10px; font-size: 0.55rem; font-weight: 850;">IQ</div>
+                            <div style="position: absolute; right: -15px; top: 35%; font-size: 0.55rem; font-weight: 850;">STRAT</div>
+                            <div style="position: absolute; right: 10px; bottom: -5px; font-size: 0.55rem; font-weight: 850;">OPS</div>
+                            <div style="position: absolute; left: 10px; bottom: -5px; font-size: 0.55rem; font-weight: 850;">COMM</div>
+                            <div style="position: absolute; left: -15px; top: 35%; font-size: 0.55rem; font-weight: 850;">TECH</div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 0.85rem; font-weight: 900; color: var(--primary); margin-bottom: 6px;">COMPOSITE STRATEGIC SYNERGY</div>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; font-weight: 500;">Alpha tier cohorts demonstrate 14% higher operational efficiency. Intelligence mapping suggests optimal resource alignment for the upcoming cycle.</p>
+                        </div>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 1.75rem;">
                         <div th:each="s : ${topScholars}" style="display: flex; justify-content: space-between; align-items: center; transition: transform 0.3s;" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">
@@ -788,8 +808,41 @@
         </div>
     </div>
 
+    <div id="ai-panel" class="ai-panel" style="display: none; position: fixed; bottom: 6rem; right: 2rem; width: 320px; background: var(--bg-card); backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-radius: 24px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; z-index: 1000;">
+        <div style="background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 1.5rem; color: white; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <i data-lucide="sparkles" style="width: 20px;"></i>
+                <div style="font-size: 0.9rem; font-weight: 900;">LUMINA AI</div>
+            </div>
+            <button onclick="toggleAIPanel()" style="background: none; border: none; color: white; cursor: pointer;"><i data-lucide="minus"></i></button>
+        </div>
+        <div style="padding: 1.5rem; height: 300px; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto;">
+            <div style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
+                Greetings, Executive. I have localized 4 strategic insights for the current cycle. Would you like to implement the technology resource allocation protocol?
+            </div>
+            <div style="background: var(--primary-glow); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-end; max-width: 80%; line-height: 1.5; color: var(--primary); font-weight: 800;">
+                Analyze current scholar velocity trends.
+            </div>
+            <div style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
+                Heuristic analysis complete. Average institutional velocity is up 12.4% since last sync.
+            </div>
+        </div>
+        <form style="padding: 1rem; border-top: 1px solid var(--border-color); display: flex; gap: 0.5rem;" onsubmit="event.preventDefault(); showToast('Querying Institutional Intelligence...')">
+            <input type="text" placeholder="Institutional Query..." style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 12px; font-size: 0.75rem;">
+            <button type="submit" class="btn btn-primary" style="padding: 0.75rem; border-radius: 12px;"><i data-lucide="send" style="width: 14px;"></i></button>
+        </form>
+    </div>
+    <div id="ai-bubble" class="ai-bubble" onclick="toggleAIPanel()">
+        <i data-lucide="bot"></i>
+    </div>
+
     <script th:inline="javascript">
         lucide.createIcons();
+
+        function toggleAIPanel() {
+            const panel = document.getElementById('ai-panel');
+            panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
+        }
 
         function showToast(msg) {
             const t = document.getElementById('toast');
