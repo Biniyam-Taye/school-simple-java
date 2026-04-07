@@ -83,6 +83,24 @@
                 <span id="theme-text">Toggle Perspective</span>
             </button>
                 <div style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                    <span>SYSTEM LOAD METRICS</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 3rem; padding: 0 10px;">
+                    <div class="gauge-container">
+                        <div class="gauge" style="--progress: 42%;"><span class="gauge-text">42%</span></div>
+                        <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">CPU</span>
+                    </div>
+                    <div class="gauge-container">
+                        <div class="gauge" style="--progress: 68%; background: conic-gradient(var(--accent) 68%, var(--border-color) 0);"><span class="gauge-text">68%</span></div>
+                        <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">RAM</span>
+                    </div>
+                    <div class="gauge-container">
+                        <div class="gauge" style="--progress: 15%; background: conic-gradient(#10b981 15%, var(--border-color) 0);"><span class="gauge-text">15%</span></div>
+                        <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">SSD</span>
+                    </div>
+                </div>
+
+                <div style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
                     <span>INSTITUTIONAL MILESTONES</span>
                 </div>
                 <div class="timeline" style="margin-bottom: 3rem;">
@@ -307,6 +325,15 @@
                                                     <div class="progress-bar" th:style="'width: ' + (${s.gpa} / 4.0 * 100) + '%'"></div>
                                                 </div>
                                             </div>
+                                            <div th:text="${s.className}" style="font-weight: 700; color: var(--text-secondary); font-size: 0.85rem;">Class A</div>
+                                            <td>
+                                                <div style="display: flex; align-items: center; gap: 8px;">
+                                                    <div th:class="${s.gpa >= 3.8 ? 'archetype-tag tag-strat' : (s.gpa >= 3.5 ? 'archetype-tag tag-tech' : 'archetype-tag tag-analyst')}" 
+                                                         th:text="${s.gpa >= 3.8 ? 'Strategist' : (s.gpa >= 3.5 ? 'Technologist' : 'Analyst')}">Archetype</div>
+                                                    <div style="width: 6px; height: 6px; border-radius: 50%;" 
+                                                         th:styleappend="${s.attendance >= 90 ? 'background: #10b981;' : (s.attendance >= 75 ? 'background: #f59e0b;' : 'background: #ef4444;')}"></div>
+                                                </div>
+                                            </td>
                                             <svg width="60" height="30" viewBox="0 0 60 30" style="opacity: 0.6;">
                                                 <path d="M0,25 Q15,5 30,20 T60,10" class="sparkline-path" th:style="'stroke: ' + (${s.gpa >= 3.5} ? 'var(--success)' : 'var(--accent)')"></path>
                                             </svg>
@@ -547,21 +574,20 @@
                     </div>
                 </div>
 
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; background: var(--terminal-bg); border: none; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.4); overflow: hidden; position: relative;">
+                <div class="card" style="padding: 0; border: none; overflow: hidden; background: none;">
                     <div class="terminal-header">
                         <div class="terminal-dot" style="background: #ef4444;"></div>
                         <div class="terminal-dot" style="background: #f59e0b;"></div>
                         <div class="terminal-dot" style="background: #10b981;"></div>
-                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #64748b; margin-left: 10px; font-weight: 800;">LUMINA_TACTICAL_TERMINAL v2.4</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #64748b; margin-left: 10px; font-weight: 800;">LUMINA_CORE_SHELL v2.4</span>
                     </div>
-                    <div style="padding: 1.5rem; font-family: 'JetBrains Mono', monospace; color: #10b981; font-size: 0.8rem; min-height: 200px;">
-                        <div style="margin-bottom: 8px;"><span style="color: #6366f1;">admin@lumina:~$</span> institutional --sync all</div>
-                        <div style="margin-bottom: 8px; color: #94a3b8;">[INFO] Initializing handshake with central registry node...</div>
-                        <div style="margin-bottom: 8px; color: #94a3b8;">[INFO] Protocols established via SECURE_LAYER_4.</div>
-                        <div style="margin-bottom: 8px; color: #10b981;">[SUCCESS] 4,281 records synchronized across 4 regional hubs.</div>
-                        <div style="margin-bottom: 8px;"><span style="color: #6366f1;">admin@lumina:~$</span> <span style="animation: blink 1s infinite;">_</span></div>
+                    <div class="terminal-shell">
+                        <div><span class="terminal-prompt">root@lumina-strategic:~#</span> institutional --status --detailed</div>
+                        <div style="color: #94a3b8; margin: 4px 0;">[SYSTEM] Initializing institutional diagnostic...</div>
+                        <div style="color: #94a3b8;">[CORE] Nodes active: 4; Latency: 14ms; Sync: 100%</div>
+                        <div style="color: #10b981; margin: 4px 0;">[SECURE] All security protocols nominal. Layer 4 active.</div>
+                        <div><span class="terminal-prompt">root@lumina-strategic:~#</span> <span style="animation: blink 1s infinite; border-left: 8px solid #10b981;">&nbsp;</span></div>
                     </div>
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--primary), transparent); opacity: 0.3;"></div>
                 </div>
 
                 <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
