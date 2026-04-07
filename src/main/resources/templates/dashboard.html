@@ -914,8 +914,44 @@
         </div>
     </div>
 
+    <div id="id-card-overlay" class="id-card-overlay" onclick="closeIDCard()">
+        <div class="id-card" onclick="event.stopPropagation()">
+            <div id="id-avatar" class="id-avatar">ST</div>
+            <div style="text-align: center;">
+                <h2 id="id-name" style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">Scholar Name</h2>
+                <div id="id-dept" style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px;">STRATEGIC RESEARCH UNIT</div>
+            </div>
+            <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div>
+                    <div style="font-size: 0.6rem; font-weight: 900; color: var(--text-secondary); margin-bottom: 0.5rem;">CLEARANCE</div>
+                    <div class="clearance-badge" style="width: fit-content;">LEVEL 4</div>
+                </div>
+                <div>
+                    <div style="font-size: 0.6rem; font-weight: 900; color: var(--text-secondary); margin-bottom: 0.5rem;">ID_HASH</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 800;">4B-A92-LMX</div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-main); border-radius: 20px; border: 1px solid var(--border-color);">
+                <div style="font-size: 0.65rem; font-weight: 800; line-height: 1.6; color: var(--text-secondary);">
+                    Subject exhibits high heuristic velocity. Deployment authorized for Q2 synergetic protocols.
+                </div>
+            </div>
+            <button onclick="closeIDCard()" style="width: 100%; margin-top: 2rem; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: none; font-weight: 800; cursor: pointer;">DEACTIVATE SCANNER</button>
+        </div>
+    </div>
+
     <script th:inline="javascript">
         lucide.createIcons();
+
+        function showIDCard(name, initials) {
+            document.getElementById('id-name').innerText = name;
+            document.getElementById('id-avatar').innerText = initials;
+            document.getElementById('id-card-overlay').style.display = 'flex';
+        }
+
+        function closeIDCard() {
+            document.getElementById('id-card-overlay').style.display = 'none';
+        }
 
         function toggleAIPanel() {
             const panel = document.getElementById('ai-panel');
