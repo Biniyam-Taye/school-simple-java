@@ -591,6 +591,40 @@
                 </div>
 
                 <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
+                    <div class="card-title" style="margin-bottom: 2rem;">Strategic Resource Allocation</div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Research Protocols</span>
+                                <span style="font-size: 0.7rem; font-weight: 900; color: var(--primary);">82%</span>
+                            </div>
+                            <div class="resource-progress"><div class="resource-fill" style="width: 82%;"></div></div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Institutional Infrastructure</span>
+                                <span style="font-size: 0.7rem; font-weight: 900; color: var(--accent);">56%</span>
+                            </div>
+                            <div class="resource-progress"><div class="resource-fill" style="width: 56%; background: var(--accent);"></div></div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Faculty Development</span>
+                                <span style="font-size: 0.7rem; font-weight: 900; color: #10b981;">94%</span>
+                            </div>
+                            <div class="resource-progress"><div class="resource-fill" style="width: 94%; background: #10b981;"></div></div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center; background: rgba(139, 92, 246, 0.1); color: var(--primary); border: 1px solid rgba(139, 92, 246, 0.2);">
+                        REALLOCATE RESOURCES
+                    </button>
+                    <div class="card-signature">
+                        <span>INSTITUTIONAL ID: 48A-921</span>
+                        <div class="signature-badge">VERIFIED PROTOCOL</div>
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
                     <div class="card-title" style="margin-bottom: 2rem;">Global Research Partners</div>
                     <div style="position: relative; height: 180px; background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center; background-size: contain; opacity: 0.3;">
                          <!-- Partner Dots -->
@@ -844,17 +878,17 @@
         </div>
         <div style="padding: 1.5rem; height: 300px; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto;">
             <div style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
-                Greetings, Executive. I have localized 4 strategic insights for the current cycle. Would you like to implement the technology resource allocation protocol?
+                Greetings, Executive. Synergetic analysis localized. Scholar velocity is trending +14.2% in Tier 1 nodes. Recommending protocol optimization for the next development cycle.
             </div>
             <div style="background: var(--primary-glow); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-end; max-width: 80%; line-height: 1.5; color: var(--primary); font-weight: 800;">
-                Analyze current scholar velocity trends.
+                Analyze resource allocation protocol.
             </div>
             <div style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
-                Heuristic analysis complete. Average institutional velocity is up 12.4% since last sync.
+                Resource allocation is currently 102% of projection in faculty developmental nodes. Suggesting a 4% shift to scholar-led initiatives.
             </div>
         </div>
-        <form style="padding: 1rem; border-top: 1px solid var(--border-color); display: flex; gap: 0.5rem;" onsubmit="event.preventDefault(); showToast('Querying Institutional Intelligence...')">
-            <input type="text" placeholder="Institutional Query..." style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 12px; font-size: 0.75rem;">
+        <form style="padding: 1rem; border-top: 1px solid var(--border-color); display: flex; gap: 0.5rem;" onsubmit="event.preventDefault(); showToast('Protocol execution initialized...')">
+            <input type="text" placeholder="Protocol Query..." style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 12px; font-size: 0.75rem;">
             <button type="submit" class="btn btn-primary" style="padding: 0.75rem; border-radius: 12px;"><i data-lucide="send" style="width: 14px;"></i></button>
         </form>
     </div>
