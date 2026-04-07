@@ -974,3 +974,50 @@ tr:hover td {
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
+
+/* Radar Sweep Effect (Map) */
+.map-radar-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.15;
+}
+
+.map-radar-sweep {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+    transform-origin: center;
+    animation: radar-sweep 6s infinite linear;
+}
+
+@keyframes radar-sweep {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Strategic Project Elements */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-item {
+    padding: 1.25rem;
+    background: var(--bg-main);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.project-item:hover {
+    transform: translateX(5px);
+    border-color: var(--primary);
+}
