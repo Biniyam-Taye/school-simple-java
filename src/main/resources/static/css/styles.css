@@ -1018,6 +1018,56 @@ tr:hover td {
 }
 
 .project-item:hover {
-    transform: translateX(5px);
     border-color: var(--primary);
+}
+
+/* Biometric Pulsing Icon */
+.biometric-scan {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.biometric-scan::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: biometric-pulse 2s infinite;
+}
+
+@keyframes biometric-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* Map Data Packet Animation */
+.map-packet {
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 10px var(--primary);
+    offset-path: path("M 60 100 Q 150 50 300 120");
+    animation: packet-move 3s infinite linear;
+}
+
+@keyframes packet-move {
+    0% { offset-distance: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+}
+
+.packet-2 {
+    offset-path: path("M 300 120 Q 200 150 100 160");
+    animation-delay: 1.5s;
 }
