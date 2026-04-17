@@ -32,17 +32,17 @@ public class StudentService {
     }
 
     public void enrollStudent(Student student) {
-        log.info("Admitting new scholar: {} {}", student.getFirstName(), student.getLastName());
+        log.info("Onboarding new strategic scholar: {} {}", student.getFirstName(), student.getLastName());
         studentRepository.save(student);
     }
 
     public void archiveStudentRecord(Long id) {
-        log.warn("Archiving scholar record with ID: {}", id);
+        log.warn("Terminating scholar record: ID {}", id);
         studentRepository.deleteById(id);
     }
 
     public void updateAcademicFile(Student student) {
-        log.info("Updating performance analytics for scholar: {}", student.getId());
+        log.info("Processing performance metrics for scholar: {}", student.getId());
         studentRepository.save(student);
     }
 }
