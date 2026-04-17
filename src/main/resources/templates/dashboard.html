@@ -105,9 +105,9 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="users"></i> Archetype Registry</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="building-2"></i> Faculty Governance</a></li>
+                <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Command Overlook</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="users"></i> Archetype Repository</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="building-2"></i> Strategic Faculty</a></li>
             </ul>
         </nav>
         <div class="sidebar-footer">
@@ -127,7 +127,7 @@
                 </div>
                 <div style="text-align: center;">
                     <div style="font-size: 0.6rem; font-weight: 850; color: #10b981; letter-spacing: 1px;">
-                        IDENTITY_VERIFIED</div>
+                        BIOMETRIC_IDENTITY_CONFIRMED</div>
                     <div
                         style="font-family: 'JetBrains Mono', monospace; font-size: 0.45rem; color: var(--text-secondary); margin-top: 4px; opacity: 0.6;">
                         SHA-256: 4b92x...1a2b</div>
@@ -135,22 +135,22 @@
             </div>
             <div
                 style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; opacity: 0.5;">
-                LICENSE: LMX-9981-ULTRA-SECURE</div>
+                ACCESS KEY: LMX-9981-QUANTUM</div>
             <button class="nav-item"
                 style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;"
                 onclick="toggleDarkMode()">
                 <i id="theme-icon" data-lucide="moon"></i>
-                <span id="theme-text">Toggle Perspective</span>
+                <span id="theme-text">Switch Visual Spectrum</span>
             </button>
             <button class="nav-item"
                 style="width: 100%; border: 1px dashed rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.05); color: #ef4444; cursor: pointer; margin-top: 1rem;"
                 onclick="toggleLockdown()">
                 <i data-lucide="shield-alert" style="width: 16px;"></i>
-                <span>LOCKDOWN PROTOCOL</span>
+                <span>EMERGENCY ISOLATION</span>
             </button>
             <div
                 style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
-                <span>SYSTEM LOAD METRICS</span>
+                <span>CORE RESOURCE LOAD</span>
             </div>
             <div style="display: flex; justify-content: space-between; margin-bottom: 3rem; padding: 0 10px;">
                 <div class="gauge-container">
@@ -359,7 +359,7 @@
                     <h3 th:text="${avgAttendance + '%'}">0%</h3>
                     <p
                         style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">
-                        Attendance Velocity</p>
+                        Cohesion Velocity</p>
                 </div>
             </div>
         </div>
@@ -374,7 +374,7 @@
                 <h3>98.2<span style="font-size: 1.25rem; opacity: 0.5; margin-left: 4px;">%</span></h3>
                 <p
                     style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">
-                    Compute Efficiency</p>
+                    Synaptic Efficiency</p>
                 <div class="progress-container"
                     style="height: 4px; margin-top: 10px; background: rgba(14, 165, 233, 0.1);">
                     <div class="progress-bar" style="width: 98.2%; background: #0ea5e9;"></div>
@@ -393,7 +393,7 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Sync Status</div>
+                        Protocol Sync</div>
                     <div style="font-size: 0.85rem; font-weight: 900; color: #10b981;">SYNCHRONIZED</div>
                 </div>
             </div>
@@ -404,7 +404,7 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Security Layer</div>
+                        Encryption Tier</div>
                     <div style="font-size: 0.85rem; font-weight: 900; color: #3b82f6;">LEVEL 4 GOLD</div>
                 </div>
             </div>
@@ -416,7 +416,7 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Network Pulse</div>
+                        Neural Pulse</div>
                     <div style="font-size: 0.85rem; font-weight: 900;">24.5 MS LATENCY</div>
                 </div>
             </div>
@@ -427,7 +427,7 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Infrastructure</div>
+                        Node Infrastructure</div>
                     <div style="font-size: 0.85rem; font-weight: 900;">4 NODES ONLINE</div>
                 </div>
             </div>
@@ -564,7 +564,7 @@
                     </table>
                     <div class="card-footer">
                         <span>TOTAL SECURE RECORDS: <span th:text="${#lists.size(students)}">0</span></span>
-                        <span>ENCRYPTION: AES-256 BIT ACTIVE</span>
+                        <span>ENCRYPTION: QUANTUM-READY AES-256</span>
                     </div>
                 </div>
         </div>
