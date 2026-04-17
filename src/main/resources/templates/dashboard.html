@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMINA STRATEGIC | Executive Dashboard</title>
+    <title>LUMINA STRATEGIC | Institutional Intelligence</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,7 @@
             color: var(--text-primary);
             padding: 1.25rem 2rem;
             border-radius: 20px;
-            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
             display: none;
             align-items: center;
             gap: 1rem;
@@ -28,43 +29,78 @@
             z-index: 2000;
             font-weight: 700;
         }
-        @keyframes slideInRight { 
-            from { transform: translateX(120%) scale(0.9); opacity: 0; } 
-            to { transform: translateX(0) scale(1); opacity: 1; } 
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(120%) scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
         }
+
         @keyframes ping {
-            0% { transform: scale(1); opacity: 1; }
-            75%, 100% { transform: scale(2.5); opacity: 0; }
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            75%,
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
         }
+
         .score-badge {
             font-size: 0.75rem;
             padding: 2px 6px;
             border-radius: 6px;
             font-weight: 700;
         }
-        .score-high { background: #dcfce7; color: #166534; }
-        .score-mid { background: #fef9c3; color: #854d0e; }
+
+        .score-high {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .score-mid {
+            background: #fef9c3;
+            color: #854d0e;
+        }
     </style>
 </head>
+
 <body id="body">
     <div class="boot-sequence">
         <div style="font-size: 0.8rem; font-weight: 900; letter-spacing: 4px; opacity: 0.7;">LUMINA STRATEGIC_CORE</div>
         <div class="boot-loader"></div>
-        <div style="font-size: 0.55rem; color: #64748b; margin-top: 1.5rem; letter-spacing: 1px;">[[ INITIALIZING SYNERGETIC_PROTOCOLS ]]</div>
+        <div style="font-size: 0.55rem; color: #64748b; margin-top: 1.5rem; letter-spacing: 1px;">[[ INITIALIZING
+            SYNERGETIC_PROTOCOLS ]]</div>
     </div>
     <!-- Background Decor -->
-    <div style="position: fixed; top: -10%; left: -5%; width: 500px; height: 500px; border-radius: 50%; background: var(--primary-glow); filter: blur(120px); z-index: -1;"></div>
-    <div style="position: fixed; bottom: -10%; right: -5%; width: 400px; height: 400px; border-radius: 50%; background: var(--accent-glow); filter: blur(100px); z-index: -1;"></div>
+    <div
+        style="position: fixed; top: -10%; left: -5%; width: 500px; height: 500px; border-radius: 50%; background: var(--primary-glow); filter: blur(120px); z-index: -1;">
+    </div>
+    <div
+        style="position: fixed; bottom: -10%; right: -5%; width: 400px; height: 400px; border-radius: 50%; background: var(--accent-glow); filter: blur(100px); z-index: -1;">
+    </div>
 
     <div id="toast" class="toast">Action completed successfully!</div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="brand">
-            <div class="brand-icon" style="background: linear-gradient(135deg, #0ea5e9, #6366f1);"><i data-lucide="shield-check" style="stroke-width: 3px;"></i></div>
+            <div class="brand-icon" style="background: linear-gradient(135deg, #0ea5e9, #6366f1);"><i
+                    data-lucide="shield-check" style="stroke-width: 3px;"></i></div>
             <div style="display: flex; flex-direction: column;">
                 <span class="brand-name">LUMINA STRATEGIC</span>
-                <span style="font-size: 0.6rem; font-weight: 900; color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 4px; width: fit-content; letter-spacing: 0.05em; margin-top: 2px;">STATUS: SECURE </span>
+                <span
+                    style="font-size: 0.6rem; font-weight: 900; color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 4px; width: fit-content; letter-spacing: 0.05em; margin-top: 2px;">STATUS:
+                    SECURE </span>
             </div>
         </div>
         <nav>
@@ -76,85 +112,111 @@
         </nav>
         <div class="sidebar-footer">
             <div class="user-profile">
-                <div class="avatar" style="width: 36px; height: 36px; font-size: 0.8rem; background: var(--primary); color: white;">BT</div>
+                <div class="avatar"
+                    style="width: 36px; height: 36px; font-size: 0.8rem; background: var(--primary); color: white;">BT
+                </div>
                 <div class="user-info">
                     <h4>Biniyam Taye</h4>
                     <p>Executive Admin</p>
                 </div>
             </div>
-            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(139, 92, 246, 0.05); border-radius: 20px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: rgba(139, 92, 246, 0.05); border-radius: 20px; border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; gap: 1rem;">
                 <div class="biometric-scan">
                     <i data-lucide="fingerprint" style="width: 30px; color: var(--primary);"></i>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 0.6rem; font-weight: 850; color: #10b981; letter-spacing: 1px;">IDENTITY_VERIFIED</div>
-                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.45rem; color: var(--text-secondary); margin-top: 4px; opacity: 0.6;">SHA-256: 4b92x...1a2b</div>
+                    <div style="font-size: 0.6rem; font-weight: 850; color: #10b981; letter-spacing: 1px;">
+                        IDENTITY_VERIFIED</div>
+                    <div
+                        style="font-family: 'JetBrains Mono', monospace; font-size: 0.45rem; color: var(--text-secondary); margin-top: 4px; opacity: 0.6;">
+                        SHA-256: 4b92x...1a2b</div>
                 </div>
             </div>
-            <div style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; opacity: 0.5;">LICENSE: LMX-9981-ULTRA-SECURE</div>
-            <button class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;" onclick="toggleDarkMode()">
-                <i id="theme-icon" data-lucide="moon"></i> 
+            <div
+                style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; opacity: 0.5;">
+                LICENSE: LMX-9981-ULTRA-SECURE</div>
+            <button class="nav-item"
+                style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;"
+                onclick="toggleDarkMode()">
+                <i id="theme-icon" data-lucide="moon"></i>
                 <span id="theme-text">Toggle Perspective</span>
             </button>
-            <button class="nav-item" style="width: 100%; border: 1px dashed rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.05); color: #ef4444; cursor: pointer; margin-top: 1rem;" onclick="toggleLockdown()">
-                <i data-lucide="shield-alert" style="width: 16px;"></i> 
+            <button class="nav-item"
+                style="width: 100%; border: 1px dashed rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.05); color: #ef4444; cursor: pointer; margin-top: 1rem;"
+                onclick="toggleLockdown()">
+                <i data-lucide="shield-alert" style="width: 16px;"></i>
                 <span>LOCKDOWN PROTOCOL</span>
             </button>
-                <div style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
-                    <span>SYSTEM LOAD METRICS</span>
+            <div
+                style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                <span>SYSTEM LOAD METRICS</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 3rem; padding: 0 10px;">
+                <div class="gauge-container">
+                    <div class="gauge" style="--progress: 42%;"><span class="gauge-text">42%</span></div>
+                    <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">CPU</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 3rem; padding: 0 10px;">
-                    <div class="gauge-container">
-                        <div class="gauge" style="--progress: 42%;"><span class="gauge-text">42%</span></div>
-                        <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">CPU</span>
-                    </div>
-                    <div class="gauge-container">
-                        <div class="gauge" style="--progress: 68%; background: conic-gradient(var(--accent) 68%, var(--border-color) 0);"><span class="gauge-text">68%</span></div>
-                        <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">RAM</span>
-                    </div>
-                    <div class="gauge-container">
-                        <div class="gauge" style="--progress: 15%; background: conic-gradient(#10b981 15%, var(--border-color) 0);"><span class="gauge-text">15%</span></div>
-                        <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">SSD</span>
-                    </div>
+                <div class="gauge-container">
+                    <div class="gauge"
+                        style="--progress: 68%; background: conic-gradient(var(--accent) 68%, var(--border-color) 0);">
+                        <span class="gauge-text">68%</span></div>
+                    <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">RAM</span>
                 </div>
-
-                <div style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
-                    <span>INSTITUTIONAL MILESTONES</span>
-                </div>
-                <div class="timeline" style="margin-bottom: 3rem;">
-                    <div class="timeline-item">
-                        <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">Q2 PROTOCOL SYNC</div>
-                        <div style="font-size: 0.6rem; color: #10b981; font-weight: 800; margin-top: 4px;">12 APRIL 2026 | SECTOR A</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">FACULTY SUMMIT</div>
-                        <div style="font-size: 0.6rem; color: #3b82f6; font-weight: 800; margin-top: 4px;">18 APRIL 2026 | MAIN HUB</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">AI CORE UPGRADE</div>
-                        <div style="font-size: 0.6rem; color: var(--accent); font-weight: 800; margin-top: 4px;">24 APRIL 2026 | V3.0</div>
-                    </div>
-                </div>
-                <div style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 12px; display: flex; justify-content: space-between;">
-                    <span>DEPLOYMENT HEATMAP</span>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-bottom: 2rem; opacity: 0.6;">
-                    <div class="heatmap-cell level-ultra"></div>
-                    <div class="heatmap-cell level-high"></div>
-                    <div class="heatmap-cell level-ultra"></div>
-                    <div class="heatmap-cell level-mid"></div>
-                    <div class="heatmap-cell level-low"></div>
-                    <div class="heatmap-cell level-high"></div>
-                    <div class="heatmap-cell level-ultra"></div>
-                    <div class="heatmap-cell level-mid"></div>
-                    <div class="heatmap-cell level-high"></div>
-                    <div class="heatmap-cell level-low"></div>
-                </div>
-                <div style="font-size: 0.5rem; font-weight: 700; color: #10b981; display: flex; align-items: center; gap: 4px;">
-                    <div class="pulse-animation" style="width: 4px; height: 4px; background: #10b981; border-radius: 50%;"></div>
-                    INSTITUTIONAL SYNC V2.4 | STABLE
+                <div class="gauge-container">
+                    <div class="gauge"
+                        style="--progress: 15%; background: conic-gradient(#10b981 15%, var(--border-color) 0);"><span
+                            class="gauge-text">15%</span></div>
+                    <span style="font-size: 0.5rem; font-weight: 800; color: var(--text-secondary);">SSD</span>
                 </div>
             </div>
+
+            <div
+                style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                <span>INSTITUTIONAL MILESTONES</span>
+            </div>
+            <div class="timeline" style="margin-bottom: 3rem;">
+                <div class="timeline-item">
+                    <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">Q2 PROTOCOL SYNC
+                    </div>
+                    <div style="font-size: 0.6rem; color: #10b981; font-weight: 800; margin-top: 4px;">12 APRIL 2026 |
+                        SECTOR A</div>
+                </div>
+                <div class="timeline-item">
+                    <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">FACULTY SUMMIT</div>
+                    <div style="font-size: 0.6rem; color: #3b82f6; font-weight: 800; margin-top: 4px;">18 APRIL 2026 |
+                        MAIN HUB</div>
+                </div>
+                <div class="timeline-item">
+                    <div style="font-size: 0.75rem; font-weight: 900; color: var(--text-primary);">AI CORE UPGRADE</div>
+                    <div style="font-size: 0.6rem; color: var(--accent); font-weight: 800; margin-top: 4px;">24 APRIL
+                        2026 | V3.0</div>
+                </div>
+            </div>
+            <div
+                style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <span>DEPLOYMENT HEATMAP</span>
+            </div>
+            <div
+                style="display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-bottom: 2rem; opacity: 0.6;">
+                <div class="heatmap-cell level-ultra"></div>
+                <div class="heatmap-cell level-high"></div>
+                <div class="heatmap-cell level-ultra"></div>
+                <div class="heatmap-cell level-mid"></div>
+                <div class="heatmap-cell level-low"></div>
+                <div class="heatmap-cell level-high"></div>
+                <div class="heatmap-cell level-ultra"></div>
+                <div class="heatmap-cell level-mid"></div>
+                <div class="heatmap-cell level-high"></div>
+                <div class="heatmap-cell level-low"></div>
+            </div>
+            <div
+                style="font-size: 0.5rem; font-weight: 700; color: #10b981; display: flex; align-items: center; gap: 4px;">
+                <div class="pulse-animation" style="width: 4px; height: 4px; background: #10b981; border-radius: 50%;">
+                </div>
+                INSTITUTIONAL SYNC V2.4 | STABLE
+            </div>
+        </div>
         </div>
     </aside>
 
@@ -163,142 +225,209 @@
         <header style="margin-bottom: 3rem; flex-direction: column; gap: 2rem;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
                 <div class="greeting">
-                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; overflow-x: auto; padding-bottom: 0.5rem;" class="ticker-text">
-                        <div style="min-width: 220px; background: var(--bg-card); padding: 1.25rem; border-radius: 20px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
-                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(16, 185, 129, 0.1); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"><i data-lucide="brain"></i></div>
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; overflow-x: auto; padding-bottom: 0.5rem;"
+                        class="ticker-text">
+                        <div
+                            style="min-width: 220px; background: var(--bg-card); padding: 1.25rem; border-radius: 20px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 10px; background: rgba(16, 185, 129, 0.1); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                                <i data-lucide="brain"></i></div>
                             <div>
                                 <div style="font-size: 1rem; font-weight: 950; letter-spacing: -0.5px;">148.2 IQ</div>
-                                <div style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850; letter-spacing: 1px;">INSTITUTIONAL_IQ</div>
+                                <div
+                                    style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850; letter-spacing: 1px;">
+                                    INSTITUTIONAL_IQ</div>
                             </div>
                         </div>
-                        <div style="min-width: 220px; background: var(--bg-card); padding: 1.25rem; border-radius: 20px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
-                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(139, 92, 246, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"><i data-lucide="zap"></i></div>
+                        <div
+                            style="min-width: 220px; background: var(--bg-card); padding: 1.25rem; border-radius: 20px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 10px; background: rgba(139, 92, 246, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                                <i data-lucide="zap"></i></div>
                             <div>
                                 <div style="font-size: 1rem; font-weight: 950; letter-spacing: -0.5px;">98.4% CAP</div>
-                                <div style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850; letter-spacing: 1px;">OPERATIONAL_SYNC</div>
+                                <div
+                                    style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850; letter-spacing: 1px;">
+                                    OPERATIONAL_SYNC</div>
                             </div>
                         </div>
-                        <div style="min-width: 220px; background: var(--bg-card); padding: 1.25rem; border-radius: 20px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
-                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(244, 63, 94, 0.1); color: #f43f5e; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"><i data-lucide="globe"></i></div>
+                        <div
+                            style="min-width: 220px; background: var(--bg-card); padding: 1.25rem; border-radius: 20px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 10px; background: rgba(244, 63, 94, 0.1); color: #f43f5e; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                                <i data-lucide="globe"></i></div>
                             <div>
                                 <div style="font-size: 1rem; font-weight: 950; letter-spacing: -0.5px;">4 NODES</div>
-                                <div style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850; letter-spacing: 1px;">GLOBAL_DEPLOYMENT</div>
+                                <div
+                                    style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850; letter-spacing: 1px;">
+                                    GLOBAL_DEPLOYMENT</div>
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        <span>Strategic Intelligence</span>
+                    <div
+                        style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
+                        <span>Institutional Intelligence</span>
                         <i data-lucide="chevron-right" style="width: 10px;"></i>
                         <span style="color: var(--primary);">Command Center</span>
                     </div>
-                    <h1 id="time-greeting">Executive Command</h1>
-                    <p style="font-size: 0.95rem; opacity: 0.7; margin-top: 0.25rem; font-weight: 500;">Precision through Intelligence. Monitoring strategic velocity across all active sectors.</p>
+                    <h1 id="time-greeting">Strategic Oversight</h1>
+                    <p style="font-size: 0.95rem; opacity: 0.7; margin-top: 0.25rem; font-weight: 500;">Precision
+                        through Intelligence. Monitoring institutional velocity across 4 active sectors.</p>
                 </div>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
-                    <div id="current-time" style="font-family: 'JetBrains Mono', monospace; font-weight: 900; font-size: 1.4rem; letter-spacing: -0.05em; background: rgba(15, 23, 42, 0.05); padding: 8px 16px; border-radius: 12px; border: 1px solid var(--border-color);">00:00:00</div>
-                    <div class="avatar" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; width: 48px; height: 48px; box-shadow: 0 10px 20px -5px var(--primary-glow);">AD</div>
+                    <div id="current-time"
+                        style="font-family: 'JetBrains Mono', monospace; font-weight: 900; font-size: 1.4rem; letter-spacing: -0.05em; background: rgba(15, 23, 42, 0.05); padding: 8px 16px; border-radius: 12px; border: 1px solid var(--border-color);">
+                        00:00:00</div>
+                    <div class="avatar"
+                        style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; width: 48px; height: 48px; box-shadow: 0 10px 20px -5px var(--primary-glow);">
+                        AD</div>
                 </div>
             </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; background: var(--bg-card); padding: 0.75rem 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border); backdrop-filter: blur(20px);">
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; width: 100%; background: var(--bg-card); padding: 0.75rem 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border); backdrop-filter: blur(20px);">
                 <div class="search-container" style="background: none; border: none; width: 400px; padding: 0;">
                     <i data-lucide="terminal" style="width: 18px; color: var(--primary);"></i>
-                    <input type="text" id="globalSearch" class="search-input terminal-text" placeholder="EXECUTE_QUERY_SEARCH... (CTRL+K)">
+                    <input type="text" id="globalSearch" class="search-input terminal-text"
+                        placeholder="EXECUTE_QUERY_SEARCH... (CTRL+K)">
                 </div>
                 <div style="display: flex; gap: 0.75rem;">
-                    <button class="theme-toggle" onclick="showToast('Initiating emergency protocol...')" style="background: rgba(244, 63, 94, 0.05); border-color: rgba(244, 63, 94, 0.1);"><i data-lucide="zap" style="width: 18px; color: var(--accent);"></i></button>
-                    <button class="theme-toggle" onclick="openModal('systemSettingsModal')"><i data-lucide="sliders" style="width: 18px;"></i></button>
-                    <button class="theme-toggle" onclick="toggleDarkMode()"><i id="header-theme-icon" data-lucide="moon" style="width: 18px;"></i></button>
+                    <button class="theme-toggle" onclick="showToast('Initiating emergency protocol...')"
+                        style="background: rgba(244, 63, 94, 0.05); border-color: rgba(244, 63, 94, 0.1);"><i
+                            data-lucide="zap" style="width: 18px; color: var(--accent);"></i></button>
+                    <button class="theme-toggle" onclick="openModal('systemSettingsModal')"><i data-lucide="sliders"
+                            style="width: 18px;"></i></button>
+                    <button class="theme-toggle" onclick="toggleDarkMode()"><i id="header-theme-icon" data-lucide="moon"
+                            style="width: 18px;"></i></button>
                 </div>
             </div>
         </header>
 
         <!-- Stats Section -->
         <div class="stats-container">
-            <div class="stats-card" style="border-bottom: 4px solid var(--primary); position: relative; overflow: hidden;">
+            <div class="stats-card"
+                style="border-bottom: 4px solid var(--primary); position: relative; overflow: hidden;">
                 <div class="floating-node" style="top: 10%; right: 10%;"></div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div class="stats-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--primary);"><i data-lucide="graduation-cap"></i></div>
+                    <div class="stats-icon" style="background: rgba(139, 92, 246, 0.1); color: var(--primary);"><i
+                            data-lucide="graduation-cap"></i></div>
                     <div style="text-align: right;">
-                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; display: block;">+14% GROWTH</span>
-                        <span style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850;">VERIFIED SOURCE</span>
+                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; display: block;">+14%
+                            GROWTH</span>
+                        <span style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850;">VERIFIED
+                            SOURCE</span>
                     </div>
                 </div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(students)}">0</h3>
-                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Student Enrollment</p>
+                    <p
+                        style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">
+                        Student Enrollment</p>
                 </div>
             </div>
             <div class="stats-card" style="border-bottom: 4px solid var(--accent);">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div class="stats-icon" style="background: rgba(244, 63, 94, 0.1); color: var(--accent);"><i data-lucide="briefcase"></i></div>
+                    <div class="stats-icon" style="background: rgba(244, 63, 94, 0.1); color: var(--accent);"><i
+                            data-lucide="briefcase"></i></div>
                     <div style="text-align: right;">
-                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; display: block;">ACTIVE STATUS</span>
-                        <span style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850;">UPTIME: 99.9%</span>
+                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; display: block;">ACTIVE
+                            STATUS</span>
+                        <span style="font-size: 0.55rem; color: var(--text-secondary); font-weight: 850;">UPTIME:
+                            99.9%</span>
                     </div>
                 </div>
                 <div class="stats-info">
                     <h3 th:text="${#lists.size(teachers)}">0</h3>
-                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Faculty Governance</p>
-                    <div style="font-size: 0.65rem; color: #10b981; font-weight: 800; margin-top: 4px;" th:text="${'1:' + facultyRatio + ' Scholar Ratio'}">1:0 Ratio</div>
+                    <p
+                        style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">
+                        Faculty Governance</p>
+                    <div style="font-size: 0.65rem; color: #10b981; font-weight: 800; margin-top: 4px;"
+                        th:text="${'1:' + facultyRatio + ' Scholar Ratio'}">1:0 Ratio</div>
                 </div>
             </div>
             <div class="stats-card" style="border-bottom: 4px solid #10b981;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div class="stats-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;"><i data-lucide="activity"></i></div>
+                    <div class="stats-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;"><i
+                            data-lucide="activity"></i></div>
                     <div style="text-align: right;">
-                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; display: block;">OPTIMIZED</span>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 800; color: #10b981; display: block;">OPTIMIZED</span>
                         <span style="font-size: 0.55rem; color: #3b82f6; font-weight: 850;">HEURISTIC: ACTIVE</span>
                     </div>
                 </div>
                 <div class="stats-info">
                     <h3 th:text="${avgAttendance + '%'}">0%</h3>
-                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Attendance Velocity</p>
+                    <p
+                        style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">
+                        Attendance Velocity</p>
                 </div>
             </div>
         </div>
-    <div class="stats-card" style="border-bottom: 4px solid #0ea5e9; background: linear-gradient(rgba(14, 165, 233, 0.05), transparent);">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div class="stats-icon" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;"><i data-lucide="cpu"></i></div>
-                    <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">OPTIMIZED</span>
-                </div>
-                <div class="stats-info">
-                    <h3>98.2<span style="font-size: 1.25rem; opacity: 0.5; margin-left: 4px;">%</span></h3>
-                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">Compute Efficiency</p>
-                    <div class="progress-container" style="height: 4px; margin-top: 10px; background: rgba(14, 165, 233, 0.1);">
-                        <div class="progress-bar" style="width: 98.2%; background: #0ea5e9;"></div>
-                    </div>
+        <div class="stats-card"
+            style="border-bottom: 4px solid #0ea5e9; background: linear-gradient(rgba(14, 165, 233, 0.05), transparent);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="stats-icon" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;"><i
+                        data-lucide="cpu"></i></div>
+                <span style="font-size: 0.75rem; font-weight: 800; color: #10b981;">OPTIMIZED</span>
+            </div>
+            <div class="stats-info">
+                <h3>98.2<span style="font-size: 1.25rem; opacity: 0.5; margin-left: 4px;">%</span></h3>
+                <p
+                    style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.7; margin-top: 0.25rem;">
+                    Compute Efficiency</p>
+                <div class="progress-container"
+                    style="height: 4px; margin-top: 10px; background: rgba(14, 165, 233, 0.1);">
+                    <div class="progress-bar" style="width: 98.2%; background: #0ea5e9;"></div>
                 </div>
             </div>
+        </div>
         </div>
 
         <!-- Real-time Institutional Status -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-xl); border: 1px solid var(--glass-border); backdrop-filter: blur(20px);">
-            <div style="display: flex; align-items: center; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid var(--border-color);">
-                <div style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 10px; border-radius: 12px;"><i data-lucide="database" style="width: 18px;"></i></div>
+        <div
+            style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-xl); border: 1px solid var(--glass-border); backdrop-filter: blur(20px);">
+            <div
+                style="display: flex; align-items: center; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid var(--border-color);">
+                <div style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 10px; border-radius: 12px;"><i
+                        data-lucide="database" style="width: 18px;"></i></div>
                 <div>
-                    <div style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">Sync Status</div>
+                    <div
+                        style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
+                        Sync Status</div>
                     <div style="font-size: 0.85rem; font-weight: 900; color: #10b981;">SYNCHRONIZED</div>
                 </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid var(--border-color);">
-                <div style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 10px; border-radius: 12px;"><i data-lucide="shield-check" style="width: 18px;"></i></div>
+            <div
+                style="display: flex; align-items: center; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid var(--border-color);">
+                <div style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 10px; border-radius: 12px;"><i
+                        data-lucide="shield-check" style="width: 18px;"></i></div>
                 <div>
-                    <div style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">Security Layer</div>
+                    <div
+                        style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
+                        Security Layer</div>
                     <div style="font-size: 0.85rem; font-weight: 900; color: #3b82f6;">LEVEL 4 GOLD</div>
                 </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid var(--border-color);">
-                <div style="background: rgba(139, 92, 246, 0.1); color: var(--primary); padding: 10px; border-radius: 12px;"><i data-lucide="wifi" style="width: 18px;"></i></div>
+            <div
+                style="display: flex; align-items: center; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid var(--border-color);">
+                <div
+                    style="background: rgba(139, 92, 246, 0.1); color: var(--primary); padding: 10px; border-radius: 12px;">
+                    <i data-lucide="wifi" style="width: 18px;"></i></div>
                 <div>
-                    <div style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">Network Pulse</div>
+                    <div
+                        style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
+                        Network Pulse</div>
                     <div style="font-size: 0.85rem; font-weight: 900;">24.5 MS LATENCY</div>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 1rem;">
-                <div style="background: rgba(244, 63, 94, 0.1); color: var(--accent); padding: 10px; border-radius: 12px;"><i data-lucide="server" style="width: 18px;"></i></div>
+                <div
+                    style="background: rgba(244, 63, 94, 0.1); color: var(--accent); padding: 10px; border-radius: 12px;">
+                    <i data-lucide="server" style="width: 18px;"></i></div>
                 <div>
-                    <div style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">Infrastructure</div>
+                    <div
+                        style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
+                        Infrastructure</div>
                     <div style="font-size: 0.85rem; font-weight: 900;">4 NODES ONLINE</div>
                 </div>
             </div>
@@ -310,12 +439,19 @@
                     <div class="card-title">
                         Global Scholar Registry
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;" onclick="showToast('Preparing institutional intel archive...')"><i data-lucide="download"></i> Export Intel</button>
-                            <button class="btn btn-primary" onclick="openModal('addStudentModal')" style="font-size: 0.8rem; padding: 0.6rem 1.25rem;">
+                            <button class="btn"
+                                style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;"
+                                onclick="showToast('Preparing institutional intel archive...')"><i
+                                    data-lucide="download"></i> Export Intel</button>
+                            <button class="btn btn-primary" onclick="openModal('addStudentModal')"
+                                style="font-size: 0.8rem; padding: 0.6rem 1.25rem;">
                                 <i data-lucide="user-plus"></i> Onboard Scholar
                             </button>
                             <div class="dropdown" style="position: relative;">
-                                <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;" onclick="showToast('Initiating bulk protocol...')"><i data-lucide="layers"></i> Bulk Actions</button>
+                                <button class="btn"
+                                    style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;"
+                                    onclick="showToast('Initiating bulk protocol...')"><i data-lucide="layers"></i> Bulk
+                                    Actions</button>
                             </div>
                         </div>
                     </div>
@@ -323,7 +459,8 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th style="width: 40px;"><input type="checkbox" id="selectAll" onclick="toggleAll(this)" style="cursor: pointer;"></th>
+                                    <th style="width: 40px;"><input type="checkbox" id="selectAll"
+                                            onclick="toggleAll(this)" style="cursor: pointer;"></th>
                                     <th>Scholar Identity</th>
                                     <th>Strategic Performance</th>
                                     <th style="text-align: right;">Operations</th>
@@ -331,23 +468,38 @@
                             </thead>
                             <tbody>
                                 <tr th:each="s, iter : ${students}" class="data-row active-row">
-                                    <td><input type="checkbox" class="row-check" onclick="event.stopPropagation()" style="cursor: pointer;"></td>
+                                    <td><input type="checkbox" class="row-check" onclick="event.stopPropagation()"
+                                            style="cursor: pointer;"></td>
                                     <td>
                                         <div style="display: flex; align-items: center; gap: 1.25rem;">
-                                            <div class="avatar" style="background: var(--bg-main); color: var(--primary);">
-                                                <span th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</span>
-                                                <div class="status-dot" th:style="${iter.index % 3 == 0} ? 'background: #cbd5e1' : 'background: #10b981'"></div>
+                                            <div class="avatar"
+                                                style="background: var(--bg-main); color: var(--primary);">
+                                                <span
+                                                    th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">JD</span>
+                                                <div class="status-dot"
+                                                    th:style="${iter.index % 3 == 0} ? 'background: #cbd5e1' : 'background: #10b981'">
+                                                </div>
                                             </div>
                                             <div>
                                                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                                    <div th:text="${s.firstName + ' ' + s.lastName}" style="font-weight: 900; font-size: 1.1rem; letter-spacing: -0.02em;">John Doe</div>
-                                                    <i th:if="${s.gpa == 4.0}" data-lucide="award" style="width: 14px; color: #fbbf24; fill: #fbbf24;"></i>
+                                                    <div th:text="${s.firstName + ' ' + s.lastName}"
+                                                        style="font-weight: 900; font-size: 1.1rem; letter-spacing: -0.02em;">
+                                                        John Doe</div>
+                                                    <i th:if="${s.gpa == 4.0}" data-lucide="award"
+                                                        style="width: 14px; color: #fbbf24; fill: #fbbf24;"></i>
                                                 </div>
                                                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                                    <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;" th:text="${s.grade}">Grade Level</div>
-                                                    <span th:if="${s.gpa >= 3.8}" class="badge-outline" style="border-color: rgba(16, 185, 129, 0.4); color: #10b981;">ELITE ARCHETYPE</span>
-                                                    <span th:if="${s.gpa >= 3.0 && s.gpa < 3.8}" class="badge-outline" style="border-color: var(--primary-glow); color: var(--primary);">ADVANCED SCHOLAR</span>
-                                                    <span th:if="${s.gpa < 3.0}" class="badge-outline" style="border-color: var(--accent-glow); color: var(--accent);">ATTENTION REQUIRED</span>
+                                                    <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;"
+                                                        th:text="${s.grade}">Grade Level</div>
+                                                    <span th:if="${s.gpa >= 3.8}" class="badge-outline"
+                                                        style="border-color: rgba(16, 185, 129, 0.4); color: #10b981;">ELITE
+                                                        ARCHETYPE</span>
+                                                    <span th:if="${s.gpa >= 3.0 && s.gpa < 3.8}" class="badge-outline"
+                                                        style="border-color: var(--primary-glow); color: var(--primary);">ADVANCED
+                                                        SCHOLAR</span>
+                                                    <span th:if="${s.gpa < 3.0}" class="badge-outline"
+                                                        style="border-color: var(--accent-glow); color: var(--accent);">ATTENTION
+                                                        REQUIRED</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -355,447 +507,663 @@
                                     <td>
                                         <div style="min-width: 220px; display: flex; align-items: center; gap: 1.5rem;">
                                             <div style="flex: 1;">
-                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                                <div
+                                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                                                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                                        <span style="font-weight: 900; font-size: 1rem;" th:text="${s.gpa}">4.0</span>
-                                                        <span th:class="${s.gpa >= 3.5} ? 'trend-up' : 'trend-down'" th:text="${s.gpa >= 3.5} ? '↑' : '↓'" style="font-size: 0.7rem;">↑</span>
+                                                        <span style="font-weight: 900; font-size: 1rem;"
+                                                            th:text="${s.gpa}">4.0</span>
+                                                        <span th:class="${s.gpa >= 3.5} ? 'trend-up' : 'trend-down'"
+                                                            th:text="${s.gpa >= 3.5} ? '↑' : '↓'"
+                                                            style="font-size: 0.7rem;">↑</span>
                                                     </div>
-                                                    <span style="font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;" th:text="${s.attendance + '% RECORD'}">100% RECORD</span>
+                                                    <span
+                                                        style="font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;"
+                                                        th:text="${s.attendance + '% RECORD'}">100% RECORD</span>
                                                 </div>
                                                 <div class="progress-container">
-                                                    <div class="progress-bar" th:style="'width: ' + (${s.gpa} / 4.0 * 100) + '%'"></div>
+                                                    <div class="progress-bar"
+                                                        th:style="'width: ' + (${s.gpa} / 4.0 * 100) + '%'"></div>
                                                 </div>
                                             </div>
-                                            <div th:text="${s.className}" style="font-weight: 700; color: var(--text-secondary); font-size: 0.85rem;">Class A</div>
-                                            <td>
-                                                <div style="display: flex; align-items: center; gap: 8px;">
-                                                    <div th:class="${s.gpa >= 3.8 ? 'archetype-tag tag-strat' : (s.gpa >= 3.5 ? 'archetype-tag tag-tech' : 'archetype-tag tag-analyst')}" 
-                                                         th:text="${s.gpa >= 3.8 ? 'Strategist' : (s.gpa >= 3.5 ? 'Technologist' : 'Analyst')}">Archetype</div>
-                                                    <div style="width: 6px; height: 6px; border-radius: 50%;" 
-                                                         th:styleappend="${s.attendance >= 90 ? 'background: #10b981;' : (s.attendance >= 75 ? 'background: #f59e0b;' : 'background: #ef4444;')}"></div>
-                                                </div>
-                                            </td>
-                                            <svg width="60" height="30" viewBox="0 0 60 30" style="opacity: 0.6;">
-                                                <path d="M0,25 Q15,5 30,20 T60,10" class="sparkline-path" th:style="'stroke: ' + (${s.gpa >= 3.5} ? 'var(--success)' : 'var(--accent)')"></path>
-                                            </svg>
-                                        </div>
-                                    </td>
-                                    <td style="text-align: right;">
-                                        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
-                                             <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}" th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}" th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}" onclick="openEditStudent(this)" title="Edit File" style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 12px; cursor: pointer;"><i data-lucide="edit-3" style="width: 18px; color: var(--text-secondary);"></i></button>
-                                             <form th:action="@{/delete-student}" method="post" onsubmit="return confirm('Archive record?');" style="display:inline;">
-                                                <input type="hidden" name="id" th:value="${s.id}">
-                                                <button type="submit" title="Archive Student" style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i data-lucide="trash-2" style="width: 18px; color: #ef4444;"></i></button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="card-footer">
-                            <span>TOTAL SECURE RECORDS: <span th:text="${#lists.size(students)}">0</span></span>
-                            <span>ENCRYPTION: AES-256 BIT ACTIVE</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
-                    <div class="card-title">
-                        Faculty Alignment & Strategy
-                        <button class="btn btn-primary" onclick="openModal('addTeacherModal')" style="background: var(--accent); font-size: 0.8rem; padding: 0.6rem 1.25rem;">
-                            <i data-lucide="briefcase"></i> Recruit Faculty
-                        </button>
-                    </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Faculty Profile</th>
-                                    <th>Discipline Range</th>
-                                    <th style="text-align: right;">Operations</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr th:each="t : ${teachers}" class="data-row">
+                                            <div th:text="${s.className}"
+                                                style="font-weight: 700; color: var(--text-secondary); font-size: 0.85rem;">
+                                                Class A</div>
                                     <td>
-                                        <div style="display: flex; align-items: center; gap: 1.25rem;">
-                                            <div class="avatar" style="background: rgba(244, 63, 94, 0.1); color: var(--accent); width: 44px; height: 44px; font-size: 0.9rem; border-radius: 14px;">
-                                                <i data-lucide="shield-check" style="width: 18px;"></i>
-                                            </div>
-                                            <div>
-                                                <div th:text="${t.firstName + ' ' + t.lastName}" style="font-weight: 800; font-size: 1rem;">Dr. Sebastian Wilde</div>
-                                                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                                    <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;" th:text="${t.department}">Science Department</div>
-                                                    <span th:if="${t.id % 4 == 0}" style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-weight: 900; letter-spacing: 1px;">LEAD</span>
-                                                    <span th:if="${t.id % 4 == 1}" style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(244, 63, 94, 0.1); color: var(--accent); font-weight: 900; letter-spacing: 1px;">SENIOR</span>
-                                                    <span th:if="${t.id % 4 > 1}" style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: #f1f5f9; color: #64748b; font-weight: 900; letter-spacing: 1px;">ASSOCIATE</span>
-                                                </div>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <div th:class="${s.gpa >= 3.8 ? 'archetype-tag tag-strat' : (s.gpa >= 3.5 ? 'archetype-tag tag-tech' : 'archetype-tag tag-analyst')}"
+                                                th:text="${s.gpa >= 3.8 ? 'Strategist' : (s.gpa >= 3.5 ? 'Technologist' : 'Analyst')}">
+                                                Archetype</div>
+                                            <div style="width: 6px; height: 6px; border-radius: 50%;"
+                                                th:styleappend="${s.attendance >= 90 ? 'background: #10b981;' : (s.attendance >= 75 ? 'background: #f59e0b;' : 'background: #ef4444;')}">
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div style="font-weight: 700; color: var(--text-primary);" th:text="${t.subject}">Advanced Physics</div>
-                                        <div style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Primary Discipline</div>
-                                    </td>
-                                    <td style="text-align: right;">
-                                        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
-                                             <button class="action-btn" th:data-id="${t.id}" th:data-fname="${t.firstName}" th:data-lname="${t.lastName}" th:data-subject="${t.subject}" onclick="openEditTeacher(this)" style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 8px; border-radius: 10px; cursor: pointer;"><i data-lucide="settings-2" style="width: 16px; color: var(--text-secondary);"></i></button>
-                                             <form th:action="@{/delete-teacher}" method="post" onsubmit="return confirm('Terminate record?');" style="display:inline;">
-                                                <input type="hidden" name="id" th:value="${t.id}">
-                                                <button type="submit" style="background: #fffafa; border: 1px solid #fee2e2; padding: 8px; border-radius: 10px; cursor: pointer;"><i data-lucide="user-minus" style="width: 16px; color: #ef4444;"></i></button>
-                                             </form>
+                                    <svg width="60" height="30" viewBox="0 0 60 30" style="opacity: 0.6;">
+                                        <path d="M0,25 Q15,5 30,20 T60,10" class="sparkline-path"
+                                            th:style="'stroke: ' + (${s.gpa >= 3.5} ? 'var(--success)' : 'var(--accent)')">
+                                        </path>
+                                    </svg>
+                    </div>
+                    </td>
+                    <td style="text-align: right;">
+                        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+                            <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}"
+                                th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}"
+                                th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}"
+                                onclick="openEditStudent(this)" title="Edit File"
+                                style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 12px; cursor: pointer;"><i
+                                    data-lucide="edit-3"
+                                    style="width: 18px; color: var(--text-secondary);"></i></button>
+                            <form th:action="@{/delete-student}" method="post"
+                                onsubmit="return confirm('Archive record?');" style="display:inline;">
+                                <input type="hidden" name="id" th:value="${s.id}">
+                                <button type="submit" title="Archive Student"
+                                    style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i
+                                        data-lucide="trash-2" style="width: 18px; color: #ef4444;"></i></button>
+                            </form>
+                        </div>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <div class="card-footer">
+                        <span>TOTAL SECURE RECORDS: <span th:text="${#lists.size(students)}">0</span></span>
+                        <span>ENCRYPTION: AES-256 BIT ACTIVE</span>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
+            <div class="card-title">
+                Faculty Alignment & Strategy
+                <button class="btn btn-primary" onclick="openModal('addTeacherModal')"
+                    style="background: var(--accent); font-size: 0.8rem; padding: 0.6rem 1.25rem;">
+                    <i data-lucide="briefcase"></i> Recruit Faculty
+                </button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Faculty Profile</th>
+                            <th>Discipline Range</th>
+                            <th style="text-align: right;">Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="t : ${teachers}" class="data-row">
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                                    <div class="avatar"
+                                        style="background: rgba(244, 63, 94, 0.1); color: var(--accent); width: 44px; height: 44px; font-size: 0.9rem; border-radius: 14px;">
+                                        <i data-lucide="shield-check" style="width: 18px;"></i>
+                                    </div>
+                                    <div>
+                                        <div th:text="${t.firstName + ' ' + t.lastName}"
+                                            style="font-weight: 800; font-size: 1rem;">Dr. Sebastian Wilde</div>
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;"
+                                                th:text="${t.department}">Science Department</div>
+                                            <span th:if="${t.id % 4 == 0}"
+                                                style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-weight: 900; letter-spacing: 1px;">LEAD</span>
+                                            <span th:if="${t.id % 4 == 1}"
+                                                style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(244, 63, 94, 0.1); color: var(--accent); font-weight: 900; letter-spacing: 1px;">SENIOR</span>
+                                            <span th:if="${t.id % 4 > 1}"
+                                                style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: #f1f5f9; color: #64748b; font-weight: 900; letter-spacing: 1px;">ASSOCIATE</span>
                                         </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                        </button>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                        <div class="insight-card" style="background: white; padding: 1.75rem; border-radius: 20px; border: 1px solid var(--border-color); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--primary)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border-color)'">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                                <div style="font-size: 0.65rem; color: #10b981; font-weight: 950; text-transform: uppercase;">Resource Allocation</div>
-                                <i data-lucide="arrow-up-right" style="width: 14px; color: #10b981;"></i>
-                            </div>
-                            <div style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 1.5rem;">Optimize Tech Architecture faculty load by 12% in the next academic cycle.</div>
-                            <button class="btn btn-primary" style="width: 100%; padding: 0.6rem; font-size: 0.7rem; background: var(--bg-main); color: var(--primary); border: 1px solid var(--primary-glow); box-shadow: none;" onclick="showToast('Strategy queued for implementation.')">Execute Strategy</button>
-                        </div>
-                        <div class="insight-card" style="background: white; padding: 1.75rem; border-radius: 20px; border: 1px solid var(--border-color); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border-color)'">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                                <div style="font-size: 0.65rem; color: var(--primary); font-weight: 950; text-transform: uppercase;">Scholar Strategy</div>
-                                <i data-lucide="sparkles" style="width: 14px; color: var(--primary);"></i>
-                            </div>
-                            <div style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 1.5rem;">Top 5% scholars show 14% higher engagement with interactive lab protocols.</div>
-                            <button class="btn btn-primary" style="width: 100%; padding: 0.6rem; font-size: 0.7rem; background: var(--bg-main); color: var(--accent); border: 1px solid var(--accent-glow); box-shadow: none;" onclick="showToast('Intel shared with faculty leads.')">Distribute Intel</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section style="display: flex; flex-direction: column; gap: 2rem;">
-                <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--primary-deep)); border: none; color: white; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 120px; opacity: 0.05; transform: rotate(15deg); pointer-events: none;"><i data-lucide="shield-check"></i></div>
-                    <div style="display: flex; font-size: 0.75rem; font-weight: 900; background: rgba(255,255,255,0.2); width: fit-content; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; margin-bottom: 2rem; letter-spacing: 1px;">Institutional Intelligence</div>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem;">
-                        <li style="display: flex; align-items: start; gap: 1.25rem;">
-                            <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i data-lucide="target" style="width: 18px; color: #fff;"></i></div>
-                            <div>
-                                <div style="font-weight: 850; font-size: 1rem;">Efficiency Index</div>
-                                <div style="font-size: 0.85rem; opacity: 0.85;">Operational throughput increased by 12.4% since last sync.</div>
-                            </div>
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 1.25rem;">
-                            <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i data-lucide="award" style="width: 18px; color: #fff;"></i></div>
-                            <div>
-                                <div style="font-weight: 850; font-size: 1rem;">Scholar Retention</div>
-                                <div style="font-size: 0.85rem; opacity: 0.85;">99.4% engagement velocity maintained across all tiers.</div>
-                            </div>
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 1.25rem;">
-                            <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i data-lucide="zap" style="width: 18px; color: #fbbf24;"></i></div>
-                            <div>
-                                <div style="font-weight: 850; font-size: 1rem;">Growth Forecast</div>
-                                <div style="font-size: 0.85rem; opacity: 0.85;">Predicting 18% influx for the upcoming academic cycle.</div>
-                            </div>
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 1.25rem;">
-                            <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i data-lucide="globe" style="width: 18px; color: #fff;"></i></div>
-                            <div>
-                                <div style="font-weight: 850; font-size: 1rem;">Global Footprint</div>
-                                <div style="font-size: 0.85rem; opacity: 0.85;">Affiliated with 42 global research institutions.</div>
-                            </div>
-                        </li>
-                        <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                                <div style="font-weight: 850; font-size: 0.85rem;">Strategic Roadmap</div>
-                                <div style="font-size: 0.75rem; font-weight: 900;">74%</div>
-                            </div>
-                            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden;">
-                                <div style="height: 100%; background: white; width: 74%; border-radius: 10px; box-shadow: 0 0 15px rgba(255,255,255,0.5);"></div>
-                            </div>
-                            <div style="font-size: 0.7rem; opacity: 0.7; margin-top: 0.5rem;">Phase 2: Digital Transition Complete</div>
-                        </li>
-                        <li style="margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
-                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                                <div style="font-weight: 850; font-size: 0.85rem;">Regional Hub Expansion</div>
-                                <div style="font-size: 0.65rem; color: #fff; font-weight: 900; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px;">ACTIVE</div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.8;"><span>North Sector (Hub A)</span> <span>42% Load</span></div>
-                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.8;"><span>East Core (Hub B)</span> <span>58% Load</span></div>
-                            </div>
-                        </li>
-                        <li style="margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
-                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <div style="font-weight: 850; font-size: 0.85rem;">Attendance Velocity Trend</div>
-                                <div style="font-size: 0.75rem; color: #10b981; font-weight: 900;">↑ 2.4%</div>
-                            </div>
-                            <div style="display: flex; align-items: flex-end; gap: 4px; height: 30px; margin-top: 8px;">
-                                <div style="flex: 1; background: rgba(255,255,255,0.2); height: 40%; border-radius: 2px;"></div>
-                                <div style="flex: 1; background: rgba(255,255,255,0.2); height: 60%; border-radius: 2px;"></div>
-                                <div style="flex: 1; background: rgba(255,255,255,0.2); height: 55%; border-radius: 2px;"></div>
-                                                    <div style="flex: 1; background: rgba(255,255,255,0.2); height: 80%; border-radius: 2px;"></div>
-                                <div style="flex: 1; background: #fff; height: 100%; border-radius: 2px; box-shadow: 0 0 10px rgba(255,255,255,0.5);"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.1); position: relative;">
-                    <div class="card-title" style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                        <span>Alpha Archetypes</span>
-                        <div style="font-size: 0.65rem; color: #10b981; font-weight: 900; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 30px;">TOP 1%</div>
-                    </div>
-                    <div style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2.5rem; background: var(--bg-main); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--border-color);">
-                        <div class="radar-chart" style="flex-shrink: 0;">
-                            <div class="radar-polygon"></div>
-                            <div style="position: absolute; top: -10px; font-size: 0.55rem; font-weight: 850;">IQ</div>
-                            <div style="position: absolute; right: -15px; top: 35%; font-size: 0.55rem; font-weight: 850;">STRAT</div>
-                            <div style="position: absolute; right: 10px; bottom: -5px; font-size: 0.55rem; font-weight: 850;">OPS</div>
-                            <div style="position: absolute; left: 10px; bottom: -5px; font-size: 0.55rem; font-weight: 850;">COMM</div>
-                            <div style="position: absolute; left: -15px; top: 35%; font-size: 0.55rem; font-weight: 850;">TECH</div>
-                        </div>
-                        <div style="flex: 1;">
-                            <div style="font-size: 0.85rem; font-weight: 900; color: var(--primary); margin-bottom: 6px;">COMPOSITE STRATEGIC SYNERGY</div>
-                            <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; font-weight: 500;">Alpha tier cohorts demonstrate 14% higher operational efficiency. Intelligence mapping suggests optimal resource alignment for the upcoming cycle.</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 1.75rem;">
-                        <div th:each="s : ${topScholars}" style="display: flex; justify-content: space-between; align-items: center; transition: transform 0.3s;" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">
-                            <div style="display: flex; align-items: center; gap: 1.25rem;">
-                                <div class="avatar" style="width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(244, 63, 94, 0.1)); color: var(--primary); font-size: 0.95rem; border: 1px solid rgba(139, 92, 246, 0.2);" th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}"></div>
-                                <div>
-                                    <div th:text="${s.firstName}" style="font-weight: 850; font-size: 1rem; letter-spacing: -0.01em;">Student</div>
-                                    <div th:text="${s.grade}" style="font-size: 0.75rem; opacity: 0.6; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Grade</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div style="text-align: right;">
-                                <div th:text="${s.gpa}" style="font-weight: 950; font-size: 1.1rem; color: var(--primary);">4.0</div>
-                                <div style="font-size: 0.55rem; color: #10b981; font-weight: 950; letter-spacing: 1px;">ALPHA TIER</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="padding: 2.5rem; border-color: rgba(139, 92, 246, 0.1); border-radius: 28px;">
-                    <div class="card-title" style="margin-bottom: 2.5rem;">Grade Distribution</div>
-                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                        <div th:each="entry : ${gradeCounts}" style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); width: 100px; text-transform: uppercase;" th:text="${entry.key}">Grade</span>
-                            <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
-                                <div style="height: 8px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color);">
-                                    <div th:style="'height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); width: ' + (${entry.value} * 10) + '%'" style="border-radius: 10px; box-shadow: 0 0 10px var(--primary-glow);"></div>
+                            </td>
+                            <td>
+                                <div style="font-weight: 700; color: var(--text-primary);" th:text="${t.subject}">
+                                    Advanced Physics</div>
+                                <div
+                                    style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">
+                                    Primary Discipline</div>
+                            </td>
+                            <td style="text-align: right;">
+                                <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+                                    <button class="action-btn" th:data-id="${t.id}" th:data-fname="${t.firstName}"
+                                        th:data-lname="${t.lastName}" th:data-subject="${t.subject}"
+                                        onclick="openEditTeacher(this)"
+                                        style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 8px; border-radius: 10px; cursor: pointer;"><i
+                                            data-lucide="settings-2"
+                                            style="width: 16px; color: var(--text-secondary);"></i></button>
+                                    <form th:action="@{/delete-teacher}" method="post"
+                                        onsubmit="return confirm('Terminate record?');" style="display:inline;">
+                                        <input type="hidden" name="id" th:value="${t.id}">
+                                        <button type="submit"
+                                            style="background: #fffafa; border: 1px solid #fee2e2; padding: 8px; border-radius: 10px; cursor: pointer;"><i
+                                                data-lucide="user-minus"
+                                                style="width: 16px; color: #ef4444;"></i></button>
+                                    </form>
                                 </div>
-                            </div>
-                            <span style="font-size: 0.95rem; font-weight: 950; color: var(--text-primary); margin-left: 1.5rem; width: 24px; text-align: right;" th:text="${entry.value}">0</span>
-                        </div>
-                    </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </button>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="insight-card"
+                style="background: white; padding: 1.75rem; border-radius: 20px; border: 1px solid var(--border-color); transition: all 0.3s; cursor: pointer;"
+                onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--primary)'"
+                onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border-color)'">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div style="font-size: 0.65rem; color: #10b981; font-weight: 950; text-transform: uppercase;">
+                        Resource Allocation</div>
+                    <i data-lucide="arrow-up-right" style="width: 14px; color: #10b981;"></i>
                 </div>
-
-                <div class="card" style="padding: 2rem; border-color: var(--primary); background: rgba(139, 92, 246, 0.02); border-radius: 28px;">
-                    <div class="card-title" style="font-size: 1.2rem; display: flex; align-items: center; gap: 0.75rem;">
-                        <i data-lucide="command" style="width: 18px; color: var(--primary);"></i>
-                        Tactical Operations
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Registry synchronized with central vault.')"><i data-lucide="refresh-cw"></i> Sync Registry</button>
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Generating encrypted report...')"><i data-lucide="file-text"></i> Intel Report</button>
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Fast-track protocols active.')"><i data-lucide="zap"></i> Fast-Track</button>
-                        <button class="btn" style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);" onclick="showToast('Opening advanced protocols panel...')"><i data-lucide="sliders"></i> Protocols</button>
-                    </div>
+                <div
+                    style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 1.5rem;">
+                    Optimize Tech Architecture faculty load by 12% in the next academic cycle.</div>
+                <button class="btn btn-primary"
+                    style="width: 100%; padding: 0.6rem; font-size: 0.7rem; background: var(--bg-main); color: var(--primary); border: 1px solid var(--primary-glow); box-shadow: none;"
+                    onclick="showToast('Strategy queued for implementation.')">Execute Strategy</button>
+            </div>
+            <div class="insight-card"
+                style="background: white; padding: 1.75rem; border-radius: 20px; border: 1px solid var(--border-color); transition: all 0.3s; cursor: pointer;"
+                onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent)'"
+                onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--border-color)'">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div
+                        style="font-size: 0.65rem; color: var(--primary); font-weight: 950; text-transform: uppercase;">
+                        Scholar Strategy</div>
+                    <i data-lucide="sparkles" style="width: 14px; color: var(--primary);"></i>
                 </div>
+                <div
+                    style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 1.5rem;">
+                    Top 5% scholars show 14% higher engagement with interactive lab protocols.</div>
+                <button class="btn btn-primary"
+                    style="width: 100%; padding: 0.6rem; font-size: 0.7rem; background: var(--bg-main); color: var(--accent); border: 1px solid var(--accent-glow); box-shadow: none;"
+                    onclick="showToast('Intel shared with faculty leads.')">Distribute Intel</button>
+            </div>
+        </div>
+        </div>
+        </section>
 
-                <div class="card" style="padding: 0; border: none; overflow: hidden; background: none;">
-                    <div class="terminal-header">
-                        <div class="terminal-dot" style="background: #ef4444;"></div>
-                        <div class="terminal-dot" style="background: #f59e0b;"></div>
-                        <div class="terminal-dot" style="background: #10b981;"></div>
-                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #64748b; margin-left: 10px; font-weight: 800;">LUMINA_CORE_SHELL v2.4</span>
-                    </div>
-                    <div class="terminal-shell">
-                        <div><span class="terminal-prompt">root@lumina-strategic:~#</span> institutional --status --detailed</div>
-                        <div style="color: #94a3b8; margin: 4px 0;">[SYSTEM] Initializing institutional diagnostic...</div>
-                        <div style="color: #94a3b8;">[CORE] Nodes active: 4; Latency: 14ms; Sync: 100%</div>
-                        <div style="color: #10b981; margin: 4px 0;">[SECURE] All security protocols nominal. Layer 4 active.</div>
-                        <div><span class="terminal-prompt">root@lumina-strategic:~#</span> <span style="animation: blink 1s infinite; border-left: 8px solid #10b981;">&nbsp;</span></div>
-                    </div>
-                </div>
-
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
-                    <div class="card-title" style="margin-bottom: 2rem;">Strategic Resource Allocation</div>
-                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <section style="display: flex; flex-direction: column; gap: 2rem;">
+            <div class="card"
+                style="background: linear-gradient(135deg, var(--primary), var(--primary-deep)); border: none; color: white; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: -20px; right: -20px; font-size: 120px; opacity: 0.05; transform: rotate(15deg); pointer-events: none;">
+                    <i data-lucide="shield-check"></i></div>
+                <div
+                    style="display: flex; font-size: 0.75rem; font-weight: 900; background: rgba(255,255,255,0.2); width: fit-content; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; margin-bottom: 2rem; letter-spacing: 1px;">
+                    Institutional Intelligence</div>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem;">
+                    <li style="display: flex; align-items: start; gap: 1.25rem;">
+                        <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
+                                data-lucide="target" style="width: 18px; color: #fff;"></i></div>
                         <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Research Protocols</span>
-                                <span style="font-size: 0.7rem; font-weight: 900; color: var(--primary);">82%</span>
-                            </div>
-                            <div class="resource-progress"><div class="resource-fill" style="width: 82%;"></div></div>
+                            <div style="font-weight: 850; font-size: 1rem;">Efficiency Index</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">Operational throughput increased by 12.4%
+                                since last sync.</div>
                         </div>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 1.25rem;">
+                        <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
+                                data-lucide="award" style="width: 18px; color: #fff;"></i></div>
                         <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Institutional Infrastructure</span>
-                                <span style="font-size: 0.7rem; font-weight: 900; color: var(--accent);">56%</span>
-                            </div>
-                            <div class="resource-progress"><div class="resource-fill" style="width: 56%; background: var(--accent);"></div></div>
+                            <div style="font-weight: 850; font-size: 1rem;">Scholar Retention</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">99.4% engagement velocity maintained across
+                                all tiers.</div>
                         </div>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 1.25rem;">
+                        <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
+                                data-lucide="zap" style="width: 18px; color: #fbbf24;"></i></div>
                         <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Faculty Development</span>
-                                <span style="font-size: 0.7rem; font-weight: 900; color: #10b981;">94%</span>
+                            <div style="font-weight: 850; font-size: 1rem;">Growth Forecast</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">Predicting 18% influx for the upcoming
+                                academic cycle.</div>
+                        </div>
+                    </li>
+                    <li style="display: flex; align-items: start; gap: 1.25rem;">
+                        <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
+                                data-lucide="globe" style="width: 18px; color: #fff;"></i></div>
+                        <div>
+                            <div style="font-weight: 850; font-size: 1rem;">Global Footprint</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">Affiliated with 42 global research
+                                institutions.</div>
+                        </div>
+                    </li>
+                    <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <div style="font-weight: 850; font-size: 0.85rem;">Strategic Roadmap</div>
+                            <div style="font-size: 0.75rem; font-weight: 900;">74%</div>
+                        </div>
+                        <div
+                            style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden;">
+                            <div
+                                style="height: 100%; background: white; width: 74%; border-radius: 10px; box-shadow: 0 0 15px rgba(255,255,255,0.5);">
                             </div>
-                            <div class="resource-progress"><div class="resource-fill" style="width: 94%; background: #10b981;"></div></div>
                         </div>
+                        <div style="font-size: 0.7rem; opacity: 0.7; margin-top: 0.5rem;">Phase 2: Digital Transition
+                            Complete</div>
+                    </li>
+                    <li style="margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <div style="font-weight: 850; font-size: 0.85rem;">Regional Hub Expansion</div>
+                            <div
+                                style="font-size: 0.65rem; color: #fff; font-weight: 900; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px;">
+                                ACTIVE</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div
+                                style="display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.8;">
+                                <span>North Sector (Hub A)</span> <span>42% Load</span></div>
+                            <div
+                                style="display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.8;">
+                                <span>East Core (Hub B)</span> <span>58% Load</span></div>
+                        </div>
+                    </li>
+                    <li style="margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <div style="font-weight: 850; font-size: 0.85rem;">Attendance Velocity Trend</div>
+                            <div style="font-size: 0.75rem; color: #10b981; font-weight: 900;">↑ 2.4%</div>
+                        </div>
+                        <div style="display: flex; align-items: flex-end; gap: 4px; height: 30px; margin-top: 8px;">
+                            <div style="flex: 1; background: rgba(255,255,255,0.2); height: 40%; border-radius: 2px;">
+                            </div>
+                            <div style="flex: 1; background: rgba(255,255,255,0.2); height: 60%; border-radius: 2px;">
+                            </div>
+                            <div style="flex: 1; background: rgba(255,255,255,0.2); height: 55%; border-radius: 2px;">
+                            </div>
+                            <div style="flex: 1; background: rgba(255,255,255,0.2); height: 80%; border-radius: 2px;">
+                            </div>
+                            <div
+                                style="flex: 1; background: #fff; height: 100%; border-radius: 2px; box-shadow: 0 0 10px rgba(255,255,255,0.5);">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card"
+                style="padding: 2.5rem; border-radius: 28px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.1); position: relative;">
+                <div class="card-title"
+                    style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                    <span>Alpha Archetypes</span>
+                    <div
+                        style="font-size: 0.65rem; color: #10b981; font-weight: 900; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 30px;">
+                        TOP 1%</div>
+                </div>
+                <div
+                    style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2.5rem; background: var(--bg-main); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--border-color);">
+                    <div class="radar-chart" style="flex-shrink: 0;">
+                        <div class="radar-polygon"></div>
+                        <div style="position: absolute; top: -10px; font-size: 0.55rem; font-weight: 850;">IQ</div>
+                        <div style="position: absolute; right: -15px; top: 35%; font-size: 0.55rem; font-weight: 850;">
+                            STRAT</div>
+                        <div
+                            style="position: absolute; right: 10px; bottom: -5px; font-size: 0.55rem; font-weight: 850;">
+                            OPS</div>
+                        <div
+                            style="position: absolute; left: 10px; bottom: -5px; font-size: 0.55rem; font-weight: 850;">
+                            COMM</div>
+                        <div style="position: absolute; left: -15px; top: 35%; font-size: 0.55rem; font-weight: 850;">
+                            TECH</div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center; background: rgba(139, 92, 246, 0.1); color: var(--primary); border: 1px solid rgba(139, 92, 246, 0.2);">
-                        REALLOCATE RESOURCES
-                    </button>
-                    <div class="card-signature">
-                        <span>INSTITUTIONAL ID: 48A-921</span>
-                        <div class="signature-badge">VERIFIED PROTOCOL</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 0.85rem; font-weight: 900; color: var(--primary); margin-bottom: 6px;">
+                            COMPOSITE STRATEGIC SYNERGY</div>
+                        <p
+                            style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; font-weight: 500;">
+                            Alpha tier cohorts demonstrate 14% higher operational efficiency. Intelligence mapping
+                            suggests optimal resource alignment for the upcoming cycle.</p>
                     </div>
                 </div>
-
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1); position: relative; overflow: hidden;">
-                    <div class="map-radar-container">
-                        <div class="map-radar-sweep"></div>
-                    </div>
-                    <div class="card-title" style="margin-bottom: 2rem;">Global Strategic Network</div>
-                    <div style="position: relative; height: 180px; background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center; background-size: contain; opacity: 0.3;">
-                         <svg style="position: absolute; inset: 0; width: 100%; height: 100%;">
-                             <path d="M 60 100 Q 150 50 300 120" class="map-link"></path>
-                             <path d="M 300 120 Q 200 150 100 160" class="map-link"></path>
-                         </svg>
-                         <!-- Data Packets -->
-                         <div class="map-packet"></div>
-                         <div class="map-packet packet-2"></div>
-                         <!-- Partner Dots -->
-                         <div style="position: absolute; top: 30%; left: 20%; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary);"></div>
-                         <div style="position: absolute; top: 45%; left: 50%; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);"></div>
-                         <div style="position: absolute; top: 60%; left: 80%; width: 6px; height: 6px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981;"></div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 8px;">
-                            <span style="font-size: 0.7rem; font-weight: 850; color: var(--text-secondary);">NODE_ALFA: EURO_RESEARCH</span>
-                            <span class="badge-outline" style="color: #10b981;">SYNCED</span>
+                <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+                    <div th:each="s : ${topScholars}"
+                        style="display: flex; justify-content: space-between; align-items: center; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='translateX(5px)'"
+                        onmouseout="this.style.transform='translateX(0)'">
+                        <div style="display: flex; align-items: center; gap: 1.25rem;">
+                            <div class="avatar"
+                                style="width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(244, 63, 94, 0.1)); color: var(--primary); font-size: 0.95rem; border: 1px solid rgba(139, 92, 246, 0.2);"
+                                th:text="${#strings.substring(s.firstName,0,1) + #strings.substring(s.lastName,0,1)}">
+                            </div>
+                            <div>
+                                <div th:text="${s.firstName}"
+                                    style="font-weight: 850; font-size: 1rem; letter-spacing: -0.01em;">Student</div>
+                                <div th:text="${s.grade}"
+                                    style="font-size: 0.75rem; opacity: 0.6; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    Grade</div>
+                            </div>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.7rem; font-weight: 850; color: var(--text-secondary);">NODE_OMEGA: ASIA_PACIFIC</span>
-                            <span class="badge-outline" style="color: #3b82f6;">HANDSHAKE</span>
-                        </div>
-                    </div>
-                    <div class="card-signature">
-                        <span>NETWORK_ID: LN-88-TX</span>
-                        <span style="opacity: 0.5;">HASH: f6a1b2</span>
-                    </div>
-                </div>
-
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; background: #020617; color: white; border: none; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
-                         <div style="display: flex; align-items: center; gap: 0.75rem;">
-                            <div style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite;"></div>
-                            <span style="font-size: 0.7rem; font-weight: 900; color: #94a3b8; text-transform: uppercase;">Active Pulse</span>
-                        </div>
-                        <div style="display: flex; gap: 0.75rem; align-items: center;">
-                            <button class="action-btn" onclick="openModal('systemLogModal')" style="background: rgba(255,255,255,0.05); border: none; padding: 6px; border-radius: 8px; cursor: pointer;"><i data-lucide="scroll-text" style="width: 14px; color: #10b981;"></i></button>
-                            <i data-lucide="activity" style="width: 16px; color: #10b981;"></i>
-                        </div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
-                            <div style="font-size: 0.85rem; color: #cbd5e1;">Registry Sync Complete</div>
-                            <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">14:10</div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
-                            <div style="font-size: 0.85rem; color: #cbd5e1;">Intelligence Core Active</div>
-                            <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">12:05</div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="font-size: 0.85rem; color: #cbd5e1;">Security Protocol V4</div>
-                            <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">09:00</div>
+                        <div style="text-align: right;">
+                            <div th:text="${s.gpa}" style="font-weight: 950; font-size: 1.1rem; color: var(--primary);">
+                                4.0</div>
+                            <div style="font-size: 0.55rem; color: #10b981; font-weight: 950; letter-spacing: 1px;">
+                                ALPHA TIER</div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
-                    <div class="card-title" style="margin-bottom: 2rem;">Faculty Discipline Range</div>
-                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Global Science</span>
-                            <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
-                                <div style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
-                                    <div style="height: 100%; background: var(--primary); width: 45%; border-radius: 10px;"></div>
+            <div class="card" style="padding: 2.5rem; border-color: rgba(139, 92, 246, 0.1); border-radius: 28px;">
+                <div class="card-title" style="margin-bottom: 2.5rem;">Grade Distribution</div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    <div th:each="entry : ${gradeCounts}"
+                        style="display: flex; justify-content: space-between; align-items: center;">
+                        <span
+                            style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); width: 100px; text-transform: uppercase;"
+                            th:text="${entry.key}">Grade</span>
+                        <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
+                            <div
+                                style="height: 8px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color);">
+                                <div th:style="'height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); width: ' + (${entry.value} * 10) + '%'"
+                                    style="border-radius: 10px; box-shadow: 0 0 10px var(--primary-glow);"></div>
+                            </div>
+                        </div>
+                        <span
+                            style="font-size: 0.95rem; font-weight: 950; color: var(--text-primary); margin-left: 1.5rem; width: 24px; text-align: right;"
+                            th:text="${entry.value}">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card"
+                style="padding: 2rem; border-color: var(--primary); background: rgba(139, 92, 246, 0.02); border-radius: 28px;">
+                <div class="card-title" style="font-size: 1.2rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i data-lucide="command" style="width: 18px; color: var(--primary);"></i>
+                    Tactical Operations
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                    <button class="btn"
+                        style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
+                        onclick="showToast('Registry synchronized with central vault.')"><i
+                            data-lucide="refresh-cw"></i> Sync Registry</button>
+                    <button class="btn"
+                        style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
+                        onclick="showToast('Generating encrypted report...')"><i data-lucide="file-text"></i> Intel
+                        Report</button>
+                    <button class="btn"
+                        style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
+                        onclick="showToast('Fast-track protocols active.')"><i data-lucide="zap"></i>
+                        Fast-Track</button>
+                    <button class="btn"
+                        style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
+                        onclick="showToast('Opening advanced protocols panel...')"><i data-lucide="sliders"></i>
+                        Protocols</button>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 0; border: none; overflow: hidden; background: none;">
+                <div class="terminal-header">
+                    <div class="terminal-dot" style="background: #ef4444;"></div>
+                    <div class="terminal-dot" style="background: #f59e0b;"></div>
+                    <div class="terminal-dot" style="background: #10b981;"></div>
+                    <span
+                        style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #64748b; margin-left: 10px; font-weight: 800;">LUMINA_CORE_SHELL
+                        v2.4</span>
+                </div>
+                <div class="terminal-shell">
+                    <div><span class="terminal-prompt">root@lumina-strategic:~#</span> institutional --status --detailed
+                    </div>
+                    <div style="color: #94a3b8; margin: 4px 0;">[SYSTEM] Initializing institutional diagnostic...</div>
+                    <div style="color: #94a3b8;">[CORE] Nodes active: 4; Latency: 14ms; Sync: 100%</div>
+                    <div style="color: #10b981; margin: 4px 0;">[SECURE] All security protocols nominal. Layer 4 active.
+                    </div>
+                    <div><span class="terminal-prompt">root@lumina-strategic:~#</span> <span
+                            style="animation: blink 1s infinite; border-left: 8px solid #10b981;">&nbsp;</span></div>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
+                <div class="card-title" style="margin-bottom: 2rem;">Strategic Resource Allocation</div>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Research
+                                Protocols</span>
+                            <span style="font-size: 0.7rem; font-weight: 900; color: var(--primary);">82%</span>
+                        </div>
+                        <div class="resource-progress">
+                            <div class="resource-fill" style="width: 82%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span
+                                style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Institutional
+                                Infrastructure</span>
+                            <span style="font-size: 0.7rem; font-weight: 900; color: var(--accent);">56%</span>
+                        </div>
+                        <div class="resource-progress">
+                            <div class="resource-fill" style="width: 56%; background: var(--accent);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Faculty
+                                Development</span>
+                            <span style="font-size: 0.7rem; font-weight: 900; color: #10b981;">94%</span>
+                        </div>
+                        <div class="resource-progress">
+                            <div class="resource-fill" style="width: 94%; background: #10b981;"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary"
+                    style="width: 100%; margin-top: 2rem; justify-content: center; background: rgba(139, 92, 246, 0.1); color: var(--primary); border: 1px solid rgba(139, 92, 246, 0.2);">
+                    REALLOCATE RESOURCES
+                </button>
+                <div class="card-signature">
+                    <span>INSTITUTIONAL ID: 48A-921</span>
+                    <div class="signature-badge">VERIFIED PROTOCOL</div>
+                </div>
+            </div>
+
+            <div class="card"
+                style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1); position: relative; overflow: hidden;">
+                <div class="map-radar-container">
+                    <div class="map-radar-sweep"></div>
+                </div>
+                <div class="card-title" style="margin-bottom: 2rem;">Global Strategic Network</div>
+                <div
+                    style="position: relative; height: 180px; background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center; background-size: contain; opacity: 0.3;">
+                    <svg style="position: absolute; inset: 0; width: 100%; height: 100%;">
+                        <path d="M 60 100 Q 150 50 300 120" class="map-link"></path>
+                        <path d="M 300 120 Q 200 150 100 160" class="map-link"></path>
+                    </svg>
+                    <!-- Data Packets -->
+                    <div class="map-packet"></div>
+                    <div class="map-packet packet-2"></div>
+                    <!-- Partner Dots -->
+                    <div
+                        style="position: absolute; top: 30%; left: 20%; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary);">
+                    </div>
+                    <div
+                        style="position: absolute; top: 45%; left: 50%; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent);">
+                    </div>
+                    <div
+                        style="position: absolute; top: 60%; left: 80%; width: 6px; height: 6px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981;">
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 8px;">
+                        <span style="font-size: 0.7rem; font-weight: 850; color: var(--text-secondary);">NODE_ALFA:
+                            EURO_RESEARCH</span>
+                        <span class="badge-outline" style="color: #10b981;">SYNCED</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.7rem; font-weight: 850; color: var(--text-secondary);">NODE_OMEGA:
+                            ASIA_PACIFIC</span>
+                        <span class="badge-outline" style="color: #3b82f6;">HANDSHAKE</span>
+                    </div>
+                </div>
+                <div class="card-signature">
+                    <span>NETWORK_ID: LN-88-TX</span>
+                    <span style="opacity: 0.5;">HASH: f6a1b2</span>
+                </div>
+            </div>
+
+            <div class="card"
+                style="padding: 2.5rem; border-radius: 28px; background: #020617; color: white; border: none; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div
+                            style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite;">
+                        </div>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 900; color: #94a3b8; text-transform: uppercase;">Active
+                            Pulse</span>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; align-items: center;">
+                        <button class="action-btn" onclick="openModal('systemLogModal')"
+                            style="background: rgba(255,255,255,0.05); border: none; padding: 6px; border-radius: 8px; cursor: pointer;"><i
+                                data-lucide="scroll-text" style="width: 14px; color: #10b981;"></i></button>
+                        <i data-lucide="activity" style="width: 16px; color: #10b981;"></i>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">Registry Sync Complete</div>
+                        <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">14:10</div>
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">Intelligence Core Active</div>
+                        <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">12:05</div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">Security Protocol V4</div>
+                        <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">09:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
+                <div class="card-title" style="margin-bottom: 2rem;">Faculty Discipline Range</div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Global
+                            Science</span>
+                        <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
+                            <div
+                                style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
+                                <div style="height: 100%; background: var(--primary); width: 45%; border-radius: 10px;">
                                 </div>
                             </div>
-                            <span style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">45%</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Hum. Intelligence</span>
-                            <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
-                                <div style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
-                                    <div style="height: 100%; background: var(--accent); width: 35%; border-radius: 10px;"></div>
+                        <span
+                            style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">45%</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Hum.
+                            Intelligence</span>
+                        <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
+                            <div
+                                style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
+                                <div style="height: 100%; background: var(--accent); width: 35%; border-radius: 10px;">
                                 </div>
                             </div>
-                            <span style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">35%</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Tech Architecture</span>
-                            <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
-                                <div style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
-                                    <div style="height: 100%; background: #0ea5e9; width: 20%; border-radius: 10px;"></div>
-                                </div>
+                        <span
+                            style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">35%</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Tech
+                            Architecture</span>
+                        <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
+                            <div
+                                style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
+                                <div style="height: 100%; background: #0ea5e9; width: 20%; border-radius: 10px;"></div>
                             </div>
-                            <span style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">20%</span>
                         </div>
+                        <span
+                            style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">20%</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="card" style="padding: 2.5rem; border-radius: 28px; background: linear-gradient(135deg, #1e293b, #0f172a); color: white; border: none; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -10px; right: -10px; font-size: 80px; opacity: 0.03;"><i data-lucide="quote"></i></div>
-                    <div style="font-size: 0.65rem; color: #38bdf8; font-weight: 900; background: rgba(56, 189, 248, 0.1); width: fit-content; padding: 4px 10px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase;">Institutional Vision</div>
-                    <p style="font-size: 1rem; font-weight: 600; line-height: 1.6; opacity: 0.9; font-style: italic;">"Leadership is the catalyst that transforms potential into institutional excellence. Our mission is to accelerate intelligence at every tier."</p>
-                    <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                        <div style="width: 24px; height: 1px; background: #38bdf8;"></div>
-                        <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Director's Strategic Directive</div>
+            <div class="card"
+                style="padding: 2.5rem; border-radius: 28px; background: linear-gradient(135deg, #1e293b, #0f172a); color: white; border: none; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -10px; right: -10px; font-size: 80px; opacity: 0.03;"><i
+                        data-lucide="quote"></i></div>
+                <div
+                    style="font-size: 0.65rem; color: #38bdf8; font-weight: 900; background: rgba(56, 189, 248, 0.1); width: fit-content; padding: 4px 10px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase;">
+                    Institutional Vision</div>
+                <p style="font-size: 1rem; font-weight: 600; line-height: 1.6; opacity: 0.9; font-style: italic;">
+                    "Leadership is the catalyst that transforms potential into institutional excellence. Our mission is
+                    to accelerate intelligence at every tier."</p>
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 24px; height: 1px; background: #38bdf8;"></div>
+                    <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Director's Strategic Directive
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
         </div>
     </main>
 
     <!-- Modals -->
     <div id="systemSettingsModal" class="modal">
         <div class="modal-content" style="max-width: 600px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                <h2 style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="settings-2" style="color: var(--primary);"></i> Institutional Overrides</h2>
-                <button onclick="closeModal('systemSettingsModal')" style="background: none; border: none; cursor: pointer; color: var(--text-secondary);"><i data-lucide="x"></i></button>
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <h2 style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="settings-2"
+                        style="color: var(--primary);"></i> Institutional Overrides</h2>
+                <button onclick="closeModal('systemSettingsModal')"
+                    style="background: none; border: none; cursor: pointer; color: var(--text-secondary);"><i
+                        data-lucide="x"></i></button>
             </div>
             <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <div style="font-weight: 850; font-size: 0.95rem;">Real-time Synchronization</div>
-                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Direct access to central registry database.</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Direct access to central registry
+                            database.</div>
                     </div>
-                    <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;"><div style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;"></div></div>
+                    <div
+                        style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;">
+                        <div
+                            style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;">
+                        </div>
+                    </div>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <div style="font-weight: 850; font-size: 0.95rem;">AI Insight Generation</div>
-                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Automated strategic recommendations engine.</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Automated strategic
+                            recommendations engine.</div>
                     </div>
-                    <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;"><div style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;"></div></div>
+                    <div
+                        style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;">
+                        <div
+                            style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;">
+                        </div>
+                    </div>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <div style="font-weight: 850; font-size: 0.95rem;">Global Search Protocol</div>
-                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Advanced fuzzy matching for scholar registry.</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Advanced fuzzy matching for
+                            scholar registry.</div>
                     </div>
-                    <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;"><div style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;"></div></div>
+                    <div
+                        style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;">
+                        <div
+                            style="position: absolute; right: 2px; top: 2px; width: 16px; height: 16px; background: white; border-radius: 50%;">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style="margin-top: 2.5rem; display: flex; gap: 1rem;">
-                <button class="btn btn-primary" style="width: 100%; border-radius: 12px;" onclick="showToast('Synchronizing overrides...'); closeModal('systemSettingsModal')">Commit All Protocols</button>
+                <button class="btn btn-primary" style="width: 100%; border-radius: 12px;"
+                    onclick="showToast('Synchronizing overrides...'); closeModal('systemSettingsModal')">Commit All
+                    Protocols</button>
             </div>
         </div>
     </div>
@@ -804,36 +1172,50 @@
 
     <div id="systemLogModal" class="modal">
         <div class="modal-content" style="max-width: 700px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                <h2 style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="scroll-text" style="color: var(--primary);"></i> Institutional Event Log</h2>
-                <button onclick="closeModal('systemLogModal')" style="background: none; border: none; cursor: pointer; color: var(--text-secondary);"><i data-lucide="x"></i></button>
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <h2 style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="scroll-text"
+                        style="color: var(--primary);"></i> Institutional Event Log</h2>
+                <button onclick="closeModal('systemLogModal')"
+                    style="background: none; border: none; cursor: pointer; color: var(--text-secondary);"><i
+                        data-lucide="x"></i></button>
             </div>
             <div style="max-height: 400px; overflow-y: auto; padding-right: 1rem;">
                 <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
-                        <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); margin-bottom: 4px;">
+                    <div
+                        style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); margin-bottom: 4px;">
                             <span>SYSTEM_SYNC_SUCCESS</span>
                             <span>2026-04-06 22:15:42</span>
                         </div>
-                        <div style="font-size: 0.85rem; font-weight: 600;">Global registry synchronized with central executive vault.</div>
+                        <div style="font-size: 0.85rem; font-weight: 600;">Global registry synchronized with central
+                            executive vault.</div>
                     </div>
-                    <div style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
-                        <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); margin-bottom: 4px;">
+                    <div
+                        style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); margin-bottom: 4px;">
                             <span>AUTH_OVERRIDE_ACTIVE</span>
                             <span>2026-04-06 22:10:05</span>
                         </div>
-                        <div style="font-size: 0.85rem; font-weight: 600;">System protocols updated via Executive Command Center.</div>
+                        <div style="font-size: 0.85rem; font-weight: 600;">System protocols updated via Executive
+                            Command Center.</div>
                     </div>
-                    <div style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
-                        <div style="display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); margin-bottom: 4px;">
+                    <div
+                        style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); margin-bottom: 4px;">
                             <span>DATA_INTEGRITY_CHECK</span>
                             <span>2026-04-06 21:45:12</span>
                         </div>
-                        <div style="font-size: 0.85rem; font-weight: 600;">Automatic heuristic analysis completed. Integrity: 99.9%.</div>
+                        <div style="font-size: 0.85rem; font-weight: 600;">Automatic heuristic analysis completed.
+                            Integrity: 99.9%.</div>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary" style="width: 100%; margin-top: 2rem;" onclick="closeModal('systemLogModal')">Dismiss Archive</button>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 2rem;"
+                onclick="closeModal('systemLogModal')">Dismiss Archive</button>
         </div>
     </div>
 
@@ -841,17 +1223,25 @@
     <div id="addStudentModal" class="modal" onclick="closeModalOnOuter(event, 'addStudentModal')">
         <div class="modal-content">
             <h2 style="margin-bottom: 1.5rem;">New Student Registration</h2>
-            <form th:action="@{/add-student}" th:object="${student}" method="post" onsubmit="showToast('Student enrolled!')">
-                <div class="form-group"><label class="form-label">First Name</label><input type="text" th:field="*{firstName}" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Last Name</label><input type="text" th:field="*{lastName}" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Email</label><input type="email" th:field="*{email}" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Grade</label><input type="text" th:field="*{grade}" class="form-input" required></div>
+            <form th:action="@{/add-student}" th:object="${student}" method="post"
+                onsubmit="showToast('Student enrolled!')">
+                <div class="form-group"><label class="form-label">First Name</label><input type="text"
+                        th:field="*{firstName}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text"
+                        th:field="*{lastName}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" th:field="*{email}"
+                        class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Grade</label><input type="text" th:field="*{grade}"
+                        class="form-input" required></div>
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div><label class="form-label">GPA</label><input type="number" step="0.1" th:field="*{gpa}" class="form-input" placeholder="4.0"></div>
-                    <div><label class="form-label">Att.%</label><input type="number" th:field="*{attendance}" class="form-input" placeholder="100"></div>
+                    <div><label class="form-label">GPA</label><input type="number" step="0.1" th:field="*{gpa}"
+                            class="form-input" placeholder="4.0"></div>
+                    <div><label class="form-label">Att.%</label><input type="number" th:field="*{attendance}"
+                            class="form-input" placeholder="100"></div>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('addStudentModal')">Cancel</button>
+                    <button type="button" class="btn" style="background: var(--bg-main);"
+                        onclick="closeModal('addStudentModal')">Cancel</button>
                     <button type="submit" class="btn btn-primary">Complete Enrollment</button>
                 </div>
             </form>
@@ -863,16 +1253,23 @@
             <h2 style="margin-bottom: 1.5rem;">Update Academic File</h2>
             <form th:action="@{/edit-student}" method="post" onsubmit="showToast('Student updated!')">
                 <input type="hidden" name="id" id="editSId">
-                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName" id="editSFName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName" id="editSLName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" id="editSEmail" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Grade</label><input type="text" name="grade" id="editSGrade" class="form-input" required></div>
-                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div><label class="form-label">GPA</label><input type="number" step="0.1" name="gpa" id="editSGpa" class="form-input"></div>
-                    <div><label class="form-label">Att.%</label><input type="number" name="attendance" id="editSAtt" class="form-input"></div>
+                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName"
+                        id="editSFName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName"
+                        id="editSLName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email"
+                        id="editSEmail" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Grade</label><input type="text" name="grade"
+                        id="editSGrade" class="form-input" required></div>
+                <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div><label class="form-label">GPA</label><input type="number" step="0.1" name="gpa" id="editSGpa"
+                            class="form-input"></div>
+                    <div><label class="form-label">Att.%</label><input type="number" name="attendance" id="editSAtt"
+                            class="form-input"></div>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('editStudentModal')">Discard</button>
+                    <button type="button" class="btn" style="background: var(--bg-main);"
+                        onclick="closeModal('editStudentModal')">Discard</button>
                     <button type="submit" class="btn btn-primary">Update File</button>
                 </div>
             </form>
@@ -882,17 +1279,21 @@
     <div id="addTeacherModal" class="modal">
         <div class="modal-content">
             <h2 style="margin-bottom: 1.5rem;">Join Faculty</h2>
-            <form th:action="@{/add-teacher}" th:object="${teacher}" method="post" onsubmit="showToast('Teacher hired!')">
+            <form th:action="@{/add-teacher}" th:object="${teacher}" method="post"
+                onsubmit="showToast('Teacher hired!')">
                 <div class="form-group"><label class="form-label">Full Name</label>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <input type="text" th:field="*{firstName}" class="form-input" placeholder="First" required>
                         <input type="text" th:field="*{lastName}" class="form-input" placeholder="Last" required>
                     </div>
                 </div>
-                <div class="form-group"><label class="form-label">Primary Subject</label><input type="text" th:field="*{subject}" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Primary Subject</label><input type="text"
+                        th:field="*{subject}" class="form-input" required></div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('addTeacherModal')">Refuse</button>
-                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Confirm Hiring</button>
+                    <button type="button" class="btn" style="background: var(--bg-main);"
+                        onclick="closeModal('addTeacherModal')">Refuse</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Confirm
+                        Hiring</button>
                 </div>
             </form>
         </div>
@@ -903,39 +1304,56 @@
             <h2 style="margin-bottom: 1.5rem;">Staff Revision</h2>
             <form th:action="@{/edit-teacher}" method="post" onsubmit="showToast('Staff updated!')">
                 <input type="hidden" name="id" id="editTId">
-                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName" id="editTFName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName" id="editTLName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Subject</label><input type="text" name="subject" id="editTSubject" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName"
+                        id="editTFName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName"
+                        id="editTLName" class="form-input" required></div>
+                <div class="form-group"><label class="form-label">Subject</label><input type="text" name="subject"
+                        id="editTSubject" class="form-input" required></div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <button type="button" class="btn" style="background: var(--bg-main);" onclick="closeModal('editTeacherModal')">Close</button>
-                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Update Records</button>
+                    <button type="button" class="btn" style="background: var(--bg-main);"
+                        onclick="closeModal('editTeacherModal')">Close</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Update
+                        Records</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <div id="ai-panel" class="ai-panel" style="display: none; position: fixed; bottom: 6rem; right: 2rem; width: 320px; background: var(--bg-card); backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-radius: 24px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; z-index: 1000;">
-        <div style="background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 1.5rem; color: white; display: flex; justify-content: space-between; align-items: center;">
+    <div id="ai-panel" class="ai-panel"
+        style="display: none; position: fixed; bottom: 6rem; right: 2rem; width: 320px; background: var(--bg-card); backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-radius: 24px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; z-index: 1000;">
+        <div
+            style="background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 1.5rem; color: white; display: flex; justify-content: space-between; align-items: center;">
             <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <i data-lucide="sparkles" style="width: 20px;"></i>
                 <div style="font-size: 0.9rem; font-weight: 900;">LUMINA AI</div>
             </div>
-            <button onclick="toggleAIPanel()" style="background: none; border: none; color: white; cursor: pointer;"><i data-lucide="minus"></i></button>
+            <button onclick="toggleAIPanel()" style="background: none; border: none; color: white; cursor: pointer;"><i
+                    data-lucide="minus"></i></button>
         </div>
-        <div style="padding: 1.5rem; height: 300px; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto;">
-            <div style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
-                Greetings, Executive. Synergetic analysis localized. Scholar velocity is trending +14.2% in Tier 1 nodes. Recommending protocol optimization for the next development cycle.
+        <div
+            style="padding: 1.5rem; height: 300px; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto;">
+            <div
+                style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
+                Greetings, Executive. Synergetic analysis localized. Scholar velocity is trending +14.2% in Tier 1
+                nodes. Recommending protocol optimization for the next development cycle.
             </div>
-            <div style="background: var(--primary-glow); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-end; max-width: 80%; line-height: 1.5; color: var(--primary); font-weight: 800;">
+            <div
+                style="background: var(--primary-glow); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-end; max-width: 80%; line-height: 1.5; color: var(--primary); font-weight: 800;">
                 Analyze resource allocation protocol.
             </div>
-            <div style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
-                Resource allocation is currently 102% of projection in faculty developmental nodes. Suggesting a 4% shift to scholar-led initiatives.
+            <div
+                style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
+                Resource allocation is currently 102% of projection in faculty developmental nodes. Suggesting a 4%
+                shift to scholar-led initiatives.
             </div>
         </div>
-        <form style="padding: 1rem; border-top: 1px solid var(--border-color); display: flex; gap: 0.5rem;" onsubmit="event.preventDefault(); showToast('Protocol execution initialized...')">
-            <input type="text" placeholder="Protocol Query..." style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 12px; font-size: 0.75rem;">
-            <button type="submit" class="btn btn-primary" style="padding: 0.75rem; border-radius: 12px;"><i data-lucide="send" style="width: 14px;"></i></button>
+        <form style="padding: 1rem; border-top: 1px solid var(--border-color); display: flex; gap: 0.5rem;"
+            onsubmit="event.preventDefault(); showToast('Protocol execution initialized...')">
+            <input type="text" placeholder="Protocol Query..."
+                style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 12px; font-size: 0.75rem;">
+            <button type="submit" class="btn btn-primary" style="padding: 0.75rem; border-radius: 12px;"><i
+                    data-lucide="send" style="width: 14px;"></i></button>
         </form>
     </div>
     <div id="ai-bubble" class="ai-bubble" onclick="toggleAIPanel()">
@@ -943,12 +1361,13 @@
         <div class="voice-wave voice-wave-2" id="voice-2" style="display: none;"></div>
         <i data-lucide="bot"></i>
     </div>
-    
+
     <div class="lockdown-label" id="lockdown-overlay">LOCKDOWN</div>
 
     <div class="ticker-wrap">
         <div class="ticker">
-            CORE_LOAD: 42.1% | SECURE_PROTOCOL: IV_ALFA | SYNCING_NODE: GENEVA_CENTRAL | NEXT_INTEL_BATCH: 14:00_HRS | GLOBAL_SCHOLAR_RISE: +0.2% | INSTITUTIONAL_STABILITY: 100% | BEYOND_PROTOCOL_ACTIVE | 
+            CORE_LOAD: 42.1% | SECURE_PROTOCOL: IV_ALFA | SYNCING_NODE: GENEVA_CENTRAL | NEXT_INTEL_BATCH: 14:00_HRS |
+            GLOBAL_SCHOLAR_RISE: +0.2% | INSTITUTIONAL_STABILITY: 100% | BEYOND_PROTOCOL_ACTIVE |
         </div>
     </div>
 
@@ -956,25 +1375,37 @@
         <div class="id-card" onclick="event.stopPropagation()">
             <div id="id-avatar" class="id-avatar">ST</div>
             <div style="text-align: center;">
-                <h2 id="id-name" style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">Scholar Name</h2>
-                <div id="id-dept" style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px;">STRATEGIC RESEARCH UNIT</div>
+                <h2 id="id-name"
+                    style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">Scholar
+                    Name</h2>
+                <div id="id-dept"
+                    style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px;">
+                    STRATEGIC RESEARCH UNIT</div>
             </div>
             <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                 <div>
-                    <div style="font-size: 0.6rem; font-weight: 900; color: var(--text-secondary); margin-bottom: 0.5rem;">CLEARANCE</div>
+                    <div
+                        style="font-size: 0.6rem; font-weight: 900; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                        CLEARANCE</div>
                     <div class="clearance-badge" style="width: fit-content;">LEVEL 4</div>
                 </div>
                 <div>
-                    <div style="font-size: 0.6rem; font-weight: 900; color: var(--text-secondary); margin-bottom: 0.5rem;">ID_HASH</div>
-                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 800;">4B-A92-LMX</div>
+                    <div
+                        style="font-size: 0.6rem; font-weight: 900; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                        ID_HASH</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 800;">
+                        4B-A92-LMX</div>
                 </div>
             </div>
-            <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-main); border-radius: 20px; border: 1px solid var(--border-color);">
+            <div
+                style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-main); border-radius: 20px; border: 1px solid var(--border-color);">
                 <div style="font-size: 0.65rem; font-weight: 800; line-height: 1.6; color: var(--text-secondary);">
                     Subject exhibits high heuristic velocity. Deployment authorized for Q2 synergetic protocols.
                 </div>
             </div>
-            <button onclick="closeIDCard()" style="width: 100%; margin-top: 2rem; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: none; font-weight: 800; cursor: pointer;">DEACTIVATE SCANNER</button>
+            <button onclick="closeIDCard()"
+                style="width: 100%; margin-top: 2rem; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: none; font-weight: 800; cursor: pointer;">DEACTIVATE
+                SCANNER</button>
         </div>
     </div>
 
@@ -1060,7 +1491,7 @@
         }
 
         // Search logic
-        document.getElementById('globalSearch').addEventListener('input', function(e) {
+        document.getElementById('globalSearch').addEventListener('input', function (e) {
             const term = e.target.value.toLowerCase();
             document.querySelectorAll('.data-row').forEach(row => {
                 row.style.display = row.innerText.toLowerCase().includes(term) ? '' : 'none';
@@ -1084,7 +1515,7 @@
         updateTime();
 
         // Keyboard Shortcuts
-        window.addEventListener('keydown', function(e) {
+        window.addEventListener('keydown', function (e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
                 document.getElementById('globalSearch').focus();
@@ -1096,13 +1527,24 @@
 
         function toggleAll(source) {
             checkboxes = document.getElementsByClassName('row-check');
-            for(var i=0, n=checkboxes.length;i<n;i++) {
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
                 checkboxes[i].checked = source.checked;
             }
         }
     </script>
     <style>
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
     </style>
 </body>
+
 </html>
