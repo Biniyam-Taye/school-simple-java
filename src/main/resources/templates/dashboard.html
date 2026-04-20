@@ -105,9 +105,9 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Command Overlook</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="users"></i> Archetype Repository</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="building-2"></i> Strategic Faculty</a></li>
+                <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Neural Overview</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="users"></i> Archetype Database</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="building-2"></i> Institutional Assets</a></li>
             </ul>
         </nav>
         <div class="sidebar-footer">
@@ -130,7 +130,7 @@
                         BIOMETRIC_IDENTITY_CONFIRMED</div>
                     <div
                         style="font-family: 'JetBrains Mono', monospace; font-size: 0.45rem; color: var(--text-secondary); margin-top: 4px; opacity: 0.6;">
-                        SHA-256: 4b92x...1a2b</div>
+                        SHA-512: 4b92x...1a2b_SECURE_NODE_04</div>
                 </div>
             </div>
             <div
@@ -278,8 +278,10 @@
                         style="font-family: 'JetBrains Mono', monospace; font-weight: 900; font-size: 1.4rem; letter-spacing: -0.05em; background: rgba(15, 23, 42, 0.05); padding: 8px 16px; border-radius: 12px; border: 1px solid var(--border-color);">
                         00:00:00</div>
                     <div class="avatar"
-                        style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; width: 48px; height: 48px; box-shadow: 0 10px 20px -5px var(--primary-glow);">
-                        AD</div>
+                        style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; width: 48px; height: 48px; box-shadow: 0 10px 20px -5px var(--primary-glow); position: relative;">
+                        AD
+                        <div style="position: absolute; -top: 5px; -right: 5px; background: #10b981; color: white; font-size: 0.45rem; padding: 2px 4px; border-radius: 4px; font-weight: 900; letter-spacing: 1px;">DIRECTOR</div>
+                    </div>
                 </div>
             </div>
 
@@ -403,8 +405,8 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Encryption Tier</div>
-                    <div style="font-size: 0.85rem; font-weight: 900; color: #3b82f6;">LEVEL 4 GOLD</div>
+                        Security Clearance</div>
+                    <div style="font-size: 0.85rem; font-weight: 900; color: #3b82f6;">OMNI-LEVEL [EXECUTIVE]</div>
                 </div>
             </div>
             <div
@@ -487,14 +489,11 @@
                                                     <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;"
                                                         th:text="${s.grade}">Grade Level</div>
                                                     <span th:if="${s.gpa >= 3.8}" class="badge-outline"
-                                                        style="border-color: rgba(16, 185, 129, 0.4); color: #10b981;">ELITE
-                                                        ARCHETYPE</span>
+                                                        style="border-color: rgba(16, 185, 129, 0.4); color: #10b981; background: rgba(16, 185, 129, 0.05);">ALPHA ASSET</span>
                                                     <span th:if="${s.gpa >= 3.0 && s.gpa < 3.8}" class="badge-outline"
-                                                        style="border-color: var(--primary-glow); color: var(--primary);">ADVANCED
-                                                        SCHOLAR</span>
+                                                        style="border-color: var(--primary-glow); color: var(--primary); background: rgba(139, 92, 246, 0.05);">QUANTUM SCHOLAR</span>
                                                     <span th:if="${s.gpa < 3.0}" class="badge-outline"
-                                                        style="border-color: var(--accent-glow); color: var(--accent);">ATTENTION
-                                                        REQUIRED</span>
+                                                        style="border-color: var(--accent-glow); color: var(--accent); background: rgba(244, 63, 94, 0.05);">RECOVERY MODE</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -812,8 +811,8 @@
                             COMPOSITE HEURISTIC SYNERGY</div>
                         <p
                             style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; font-weight: 500;">
-                            Alpha tier cohorts currently demonstrate 16.4% higher operational velocity. Neural mapping
-                            suggests optimal resource distribution for the upcoming Q3 cycle.</p>
+                            Top-tier synergistic cohorts are currently outperforming projections by 18.2%. Real-time heuristic mapping
+                            indicates a 99.4% stability across the frontline developmental nodes.</p>
                     </div>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 1.75rem;">
@@ -905,8 +904,8 @@
                     <div><span class="terminal-prompt">root@lumina-strategic:~#</span> institutional --status --detailed
                     </div>
                     <div style="color: #94a3b8; margin: 4px 0;">[SYSTEM] Initializing institutional diagnostic...</div>
-                    <div style="color: #94a3b8;">[CORE] Nodes active: 4; Latency: 14ms; Sync: 100%</div>
-                    <div style="color: #10b981; margin: 4px 0;">[SECURE] All security protocols nominal. Layer 4 active.
+                    <div style="color: #94a3b8;">[CORE] Nodes active: 04; Latency: 12ms; Sync: 100% [OPTIMIZED]</div>
+                    <div style="color: #10b981; margin: 4px 0;">[SECURE] All security protocols nominal. Omni-Level Active.
                     </div>
                     <div><span class="terminal-prompt">root@lumina-strategic:~#</span> <span
                             style="animation: blink 1s infinite; border-left: 8px solid #10b981;">&nbsp;</span></div>
@@ -1094,7 +1093,7 @@
                     "Leadership is the catalyst that transforms raw potential into strategic excellence. Our mission is to accelerate intelligence across the core."</p>
                 <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
                     <div style="width: 24px; height: 1px; background: #38bdf8;"></div>
-                    <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Director's Strategic Directive
+                    <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Executive Directive 44-A
                     </div>
                 </div>
             </div>
