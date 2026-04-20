@@ -105,9 +105,9 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Neural Overview</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="users"></i> Archetype Database</a></li>
-                <li><a href="#" class="nav-item"><i data-lucide="building-2"></i> Institutional Assets</a></li>
+                <li><a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Neural Command Hub</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="users"></i> Asset Signature Bank</a></li>
+                <li><a href="#" class="nav-item"><i data-lucide="building-2"></i> Global Infrastructure</a></li>
             </ul>
         </nav>
         <div class="sidebar-footer">
@@ -135,7 +135,7 @@
             </div>
             <div
                 style="font-size: 0.6rem; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; opacity: 0.5;">
-                ACCESS KEY: LMX-9981-QUANTUM</div>
+                ACCESS KEY: LMX-9981-QUANTUM [CLEARANCE: OMNI]</div>
             <button class="nav-item"
                 style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;"
                 onclick="toggleDarkMode()">
@@ -143,10 +143,10 @@
                 <span id="theme-text">Switch Visual Spectrum</span>
             </button>
             <button class="nav-item"
-                style="width: 100%; border: 1px dashed rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.05); color: #ef4444; cursor: pointer; margin-top: 1rem;"
+                style="width: 100%; border: 1px dashed rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.08); color: #ef4444; cursor: pointer; margin-top: 1rem; font-weight: 900;"
                 onclick="toggleLockdown()">
                 <i data-lucide="shield-alert" style="width: 16px;"></i>
-                <span>EMERGENCY ISOLATION</span>
+                <span>SECTOR LOCKDOWN [CLEANROOM]</span>
             </button>
             <div
                 style="font-size: 0.55rem; font-weight: 900; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 24px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
@@ -290,7 +290,7 @@
                 <div class="search-container" style="background: none; border: none; width: 400px; padding: 0;">
                     <i data-lucide="terminal" style="width: 18px; color: var(--primary);"></i>
                     <input type="text" id="globalSearch" class="search-input terminal-text"
-                        placeholder="QUERY_STRATEGIC_REPOSITORY... (CTRL+K)">
+                        placeholder="INITIATE_NODAL_QUERY... [AUTH_REQD] (CTRL+K)">
                 </div>
                 <div style="display: flex; gap: 0.75rem;">
                     <button class="theme-toggle" onclick="showToast('Initiating emergency protocol...')"
@@ -417,8 +417,8 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Neural Pulse</div>
-                    <div style="font-size: 0.85rem; font-weight: 900;">24.5 MS LATENCY</div>
+                        Neural Synchronization</div>
+                    <div style="font-size: 0.85rem; font-weight: 900;">18.2 MS SYNCHRONY</div>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 1rem;">
@@ -722,8 +722,7 @@
                                 data-lucide="globe" style="width: 18px; color: #fff;"></i></div>
                         <div>
                             <div style="font-weight: 850; font-size: 1rem;">Global Footprint</div>
-                            <div style="font-size: 0.85rem; opacity: 0.85;">Affiliated with 42 global research
-                                institutions.</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">Commanding 42 global intelligence nodes across all sectors.</div>
                         </div>
                     </li>
                     <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
@@ -811,8 +810,8 @@
                             COMPOSITE HEURISTIC SYNERGY</div>
                         <p
                             style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; font-weight: 500;">
-                            Top-tier synergistic cohorts are currently outperforming projections by 18.2%. Real-time heuristic mapping
-                            indicates a 99.4% stability across the frontline developmental nodes.</p>
+                            Top-tier synergistic cohorts are currently outperforming projections by 18.2%. Recursive learning protocols are 
+                            holding at 99.4% stability across all frontline command nodes.</p>
                     </div>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 1.75rem;">
@@ -954,7 +953,7 @@
                 </button>
                 <div class="card-signature">
                     <span>INSTITUTIONAL ID: 48A-921</span>
-                    <div class="signature-badge">VERIFIED PROTOCOL</div>
+                    <div class="signature-badge">EXECUTIVE_OVERSIGHT_CONFIRMED</div>
                 </div>
             </div>
 
@@ -993,7 +992,7 @@
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <span style="font-size: 0.7rem; font-weight: 850; color: var(--text-secondary);">NODE_OMEGA:
-                            ASIA_PACIFIC</span>
+                            PACIFIC_RIM_AGI</span>
                         <span class="badge-outline" style="color: #3b82f6;">HANDSHAKE</span>
                     </div>
                 </div>
@@ -1424,7 +1423,7 @@
             const overlay = document.getElementById('lockdown-overlay');
             const isLockdown = body.classList.toggle('lockdown-active');
             overlay.style.display = isLockdown ? 'block' : 'none';
-            showToast(isLockdown ? 'EMERGENCY PROTOCOL ACTIVATED' : 'INSTITUTIONAL SECURITY RESTORED');
+            showToast(isLockdown ? 'SECTOR LOCKDOWN ACTIVATED - ALL TERMINALS ISOLATED' : 'INSTITUTIONAL SECURITY RESTORED - SYNC RE-ESTABLISHED');
         }
 
         function showToast(msg) {
@@ -1499,6 +1498,12 @@
             else if (hour < 18) greet = "Good Afternoon, Executive";
             else greet = "Good Evening, Executive";
             document.getElementById('time-greeting').innerText = greet;
+            
+            // Random Neural Jitter
+            if (Math.random() > 0.8) {
+                const hv = (164.8 + (Math.random() * 0.4)).toFixed(1);
+                document.querySelector('.ticker-text div:first-child div:first-child').innerText = hv + " HV";
+            }
         }
         setInterval(updateTime, 1000);
         updateTime();
