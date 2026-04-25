@@ -1109,12 +1109,12 @@
                         data-lucide="quote"></i></div>
                 <div
                     style="font-size: 0.65rem; color: #38bdf8; font-weight: 900; background: rgba(56, 189, 248, 0.1); width: fit-content; padding: 4px 10px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase;">
-                    Institutional Vision</div>
+                    PRIME_DIRECTIVE_VISION_LOG</div>
                 <p style="font-size: 1rem; font-weight: 600; line-height: 1.6; opacity: 0.9; font-style: italic;">
                     "LEADERSHIP_IS_THE_CATALYST_THAT_TRANSFORMS_RAW_POTENTIAL_INTO_STRATEGIC_EXCELLENCE. OUR_MISSION_IS_TO_ACCELERATE_INTELLIGENCE_ACROSS_THE_DIRECTORATE_CORE."</p>
                 <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
                     <div style="width: 24px; height: 1px; background: #38bdf8;"></div>
-                    <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Lumina Prime Directive 01
+                    <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">LUMINA_PRIME_DIRECTIVE_01
                     </div>
                 </div>
             </div>
@@ -1223,7 +1223,7 @@
                 </div>
             </div>
             <button class="btn btn-primary" style="width: 100%; margin-top: 2rem;"
-                onclick="closeModal('systemLogModal')">Dismiss Archive</button>
+                onclick="closeModal('systemLogModal')">ARCHIVE_DISMISSED_ACKNOWLEDGED</button>
         </div>
     </div>
 
@@ -1232,14 +1232,14 @@
         <div class="modal-content">
             <h2 style="margin-bottom: 1.5rem;">INITIATE_ASSET_ONBOARDING_SEQUENCE</h2>
             <form th:action="@{/add-student}" th:object="${student}" method="post"
-                onsubmit="showToast('Asset initialized!')">
+                onsubmit="showToast('ASSET_INTEGRATION_COMMITTED_TO_CORE_REGISTRY.')">
                 <div class="form-group"><label class="form-label">PRIMARY_COGNITIVE_IDENTIFIER</label><input type="text"
                         th:field="*{firstName}" class="form-input" required></div>
                 <div class="form-group"><label class="form-label">SECONDARY_COGNITIVE_IDENTIFIER</label><input type="text"
                         th:field="*{lastName}" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Comm Vector</label><input type="email" th:field="*{email}"
+                <div class="form-group"><label class="form-label">COMM_VECTOR_CHANNEL</label><input type="email" th:field="*{email}"
                         class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Clearance Level</label><input type="text" th:field="*{grade}"
+                <div class="form-group"><label class="form-label">COGNITIVE_CLEARANCE_GRADE</label><input type="text" th:field="*{grade}"
                         class="form-input" required></div>
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <div><label class="form-label">HEURISTIC_EVAL_METRIC [SPI]</label><input type="number" step="0.1" th:field="*{gpa}"
@@ -1265,9 +1265,9 @@
                         id="editSFName" class="form-input" required></div>
                 <div class="form-group"><label class="form-label">SECONDARY_COGNITIVE_IDENTIFIER</label><input type="text" name="lastName"
                         id="editSLName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Comm Vector</label><input type="email" name="email"
+                <div class="form-group"><label class="form-label">COMM_VECTOR_CHANNEL</label><input type="email" name="email"
                         id="editSEmail" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Clearance</label><input type="text" name="grade"
+                <div class="form-group"><label class="form-label">COGNITIVE_CLEARANCE_GRADE</label><input type="text" name="grade"
                         id="editSGrade" class="form-input" required></div>
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <div><label class="form-label">HEURISTIC_EVAL_METRIC</label><input type="number" step="0.1" name="gpa" id="editSGpa"
@@ -1288,11 +1288,11 @@
         <div class="modal-content">
             <h2 style="margin-bottom: 1.5rem;">DIRECTORATE_LEAD_COMMISSIONING</h2>
             <form th:action="@{/add-teacher}" th:object="${teacher}" method="post"
-                onsubmit="showToast('Lead Asset Engaged!')">
-                <div class="form-group"><label class="form-label">Asset Designation</label>
+                onsubmit="showToast('DIRECTORATE_LEAD_ASSET_COMMISSIONED_AND_ACTIVE.')">
+                <div class="form-group"><label class="form-label">LEAD_ASSET_DESIGNATION</label>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <input type="text" th:field="*{firstName}" class="form-input" placeholder="Alpha Name" required>
-                        <input type="text" th:field="*{lastName}" class="form-input" placeholder="Omega Name" required>
+                        <input type="text" th:field="*{firstName}" class="form-input" placeholder="ALPHA_GIVEN_ID" required>
+                        <input type="text" th:field="*{lastName}" class="form-input" placeholder="OMEGA_SURNAME_ID" required>
                     </div>
                 </div>
                 <div class="form-group"><label class="form-label">COMMAND_STRATUM_DOMAIN</label><input type="text"
@@ -1309,11 +1309,11 @@
     <div id="editTeacherModal" class="modal">
         <div class="modal-content">
             <h2 style="margin-bottom: 1.5rem;">CORE_LEAD_RE-CALIBRATION</h2>
-            <form th:action="@{/edit-teacher}" method="post" onsubmit="showToast('Matrix synced!')">
+            <form th:action="@{/edit-teacher}" method="post" onsubmit="showToast('LEAD_MATRIX_RECALIBRATED_AND_SYNCED.')">
                 <input type="hidden" name="id" id="editTId">
-                <div class="form-group"><label class="form-label">Alpha Designation</label><input type="text" name="firstName"
+                <div class="form-group"><label class="form-label">ALPHA_GIVEN_ID</label><input type="text" name="firstName"
                         id="editTFName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Omega Designation</label><input type="text" name="lastName"
+                <div class="form-group"><label class="form-label">OMEGA_SURNAME_ID</label><input type="text" name="lastName"
                         id="editTLName" class="form-input" required></div>
                 <div class="form-group"><label class="form-label">CORE_COMMAND_PARADIGM</label><input type="text" name="subject"
                         id="editTSubject" class="form-input" required></div>
@@ -1345,7 +1345,7 @@
             </div>
             <div
                 style="background: var(--primary-glow); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-end; max-width: 80%; line-height: 1.5; color: var(--primary); font-weight: 800;">
-                Analyze resource allocation protocol.
+                INITIATE_RESOURCE_ALLOCATION_DIAGNOSTIC.
             </div>
             <div
                 style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
@@ -1355,7 +1355,7 @@
         </div>
         <form style="padding: 1rem; border-top: 1px solid var(--border-color); display: flex; gap: 0.5rem;"
             onsubmit="event.preventDefault(); showToast('Protocol execution initialized...')">
-            <input type="text" placeholder="Protocol Query..."
+            <input type="text" placeholder="ENTER_DIRECTIVE_QUERY [OMNI_CLEARANCE]..."
                 style="flex: 1; background: var(--bg-main); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 12px; font-size: 0.75rem;">
             <button type="submit" class="btn btn-primary" style="padding: 0.75rem; border-radius: 12px;"><i
                     data-lucide="send" style="width: 14px;"></i></button>
@@ -1380,11 +1380,10 @@
             <div id="id-avatar" class="id-avatar">ST</div>
             <div style="text-align: center;">
                 <h2 id="id-name"
-                    style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">Asset
-                    Designation</h2>
+                    style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">ASSET_DESIGNATION_PRIME</h2>
                 <div id="id-dept"
                     style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px;">
-                    STRATEGIC RESEARCH UNIT</div>
+                    DIRECTORATE_RESEARCH_COMMAND_UNIT</div>
             </div>
             <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                 <div>
