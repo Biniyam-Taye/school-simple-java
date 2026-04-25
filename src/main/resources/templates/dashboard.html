@@ -302,7 +302,7 @@
                         <i data-lucide="chevron-right" style="width: 10px;"></i>
                         <span style="color: #3b82f6; font-weight: 950; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px; margin-left: 0.5rem;">ETERNAL CORE CONSOLE</span>
                     </div>
-                    <h1 id="time-greeting">Operations Control Center</h1>
+                    <h1 id="time-greeting">Central Command Core</h1>
                     <p style="font-size: 0.95rem; opacity: 0.7; margin-top: 0.25rem; font-weight: 500;">Sentient Orchestration. Distributing institutional intelligence across forty-two global nodes.</p>
                 </div>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
@@ -470,17 +470,16 @@
             <section>
                 <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
                     <div class="card-title">
-                        Strategic Archetype Ledger
+                        High-Value Entity Signature Bank
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;" onclick="showToast('Preparing strategic data archive...')"><i data-lucide="download"></i> Export Strategy</button>
+                            <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;" onclick="showToast('Preparing strategic data archive...')"><i data-lucide="download"></i> Data Payload Extraction</button>
                             <button class="btn btn-primary" onclick="openModal('addStudentModal')" style="font-size: 0.8rem; padding: 0.6rem 1.25rem;">
                                 <i data-lucide="user-plus"></i> INITIATE_ASSET_ONBOARDING
                             </button>
                             <div class="dropdown" style="position: relative;">
                                 <button class="btn"
                                     style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;"
-                                    onclick="showToast('Initiating bulk protocol...')"><i data-lucide="layers"></i> Bulk
-                                    Actions</button>
+                                    Collective Directives</button>
                             </div>
                         </div>
                     </div>
@@ -490,8 +489,8 @@
                                 <tr>
                                     <th style="width: 40px;"><input type="checkbox" id="selectAll"
                                             onclick="toggleAll(this)" style="cursor: pointer;"></th>
-                                    <th>Archetype Signature</th>
-                                    <th>Heuristic Output [GPA]</th>
+                                    <th>Neural Signature Hash</th>
+                                    <th>Synaptic Performance Index [SPI]</th>
                                     <th style="text-align: right;">Operations</th>
                                 </tr>
                             </thead>
@@ -519,7 +518,7 @@
                                                 </div>
                                                 <div style="display: flex; align-items: center; gap: 0.5rem;">
                                                     <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;"
-                                                        th:text="${s.grade}">Grade Level</div>
+                                                        th:text="${s.grade}">Clearance Stratum</div>
                                                     <span th:if="${s.gpa >= 3.8}" class="badge-outline"
                                                         style="border-color: rgba(16, 185, 129, 0.4); color: #10b981; background: rgba(16, 185, 129, 0.05);">ALPHA ASSET</span>
                                                     <span th:if="${s.gpa >= 3.0 && s.gpa < 3.8}" class="badge-outline"
@@ -553,7 +552,7 @@
                                             </div>
                                             <div th:text="${s.className}"
                                                 style="font-weight: 700; color: var(--text-secondary); font-size: 0.85rem;">
-                                                Class A</div>
+                                                Sector Alpha</div>
                                     <td>
                                         <div style="display: flex; align-items: center; gap: 8px;">
                                             <div th:class="${s.gpa >= 3.8 ? 'archetype-tag tag-strat' : (s.gpa >= 3.5 ? 'archetype-tag tag-tech' : 'archetype-tag tag-analyst')}"
@@ -572,47 +571,48 @@
                     </div>
                     </td>
                     <td style="text-align: right;">
-                        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
-                            <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}"
-                                th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}"
-                                th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}"
-                                onclick="openEditStudent(this)" title="Edit File"
-                                style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 12px; cursor: pointer;"><i
-                                    data-lucide="edit-3"
-                                    style="width: 18px; color: var(--text-secondary);"></i></button>
-                            <form th:action="@{/delete-student}" method="post"
-                                onsubmit="return confirm('Archive record?');" style="display:inline;">
-                                <input type="hidden" name="id" th:value="${s.id}">
-                                <button type="submit" title="Archive Student"
-                                    style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i
-                                        data-lucide="trash-2" style="width: 18px; color: #ef4444;"></i></button>
-                            </form>
+                                <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+                                    <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}"
+                                        th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}"
+                                        th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}"
+                                        onclick="openEditStudent(this)" title="Modify Dossier"
+                                        style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 12px; cursor: pointer;"><i
+                                            data-lucide="edit-3"
+                                            style="width: 18px; color: var(--text-secondary);"></i></button>
+                                    <form th:action="@{/delete-student}" method="post"
+                                        onsubmit="return confirm('Archive record?');" style="display:inline;">
+                                        <input type="hidden" name="id" th:value="${s.id}">
+                                        <button type="submit" title="Decommission Asset"
+                                            style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i
+                                                data-lucide="trash-2" style="width: 18px; color: #ef4444;"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <div class="card-footer">
+                                <span>ACTIVE ASSET QUANTUM: <span th:text="${#lists.size(students)}">0</span></span>
+                                <span>ENCRYPTION: QUANTUM_READY_AES_512</span>
+                            </div>
                         </div>
-                    </td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    <div class="card-footer">
-                        <span>TOTAL STRATEGIC RECORDS: <span th:text="${#lists.size(students)}">0</span></span>
-                        <span>ENCRYPTION: QUANTUM_READY_AES_512</span>
-                    </div>
                 </div>
         </div>
 
         <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
             <div class="card-title">
-                Operational Asset Governance
+                Operational Asset Governance [Leads]
                 <button class="btn btn-primary" onclick="openModal('addTeacherModal')"
                     style="background: var(--accent); font-size: 0.8rem; padding: 0.6rem 1.25rem;">
-                    <i data-lucide="briefcase"></i> Recruit Faculty
+                    <i data-lucide="briefcase"></i> Enlist Strategic Leads
                 </button>
             </div>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Lead Asset Profile</th>
-                            <th>Operational Domain</th>
+                            <th>High-Value Asset Dossier</th>
+                            <th>Command Specialization</th>
                             <th style="text-align: right;">Operations</th>
                         </tr>
                     </thead>
@@ -626,10 +626,10 @@
                                     </div>
                                     <div>
                                         <div th:text="${t.firstName + ' ' + t.lastName}"
-                                            style="font-weight: 800; font-size: 1rem;">Dr. Sebastian Wilde</div>
+                                            style="font-weight: 800; font-size: 1rem;">Strategic Lead WILDE</div>
                                         <div style="display: flex; align-items: center; gap: 0.5rem;">
                                             <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;"
-                                                th:text="${t.department}">Science Department</div>
+                                                th:text="${t.department}">Cognitive Science Division</div>
                                             <span th:if="${t.id % 4 == 0}"
                                                 style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-weight: 900; letter-spacing: 1px;">LEAD</span>
                                             <span th:if="${t.id % 4 == 1}"
@@ -642,10 +642,10 @@
                             </td>
                             <td>
                                 <div style="font-weight: 700; color: var(--text-primary);" th:text="${t.subject}">
-                                    Advanced Physics</div>
+                                    Quantum Mechanics Protocol</div>
                                 <div
                                     style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">
-                                    Primary Discipline</div>
+                                    Core Operational Focus</div>
                             </td>
                             <td style="text-align: right;">
                                 <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
@@ -726,7 +726,7 @@
                         <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
                                 data-lucide="target" style="width: 18px; color: #fff;"></i></div>
                         <div>
-                            <div style="font-weight: 850; font-size: 1rem;">Efficiency Index</div>
+                            <div style="font-weight: 850; font-size: 1rem;">Throughput Velocity Index</div>
                             <div style="font-size: 0.85rem; opacity: 0.85;">Operational throughput increased by 12.4%
                                 since last sync.</div>
                         </div>
@@ -735,7 +735,7 @@
                         <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
                                 data-lucide="award" style="width: 18px; color: #fff;"></i></div>
                         <div>
-                            <div style="font-weight: 850; font-size: 1rem;">Scholar Retention</div>
+                            <div style="font-weight: 850; font-size: 1rem;">Asset Persistence Ratio</div>
                             <div style="font-size: 0.85rem; opacity: 0.85;">99.4% engagement velocity maintained across
                                 all tiers.</div>
                         </div>
@@ -744,7 +744,7 @@
                         <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
                                 data-lucide="zap" style="width: 18px; color: #fbbf24;"></i></div>
                         <div>
-                            <div style="font-weight: 850; font-size: 1rem;">Growth Forecast</div>
+                            <div style="font-weight: 850; font-size: 1rem;">Expansion Projection</div>
                             <div style="font-size: 0.85rem; opacity: 0.85;">Predicting 18% influx for the upcoming
                                 academic cycle.</div>
                         </div>
@@ -760,7 +760,7 @@
                     <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
                         <div
                             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                            <div style="font-weight: 850; font-size: 0.85rem;">Strategic Roadmap</div>
+                            <div style="font-weight: 850; font-size: 0.85rem;">Core Evolution Path</div>
                             <div style="font-size: 0.75rem; font-weight: 900;">82%</div>
                         </div>
                         <div
@@ -874,13 +874,13 @@
             </div>
 
             <div class="card" style="padding: 2.5rem; border-color: rgba(139, 92, 246, 0.1); border-radius: 28px;">
-                <div class="card-title" style="margin-bottom: 2.5rem;">Grade Distribution</div>
+                <div class="card-title" style="margin-bottom: 2.5rem;">Performance Stratification Spread</div>
                 <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                     <div th:each="entry : ${gradeCounts}"
                         style="display: flex; justify-content: space-between; align-items: center;">
                         <span
                             style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); width: 100px; text-transform: uppercase;"
-                            th:text="${entry.key}">Grade</span>
+                            th:text="${entry.key}">Clearance Stratum</span>
                         <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                             <div
                                 style="height: 8px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color);">
@@ -950,12 +950,11 @@
             </div>
 
             <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
-                <div class="card-title" style="margin-bottom: 2rem;">Strategic Resource Allocation</div>
+                <div class="card-title" style="margin-bottom: 2rem;">Nodal Resource Distribution</div>
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Research
-                                Protocols</span>
+                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Empirical Research Directives</span>
                             <span style="font-size: 0.7rem; font-weight: 900; color: var(--primary);">86%</span>
                         </div>
                         <div class="resource-progress">
@@ -965,8 +964,7 @@
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                             <span
-                                style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Institutional
-                                Infrastructure</span>
+                                style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Global Infrastructure Fabric</span>
                             <span style="font-size: 0.7rem; font-weight: 900; color: var(--accent);">62%</span>
                         </div>
                         <div class="resource-progress">
@@ -975,8 +973,7 @@
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Faculty
-                                Development</span>
+                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Asset Evolution Metrics</span>
                             <span style="font-size: 0.7rem; font-weight: 900; color: #10b981;">98%</span>
                         </div>
                         <div class="resource-progress">
@@ -1076,11 +1073,11 @@
             </div>
 
             <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
-                <div class="card-title" style="margin-bottom: 2rem;">Faculty Discipline Range</div>
+                <div class="card-title" style="margin-bottom: 2rem;">Command Faculty Domain Spread</div>
                 <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Global
-                            Science</span>
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Universal
+                            Empirical Logic</span>
                         <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                             <div
                                 style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
@@ -1092,8 +1089,8 @@
                             style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">45%</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Hum.
-                            Intelligence</span>
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Cognitive
+                            Synergy Systems</span>
                         <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                             <div
                                 style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
@@ -1105,8 +1102,8 @@
                             style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">35%</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Tech
-                            Architecture</span>
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Structural
+                            Logic Architectures</span>
                         <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                             <div
                                 style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
@@ -1130,7 +1127,7 @@
                     "Leadership is the catalyst that transforms raw potential into strategic excellence. Our mission is to accelerate intelligence across the core."</p>
                 <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
                     <div style="width: 24px; height: 1px; background: #38bdf8;"></div>
-                    <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Executive Directive 44-A
+                    <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Lumina Prime Directive 01
                     </div>
                 </div>
             </div>
@@ -1248,27 +1245,27 @@
     <!-- Modals -->
     <div id="addStudentModal" class="modal" onclick="closeModalOnOuter(event, 'addStudentModal')">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">New Student Registration</h2>
+            <h2 style="margin-bottom: 1.5rem;">Asset Onboarding Matrix</h2>
             <form th:action="@{/add-student}" th:object="${student}" method="post"
-                onsubmit="showToast('Student enrolled!')">
-                <div class="form-group"><label class="form-label">First Name</label><input type="text"
+                onsubmit="showToast('Asset initialized!')">
+                <div class="form-group"><label class="form-label">Primary Designation</label><input type="text"
                         th:field="*{firstName}" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Last Name</label><input type="text"
+                <div class="form-group"><label class="form-label">Secondary Designation</label><input type="text"
                         th:field="*{lastName}" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Email</label><input type="email" th:field="*{email}"
+                <div class="form-group"><label class="form-label">Comm Vector</label><input type="email" th:field="*{email}"
                         class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Grade</label><input type="text" th:field="*{grade}"
+                <div class="form-group"><label class="form-label">Clearance Level</label><input type="text" th:field="*{grade}"
                         class="form-input" required></div>
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div><label class="form-label">GPA</label><input type="number" step="0.1" th:field="*{gpa}"
+                    <div><label class="form-label">Eval Metric (GPA)</label><input type="number" step="0.1" th:field="*{gpa}"
                             class="form-input" placeholder="4.0"></div>
-                    <div><label class="form-label">Att.%</label><input type="number" th:field="*{attendance}"
+                    <div><label class="form-label">Sync Pulse (%)</label><input type="number" th:field="*{attendance}"
                             class="form-input" placeholder="100"></div>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('addStudentModal')">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Complete Enrollment</button>
+                        onclick="closeModal('addStudentModal')">Abort Sequence</button>
+                    <button type="submit" class="btn btn-primary">Authorize Genesis</button>
                 </div>
             </form>
         </div>
@@ -1276,27 +1273,27 @@
 
     <div id="editStudentModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">Finalize Strategic Archive</h2>
+            <h2 style="margin-bottom: 1.5rem;">Asset Parameter Revision</h2>
             <form th:action="@{/edit-student}" method="post" onsubmit="showToast('Strategic archive finalized!')">
                 <input type="hidden" name="id" id="editSId">
-                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName"
+                <div class="form-group"><label class="form-label">Primary Designation</label><input type="text" name="firstName"
                         id="editSFName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName"
+                <div class="form-group"><label class="form-label">Secondary Designation</label><input type="text" name="lastName"
                         id="editSLName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Email</label><input type="email" name="email"
+                <div class="form-group"><label class="form-label">Comm Vector</label><input type="email" name="email"
                         id="editSEmail" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Grade</label><input type="text" name="grade"
+                <div class="form-group"><label class="form-label">Clearance</label><input type="text" name="grade"
                         id="editSGrade" class="form-input" required></div>
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div><label class="form-label">GPA</label><input type="number" step="0.1" name="gpa" id="editSGpa"
+                    <div><label class="form-label">Eval Metric</label><input type="number" step="0.1" name="gpa" id="editSGpa"
                             class="form-input"></div>
-                    <div><label class="form-label">Att.%</label><input type="number" name="attendance" id="editSAtt"
+                    <div><label class="form-label">Sync Pulse (%)</label><input type="number" name="attendance" id="editSAtt"
                             class="form-input"></div>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('editStudentModal')">Abort Entry</button>
-                    <button type="submit" class="btn btn-primary">Authorize Archive</button>
+                        onclick="closeModal('editStudentModal')">Abort Revision</button>
+                    <button type="submit" class="btn btn-primary">Commit Matrix Override</button>
                 </div>
             </form>
         </div>
@@ -1304,22 +1301,21 @@
 
     <div id="addTeacherModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">Join Faculty</h2>
+            <h2 style="margin-bottom: 1.5rem;">Faculty Command Injection</h2>
             <form th:action="@{/add-teacher}" th:object="${teacher}" method="post"
-                onsubmit="showToast('Teacher hired!')">
-                <div class="form-group"><label class="form-label">Full Name</label>
+                onsubmit="showToast('Lead Asset Engaged!')">
+                <div class="form-group"><label class="form-label">Asset Designation</label>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <input type="text" th:field="*{firstName}" class="form-input" placeholder="First" required>
-                        <input type="text" th:field="*{lastName}" class="form-input" placeholder="Last" required>
+                        <input type="text" th:field="*{firstName}" class="form-input" placeholder="Alpha Name" required>
+                        <input type="text" th:field="*{lastName}" class="form-input" placeholder="Omega Name" required>
                     </div>
                 </div>
-                <div class="form-group"><label class="form-label">Primary Subject</label><input type="text"
+                <div class="form-group"><label class="form-label">Operational Domain</label><input type="text"
                         th:field="*{subject}" class="form-input" required></div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('addTeacherModal')">Refuse</button>
-                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Confirm
-                        Hiring</button>
+                        onclick="closeModal('addTeacherModal')">Terminus</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Authorize Overdrive</button>
                 </div>
             </form>
         </div>
@@ -1327,20 +1323,19 @@
 
     <div id="editTeacherModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">Staff Revision</h2>
-            <form th:action="@{/edit-teacher}" method="post" onsubmit="showToast('Staff updated!')">
+            <h2 style="margin-bottom: 1.5rem;">Operational Re-calibration</h2>
+            <form th:action="@{/edit-teacher}" method="post" onsubmit="showToast('Matrix synced!')">
                 <input type="hidden" name="id" id="editTId">
-                <div class="form-group"><label class="form-label">First Name</label><input type="text" name="firstName"
+                <div class="form-group"><label class="form-label">Alpha Designation</label><input type="text" name="firstName"
                         id="editTFName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="lastName"
+                <div class="form-group"><label class="form-label">Omega Designation</label><input type="text" name="lastName"
                         id="editTLName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Subject</label><input type="text" name="subject"
+                <div class="form-group"><label class="form-label">Core Paradigm</label><input type="text" name="subject"
                         id="editTSubject" class="form-input" required></div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('editTeacherModal')">Close</button>
-                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Update
-                        Records</button>
+                        onclick="closeModal('editTeacherModal')">Sever Link</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Initialize Re-hash</button>
                 </div>
             </form>
         </div>
@@ -1400,8 +1395,8 @@
             <div id="id-avatar" class="id-avatar">ST</div>
             <div style="text-align: center;">
                 <h2 id="id-name"
-                    style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">Scholar
-                    Name</h2>
+                    style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">Asset
+                    Designation</h2>
                 <div id="id-dept"
                     style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px;">
                     STRATEGIC RESEARCH UNIT</div>
@@ -1533,10 +1528,10 @@
             document.getElementById('current-time').innerText = timeStr;
 
             const hour = now.getHours();
-            let greet = "Executive Oversight";
-            if (hour < 12) greet = "Good Morning, Executive";
-            else if (hour < 18) greet = "Good Afternoon, Executive";
-            else greet = "Good Evening, Executive";
+            let greet = "Lumina Core Authorization";
+            if (hour < 12) greet = "Core Sync Authorized: Alpha Cycle";
+            else if (hour < 18) greet = "Core Sync Authorized: Zen Cycle";
+            else greet = "Core Sync Authorized: Omega Cycle";
             document.getElementById('time-greeting').innerText = greet;
             
             // Random Neural Jitter
