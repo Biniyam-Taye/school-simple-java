@@ -107,7 +107,7 @@
         style="position: fixed; bottom: -10%; right: -5%; width: 400px; height: 400px; border-radius: 50%; background: var(--accent-glow); filter: blur(100px); z-index: -1;">
     </div>
 
-    <div id="toast" class="toast">Action completed successfully!</div>
+    <div id="toast" class="toast">PROTOCOL_EXECUTION_SUCCESSFUL</div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="user-info">
                     <h4>Biniyam Taye</h4>
-                    <p>Strategic Director</p>
+                    <p>COMMAND_LEVEL_ARCHITECT</p>
                 </div>
             </div>
             <div
@@ -426,8 +426,8 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Protocol Sync</div>
-                    <div style="font-size: 0.85rem; font-weight: 900; color: #10b981;">SYNCHRONIZED</div>
+                        SYNAPTIC_LAYER_SYNCHRONIZATION</div>
+                    <div style="font-size: 0.85rem; font-weight: 900; color: #10b981;">INTEGRITY_VERIFIED</div>
                 </div>
             </div>
             <div
@@ -437,8 +437,8 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Security Clearance</div>
-                    <div style="font-size: 0.85rem; font-weight: 900; color: #3b82f6;">OMNI-LEVEL [EXECUTIVE]</div>
+                        AUTHORIZATION_STRATUM</div>
+                    <div style="font-size: 0.85rem; font-weight: 900; color: #3b82f6;">OMNI-STRATUM [DIRECTORATE]</div>
                 </div>
             </div>
             <div
@@ -449,8 +449,8 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Neural Synchronization</div>
-                    <div style="font-size: 0.85rem; font-weight: 900;">18.2 MS SYNCHRONY</div>
+                        COGNITIVE_RESONANCE_ALIGNMENT</div>
+                    <div style="font-size: 0.85rem; font-weight: 900;">18.2 MS LATENCY_COMPRESSION</div>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 1rem;">
@@ -460,8 +460,8 @@
                 <div>
                     <div
                         style="font-size: 0.6rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">
-                        Node Infrastructure</div>
-                    <div style="font-size: 0.85rem; font-weight: 900;">04 SECTORS SYNCHRONIZED</div>
+                        DISTRIBUTED_CORE_ARCHITECTURE</div>
+                    <div style="font-size: 0.85rem; font-weight: 900;">04_SECTOR_GRID_STABILITY</div>
                 </div>
             </div>
         </div>
@@ -472,14 +472,14 @@
                     <div class="card-title">
                         High-Value Entity Signature Bank
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;" onclick="showToast('Preparing strategic data archive...')"><i data-lucide="download"></i> Data Payload Extraction</button>
+                            <button class="btn" style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;" onclick="showToast('INITIALIZING_SECURE_EXTRACTION_SEQUENCE...')"><i data-lucide="download"></i> PAYLOAD_EXPORT_DECRYPT</button>
                             <button class="btn btn-primary" onclick="openModal('addStudentModal')" style="font-size: 0.8rem; padding: 0.6rem 1.25rem;">
                                 <i data-lucide="user-plus"></i> INITIATE_ASSET_ONBOARDING
                             </button>
                             <div class="dropdown" style="position: relative;">
                                 <button class="btn"
                                     style="background: var(--bg-main); border: 1px solid var(--border-color); font-size: 0.8rem; padding: 0.6rem 1.25rem;"
-                                    Collective Directives</button>
+                                    DIRECTORATE_COMMAND_SCRIPTS</button>
                             </div>
                         </div>
                     </div>
@@ -580,7 +580,7 @@
                                             data-lucide="edit-3"
                                             style="width: 18px; color: var(--text-secondary);"></i></button>
                                     <form th:action="@{/delete-student}" method="post"
-                                        onsubmit="return confirm('Archive record?');" style="display:inline;">
+                                        onsubmit="return confirm('INITIATE_PERMANENT_DECOMMISSION?');" style="display:inline;">
                                         <input type="hidden" name="id" th:value="${s.id}">
                                         <button type="submit" title="Decommission Asset"
                                             style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i
@@ -601,18 +601,18 @@
 
         <div class="card" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,0.08);">
             <div class="card-title">
-                Operational Asset Governance [Leads]
+                DIRECTORATE_ASSET_HEURISTICS [LEADS]
                 <button class="btn btn-primary" onclick="openModal('addTeacherModal')"
                     style="background: var(--accent); font-size: 0.8rem; padding: 0.6rem 1.25rem;">
-                    <i data-lucide="briefcase"></i> Enlist Strategic Leads
+                    <i data-lucide="briefcase"></i> COMMISSION_NEW_DIRECTIVES
                 </button>
             </div>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>High-Value Asset Dossier</th>
-                            <th>Command Specialization</th>
+                            <th>ASSET_COGNITIVE_DOSSIER</th>
+                            <th>COMMAND_HEURISTIC_FOCUS</th>
                             <th style="text-align: right;">Operations</th>
                         </tr>
                     </thead>
@@ -629,7 +629,7 @@
                                             style="font-weight: 800; font-size: 1rem;">Strategic Lead WILDE</div>
                                         <div style="display: flex; align-items: center; gap: 0.5rem;">
                                             <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;"
-                                                th:text="${t.department}">Cognitive Science Division</div>
+                                                th:text="${t.department}">COGNITIVE_SYSTEMS_DIVISION</div>
                                             <span th:if="${t.id % 4 == 0}"
                                                 style="font-size: 0.55rem; padding: 2px 5px; border-radius: 4px; background: rgba(139, 92, 246, 0.1); color: var(--primary); font-weight: 900; letter-spacing: 1px;">LEAD</span>
                                             <span th:if="${t.id % 4 == 1}"
@@ -645,7 +645,7 @@
                                     Quantum Mechanics Protocol</div>
                                 <div
                                     style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">
-                                    Core Operational Focus</div>
+                                    CORE_COMMAND_VECTORS</div>
                             </td>
                             <td style="text-align: right;">
                                 <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
@@ -656,7 +656,7 @@
                                             data-lucide="settings-2"
                                             style="width: 16px; color: var(--text-secondary);"></i></button>
                                     <form th:action="@{/delete-teacher}" method="post"
-                                        onsubmit="return confirm('Terminate record?');" style="display:inline;">
+                                        onsubmit="return confirm('ARCHIVE_COMMAND_DOSSIER?');" style="display:inline;">
                                         <input type="hidden" name="id" th:value="${t.id}">
                                         <button type="submit"
                                             style="background: #fffafa; border: 1px solid #fee2e2; padding: 8px; border-radius: 10px; cursor: pointer;"><i
@@ -680,15 +680,15 @@
                 <div
                     style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                     <div style="font-size: 0.65rem; color: #10b981; font-weight: 950; text-transform: uppercase;">
-                        Resource Allocation</div>
+                        HEURISTIC_DISTRIBUTION</div>
                     <i data-lucide="arrow-up-right" style="width: 14px; color: #10b981;"></i>
                 </div>
                 <div
                     style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 1.5rem;">
-                    Analyze and optimize global faculty developmental load by 15.4% before the Q3 cycle.</div>
+                    EXECUTE_COGNITIVE_OPTIMIZATION_ON_GLOBAL_CORE_LOAD_BY_15.4%_POST_Q3.</div>
                 <button class="btn btn-primary"
                     style="width: 100%; padding: 0.6rem; font-size: 0.7rem; background: var(--bg-main); color: var(--primary); border: 1px solid var(--primary-glow); box-shadow: none;"
-                    onclick="showToast('Strategy queued for implementation.')">Execute Strategy</button>
+                    onclick="showToast('STRATEGY_COMMITTED_TO_CORE_LOOP.')">COMMIT_STRATEGY</button>
             </div>
             <div class="insight-card"
                 style="background: white; padding: 1.75rem; border-radius: 20px; border: 1px solid var(--border-color); transition: all 0.3s; cursor: pointer;"
@@ -698,15 +698,15 @@
                     style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                     <div
                         style="font-size: 0.65rem; color: var(--primary); font-weight: 950; text-transform: uppercase;">
-                        Scholar Strategy</div>
+                        NEURAL_ASSET_EVOLUTION</div>
                     <i data-lucide="sparkles" style="width: 14px; color: var(--primary);"></i>
                 </div>
                 <div
                     style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 1.5rem;">
-                    Alpha-tier scholar engagement has hit peak velocity. Implement next-gen protocols.</div>
+                    ALPHA_STRATUM_RESONANCE_HEURISTIC AT TERMINAL_VELOCITY. DEPLOY_V4_PROTOCOLS.</div>
                 <button class="btn btn-primary"
                     style="width: 100%; padding: 0.6rem; font-size: 0.7rem; background: var(--bg-main); color: var(--accent); border: 1px solid var(--accent-glow); box-shadow: none;"
-                    onclick="showToast('Intel shared with faculty leads.')">Distribute Intel</button>
+                    onclick="showToast('INTEL_BROADCAST_TO_CORE_NODES.')">BROADCAST_INTEL</button>
             </div>
         </div>
         </div>
@@ -720,15 +720,14 @@
                     <i data-lucide="shield-check"></i></div>
                 <div
                     style="display: flex; font-size: 0.75rem; font-weight: 900; background: rgba(255,255,255,0.2); width: fit-content; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; margin-bottom: 2rem; letter-spacing: 1px;">
-                    Institutional Intelligence</div>
+                    INSTITUTIONAL_COGNITION_CORE</div>
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem;">
                     <li style="display: flex; align-items: start; gap: 1.25rem;">
                         <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 10px;"><i
                                 data-lucide="target" style="width: 18px; color: #fff;"></i></div>
                         <div>
                             <div style="font-weight: 850; font-size: 1rem;">Throughput Velocity Index</div>
-                            <div style="font-size: 0.85rem; opacity: 0.85;">Operational throughput increased by 12.4%
-                                since last sync.</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">COGNITIVE_THROUGHPUT_ACCELERATION: +12.4%_POST_SYNC.</div>
                         </div>
                     </li>
                     <li style="display: flex; align-items: start; gap: 1.25rem;">
@@ -736,8 +735,7 @@
                                 data-lucide="award" style="width: 18px; color: #fff;"></i></div>
                         <div>
                             <div style="font-weight: 850; font-size: 1rem;">Asset Persistence Ratio</div>
-                            <div style="font-size: 0.85rem; opacity: 0.85;">99.4% engagement velocity maintained across
-                                all tiers.</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">99.4%_COGNITIVE_PERSISTENCE_ACROSS_ALL_STRATA.</div>
                         </div>
                     </li>
                     <li style="display: flex; align-items: start; gap: 1.25rem;">
@@ -745,8 +743,7 @@
                                 data-lucide="zap" style="width: 18px; color: #fbbf24;"></i></div>
                         <div>
                             <div style="font-weight: 850; font-size: 1rem;">Expansion Projection</div>
-                            <div style="font-size: 0.85rem; opacity: 0.85;">Predicting 18% influx for the upcoming
-                                academic cycle.</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">HEURISTIC_PROJECTION: +18%_CORE_EXPANSION_Q4.</div>
                         </div>
                     </li>
                     <li style="display: flex; align-items: start; gap: 1.25rem;">
@@ -754,7 +751,7 @@
                                 data-lucide="globe" style="width: 18px; color: #fff;"></i></div>
                         <div>
                             <div style="font-weight: 850; font-size: 1rem;">Institutional Reach</div>
-                            <div style="font-size: 0.85rem; opacity: 0.85;">Commanding 42 global intelligence nodes [NODAL_GRID_ALPHA].</div>
+                            <div style="font-size: 0.85rem; opacity: 0.85;">ORCHESTRATING_42_GLOBAL_COGNITIVE_NODES [GRID_ALPHA].</div>
                         </div>
                     </li>
                     <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
@@ -769,7 +766,7 @@
                                 style="height: 100%; background: white; width: 82%; border-radius: 10px; box-shadow: 0 0 15px rgba(255,255,255,0.5);">
                             </div>
                         </div>
-                        <div style="font-size: 0.7rem; opacity: 0.7; margin-top: 0.5rem;">Phase 3: Cognitive Integration Active</div>
+                        <div style="font-size: 0.7rem; opacity: 0.7; margin-top: 0.5rem;">PHASE_03_RECURSIVE_INTEGRATION_ACTIVE</div>
                     </li>
                     <li style="margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem;">
                         <div
@@ -815,7 +812,7 @@
                 style="padding: 2.5rem; border-radius: 28px; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.1); position: relative;">
                 <div class="card-title"
                     style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                    <span>Tier-1 Primary Assets</span>
+                    <span>STRATUM_01_CORE_ASSETS</span>
                     <div
                         style="font-size: 0.65rem; color: #10b981; font-weight: 900; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 30px;">
                         TOP 1%</div>
@@ -838,11 +835,11 @@
                     </div>
                     <div style="flex: 1;">
                         <div style="font-size: 0.85rem; font-weight: 900; color: var(--primary); margin-bottom: 6px;">
-                            COMPOSITE HEURISTIC SYNERGY</div>
+                            COMPOSITE_COGNITIVE_SYNERGY</div>
                         <p
                             style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; font-weight: 500;">
-                            Top-tier synergistic cohorts are currently outperforming projections by 18.2%. Autonomous correction protocols 
-                            are holding at 99.4% stability across all frontline command nodes.</p>
+                            TOP-TIER_COGNITIVE_COHORTS_ARE_CURRENTLY_OUTPERFORMING_PROJECTIONS_BY_18.2%. AUTONOMOUS_CORRECTION_PROTOCOLS 
+                            ARE_HOLDING_AT_99.4%_STABILITY_ACROSS_ALL_COMMAND_NODES.</p>
                     </div>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 1.75rem;">
@@ -874,7 +871,7 @@
             </div>
 
             <div class="card" style="padding: 2.5rem; border-color: rgba(139, 92, 246, 0.1); border-radius: 28px;">
-                <div class="card-title" style="margin-bottom: 2.5rem;">Performance Stratification Spread</div>
+                <div class="card-title" style="margin-bottom: 2.5rem;">COGNITIVE_STRATIFICATION_SPREAD</div>
                 <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                     <div th:each="entry : ${gradeCounts}"
                         style="display: flex; justify-content: space-between; align-items: center;">
@@ -899,24 +896,23 @@
                 style="padding: 2rem; border-color: var(--primary); background: rgba(139, 92, 246, 0.02); border-radius: 28px;">
                 <div class="card-title" style="font-size: 1.2rem; display: flex; align-items: center; gap: 0.75rem;">
                     <i data-lucide="command" style="width: 18px; color: var(--primary);"></i>
-                    Strategic Operations
+                    DIRECTORATE_COMMAND_VECTORS
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
                     <button class="btn"
                         style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
-                        onclick="showToast('Registry synchronized with central vault.')"><i
-                            data-lucide="refresh-cw"></i> Sync Registry</button>
+                        onclick="showToast('REGISTRY_SYNC_COMPLETE [VAULT_ALPHA].')"><i
+                            data-lucide="refresh-cw"></i> SYNC_REGISTRY</button>
                     <button class="btn"
                         style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
-                        onclick="showToast('Generating encrypted report...')"><i data-lucide="file-text"></i> Intel
-                        Report</button>
+                        onclick="showToast('INITIALIZING_SECURE_PAYLOAD_GEN...')"><i data-lucide="file-text"></i> INTEL_DOSSIER</button>
                     <button class="btn"
                         style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
-                        onclick="showToast('Fast-track protocols active.')"><i data-lucide="zap"></i>
+                        onclick="showToast('FAST-TRACK_PROTOCOLS_ACTIVE [LEVEL_ALPHA].')"><i data-lucide="zap"></i>
                         Fast-Track</button>
                     <button class="btn"
                         style="background: white; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.85rem; border-radius: 14px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);"
-                        onclick="showToast('Opening advanced protocols panel...')"><i data-lucide="sliders"></i>
+                        onclick="showToast('OPENING_DIRECTORATE_PROTOCOL_INTERFACE...')"><i data-lucide="sliders"></i>
                         Protocols</button>
                 </div>
             </div>
@@ -950,11 +946,11 @@
             </div>
 
             <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
-                <div class="card-title" style="margin-bottom: 2rem;">Nodal Resource Distribution</div>
+                <div class="card-title" style="margin-bottom: 2rem;">DISTRIBUTED_CORE_RESOURCE_ALLOCATION</div>
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Empirical Research Directives</span>
+                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">EMPIRICAL_COGNITIVE_RESEARCH</span>
                             <span style="font-size: 0.7rem; font-weight: 900; color: var(--primary);">86%</span>
                         </div>
                         <div class="resource-progress">
@@ -964,7 +960,7 @@
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                             <span
-                                style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Global Infrastructure Fabric</span>
+                                style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">GLOBAL_SYNERGETIC_FABRIC</span>
                             <span style="font-size: 0.7rem; font-weight: 900; color: var(--accent);">62%</span>
                         </div>
                         <div class="resource-progress">
@@ -973,7 +969,7 @@
                     </div>
                     <div>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">Asset Evolution Metrics</span>
+                            <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary);">COGNITIVE_ASSET_EVOLUTION</span>
                             <span style="font-size: 0.7rem; font-weight: 900; color: #10b981;">98%</span>
                         </div>
                         <div class="resource-progress">
@@ -983,7 +979,7 @@
                 </div>
                 <button class="btn btn-primary"
                     style="width: 100%; margin-top: 2rem; justify-content: center; background: rgba(139, 92, 246, 0.1); color: var(--primary); border: 1px solid rgba(139, 92, 246, 0.2);">
-                    DISTRIBUTE_NODAL_ASSETS
+                    EXECUTE_NODAL_DISTRIBUTION
                 </button>
                 <div class="card-signature">
                     <span>INSTITUTIONAL ID: 48A-921</span>
@@ -996,7 +992,7 @@
                 <div class="map-radar-container">
                     <div class="map-radar-sweep"></div>
                 </div>
-                <div class="card-title" style="margin-bottom: 2rem;">Cosmic Synergetic Loom</div>
+                <div class="card-title" style="margin-bottom: 2rem;">GLOBAL_RESONANCE_ORCHESTRATOR</div>
                 <div
                     style="position: relative; height: 180px; background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center; background-size: contain; opacity: 0.3;">
                     <svg style="position: absolute; inset: 0; width: 100%; height: 100%;">
@@ -1044,8 +1040,7 @@
                             style="width: 10px; height: 10px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite;">
                         </div>
                         <span
-                            style="font-size: 0.7rem; font-weight: 900; color: #94a3b8; text-transform: uppercase;">Active
-                            Pulse</span>
+                            style="font-size: 0.7rem; font-weight: 900; color: #94a3b8; text-transform: uppercase;">CORE_HEURISTIC_PULSE</span>
                     </div>
                     <div style="display: flex; gap: 0.75rem; align-items: center;">
                         <button class="action-btn" onclick="openModal('systemLogModal')"
@@ -1057,27 +1052,26 @@
                 <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
-                        <div style="font-size: 0.85rem; color: #cbd5e1;">Registry Sync Complete</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">REGISTRY_INTEGRITY_SYNC_SUCCESS</div>
                         <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">14:10</div>
                     </div>
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem;">
-                        <div style="font-size: 0.85rem; color: #cbd5e1;">Intelligence Core Active</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">SENTIENT_CORE_ACTIVE</div>
                         <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">12:05</div>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div style="font-size: 0.85rem; color: #cbd5e1;">Security Protocol V4</div>
+                        <div style="font-size: 0.85rem; color: #cbd5e1;">DIRECTORATE_SECURITY_PROTOCOL_V4</div>
                         <div style="font-size: 0.65rem; color: #64748b; font-weight: 800;">09:00</div>
                     </div>
                 </div>
             </div>
 
             <div class="card" style="padding: 2.5rem; border-radius: 28px; border-color: rgba(139, 92, 246, 0.1);">
-                <div class="card-title" style="margin-bottom: 2rem;">Command Faculty Domain Spread</div>
+                <div class="card-title" style="margin-bottom: 2rem;">LEADERSHIP_DOMAIN_DYNAMICS</div>
                 <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Universal
-                            Empirical Logic</span>
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">UNIVERSAL_EMPIRICAL_HEURISTICS</span>
                         <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                             <div
                                 style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
@@ -1089,8 +1083,7 @@
                             style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">45%</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Cognitive
-                            Synergy Systems</span>
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">COGNITIVE_SYNERGY_MATRICES</span>
                         <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                             <div
                                 style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
@@ -1102,8 +1095,7 @@
                             style="font-size: 0.85rem; font-weight: 900; color: var(--text-primary); margin-left: 1rem;">35%</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">Structural
-                            Logic Architectures</span>
+                        <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-secondary);">STRUCTURAL_COMMAND_LOGIC</span>
                         <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                             <div
                                 style="height: 6px; background: var(--bg-main); border-radius: 10px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--border-color); margin-left: 1rem;">
@@ -1124,7 +1116,7 @@
                     style="font-size: 0.65rem; color: #38bdf8; font-weight: 900; background: rgba(56, 189, 248, 0.1); width: fit-content; padding: 4px 10px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase;">
                     Institutional Vision</div>
                 <p style="font-size: 1rem; font-weight: 600; line-height: 1.6; opacity: 0.9; font-style: italic;">
-                    "Leadership is the catalyst that transforms raw potential into strategic excellence. Our mission is to accelerate intelligence across the core."</p>
+                    "LEADERSHIP_IS_THE_CATALYST_THAT_TRANSFORMS_RAW_POTENTIAL_INTO_STRATEGIC_EXCELLENCE. OUR_MISSION_IS_TO_ACCELERATE_INTELLIGENCE_ACROSS_THE_DIRECTORATE_CORE."</p>
                 <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
                     <div style="width: 24px; height: 1px; background: #38bdf8;"></div>
                     <div style="font-size: 0.75rem; font-weight: 800; color: #38bdf8;">Lumina Prime Directive 01
@@ -1141,7 +1133,7 @@
             <div
                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
                 <h2 style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="settings-2"
-                        style="color: var(--primary);"></i> Strategic Overrides</h2>
+                        style="color: var(--primary);"></i> DIRECTORATE_OVERRIDE_INTERFACE</h2>
                 <button onclick="closeModal('systemSettingsModal')"
                     style="background: none; border: none; cursor: pointer; color: var(--text-secondary);"><i
                         data-lucide="x"></i></button>
@@ -1149,8 +1141,8 @@
             <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-weight: 850; font-size: 0.95rem;">Real-time Synchronization</div>
-                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Unrestricted access to the strategic core repository.</div>
+                        <div style="font-weight: 850; font-size: 0.95rem;">REAL-TIME_CORE_SYNC</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">UNRESTRICTED_READ/WRITE_ACCESS_TO_THE_DIRECTORATE_CORE_REPOSITORY.</div>
                     </div>
                     <div
                         style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;">
@@ -1161,8 +1153,8 @@
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-weight: 850; font-size: 0.95rem;">AI Insight Generation</div>
-                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Heuristic analysis & protocol optimization engine.</div>
+                        <div style="font-weight: 850; font-size: 0.95rem;">HEURISTIC_INSIGHT_ENGINE</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">RECURSIVE_HEURISTIC_ANALYSIS_&_DYNAMIC_PROTOCOL_OPTIMIZATION.</div>
                     </div>
                     <div
                         style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;">
@@ -1173,8 +1165,8 @@
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-weight: 850; font-size: 0.95rem;">Global Search Protocol</div>
-                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Quantum-ready pattern matching for the archetype repository.</div>
+                        <div style="font-weight: 850; font-size: 0.95rem;">GRID-WIDE_QUERY_PROTOCOL</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">QUANTUM-READY_PATTERN_MATCHING_FOR_THE_ARCHETYPE_VAULT.</div>
                     </div>
                     <div
                         style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative;">
@@ -1186,7 +1178,7 @@
             </div>
             <div style="margin-top: 2.5rem; display: flex; gap: 1rem;">
                 <button class="btn btn-primary" style="width: 100%; border-radius: 12px;"
-                    onclick="showToast('Synchronizing neural directives...'); closeModal('systemSettingsModal')">Synchronize Neural Directives</button>
+                    onclick="showToast('INITIALIZING_DIRECTIVE_SYNC...'); closeModal('systemSettingsModal')">COMMIT_CORE_DIRECTIVES</button>
             </div>
         </div>
     </div>
@@ -1212,8 +1204,7 @@
                             <span>SYSTEM_SYNC_SUCCESS</span>
                             <span>2026-04-06 22:15:42</span>
                         </div>
-                        <div style="font-size: 0.85rem; font-weight: 600;">Global registry synchronized with central
-                            executive vault.</div>
+                        <div style="font-size: 0.85rem; font-weight: 600;">GLOBAL_REGISTRY_SYNCED_WITH_DIRECTORATE_VAULT_ALPHA.</div>
                     </div>
                     <div
                         style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
@@ -1222,8 +1213,7 @@
                             <span>AUTH_OVERRIDE_ACTIVE</span>
                             <span>2026-04-06 22:10:05</span>
                         </div>
-                        <div style="font-size: 0.85rem; font-weight: 600;">System protocols updated via Executive
-                            Command Center.</div>
+                        <div style="font-size: 0.85rem; font-weight: 600;">SYSTEM_PROTOCOLS_COMMITTED_VIA_CORE_COMMAND.</div>
                     </div>
                     <div
                         style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-color);">
@@ -1232,8 +1222,8 @@
                             <span>DATA_INTEGRITY_CHECK</span>
                             <span>2026-04-06 21:45:12</span>
                         </div>
-                        <div style="font-size: 0.85rem; font-weight: 600;">Automatic heuristic analysis completed.
-                            Integrity: 99.9%.</div>
+                        <div style="font-size: 0.85rem; font-weight: 600;">RECURSIVE_HEURISTIC_CHECK_COMPLETE.
+                            INTEGRITY: 99.9%_NOMINAL.</div>
                     </div>
                 </div>
             </div>
@@ -1245,27 +1235,27 @@
     <!-- Modals -->
     <div id="addStudentModal" class="modal" onclick="closeModalOnOuter(event, 'addStudentModal')">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">Asset Onboarding Matrix</h2>
+            <h2 style="margin-bottom: 1.5rem;">INITIATE_ASSET_ONBOARDING_SEQUENCE</h2>
             <form th:action="@{/add-student}" th:object="${student}" method="post"
                 onsubmit="showToast('Asset initialized!')">
-                <div class="form-group"><label class="form-label">Primary Designation</label><input type="text"
+                <div class="form-group"><label class="form-label">PRIMARY_COGNITIVE_IDENTIFIER</label><input type="text"
                         th:field="*{firstName}" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Secondary Designation</label><input type="text"
+                <div class="form-group"><label class="form-label">SECONDARY_COGNITIVE_IDENTIFIER</label><input type="text"
                         th:field="*{lastName}" class="form-input" required></div>
                 <div class="form-group"><label class="form-label">Comm Vector</label><input type="email" th:field="*{email}"
                         class="form-input" required></div>
                 <div class="form-group"><label class="form-label">Clearance Level</label><input type="text" th:field="*{grade}"
                         class="form-input" required></div>
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div><label class="form-label">Eval Metric (GPA)</label><input type="number" step="0.1" th:field="*{gpa}"
+                    <div><label class="form-label">HEURISTIC_EVAL_METRIC [SPI]</label><input type="number" step="0.1" th:field="*{gpa}"
                             class="form-input" placeholder="4.0"></div>
-                    <div><label class="form-label">Sync Pulse (%)</label><input type="number" th:field="*{attendance}"
+                    <div><label class="form-label">NEURAL_SYNC_STABILITY (%)</label><input type="number" th:field="*{attendance}"
                             class="form-input" placeholder="100"></div>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('addStudentModal')">Abort Sequence</button>
-                    <button type="submit" class="btn btn-primary">Authorize Genesis</button>
+                        onclick="closeModal('addStudentModal')">TERMINATE_PROCESS</button>
+                    <button type="submit" class="btn btn-primary">COMMIT_GENESIS</button>
                 </div>
             </form>
         </div>
@@ -1273,27 +1263,27 @@
 
     <div id="editStudentModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">Asset Parameter Revision</h2>
-            <form th:action="@{/edit-student}" method="post" onsubmit="showToast('Strategic archive finalized!')">
+            <h2 style="margin-bottom: 1.5rem;">ASSET_COGNITIVE_RECALIBRATION</h2>
+            <form th:action="@{/edit-student}" method="post" onsubmit="showToast('COGNITIVE_MATRIX_FINALIZED!')">
                 <input type="hidden" name="id" id="editSId">
-                <div class="form-group"><label class="form-label">Primary Designation</label><input type="text" name="firstName"
+                <div class="form-group"><label class="form-label">PRIMARY_COGNITIVE_IDENTIFIER</label><input type="text" name="firstName"
                         id="editSFName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Secondary Designation</label><input type="text" name="lastName"
+                <div class="form-group"><label class="form-label">SECONDARY_COGNITIVE_IDENTIFIER</label><input type="text" name="lastName"
                         id="editSLName" class="form-input" required></div>
                 <div class="form-group"><label class="form-label">Comm Vector</label><input type="email" name="email"
                         id="editSEmail" class="form-input" required></div>
                 <div class="form-group"><label class="form-label">Clearance</label><input type="text" name="grade"
                         id="editSGrade" class="form-input" required></div>
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div><label class="form-label">Eval Metric</label><input type="number" step="0.1" name="gpa" id="editSGpa"
+                    <div><label class="form-label">HEURISTIC_EVAL_METRIC</label><input type="number" step="0.1" name="gpa" id="editSGpa"
                             class="form-input"></div>
-                    <div><label class="form-label">Sync Pulse (%)</label><input type="number" name="attendance" id="editSAtt"
+                    <div><label class="form-label">NEURAL_SYNC_STABILITY (%)</label><input type="number" name="attendance" id="editSAtt"
                             class="form-input"></div>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('editStudentModal')">Abort Revision</button>
-                    <button type="submit" class="btn btn-primary">Commit Matrix Override</button>
+                        onclick="closeModal('editStudentModal')">CANCEL_RECALIBRATION</button>
+                    <button type="submit" class="btn btn-primary">COMMIT_RECALIBRATION_OVERRIDE</button>
                 </div>
             </form>
         </div>
@@ -1301,7 +1291,7 @@
 
     <div id="addTeacherModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">Faculty Command Injection</h2>
+            <h2 style="margin-bottom: 1.5rem;">DIRECTORATE_LEAD_COMMISSIONING</h2>
             <form th:action="@{/add-teacher}" th:object="${teacher}" method="post"
                 onsubmit="showToast('Lead Asset Engaged!')">
                 <div class="form-group"><label class="form-label">Asset Designation</label>
@@ -1310,12 +1300,12 @@
                         <input type="text" th:field="*{lastName}" class="form-input" placeholder="Omega Name" required>
                     </div>
                 </div>
-                <div class="form-group"><label class="form-label">Operational Domain</label><input type="text"
+                <div class="form-group"><label class="form-label">COMMAND_STRATUM_DOMAIN</label><input type="text"
                         th:field="*{subject}" class="form-input" required></div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('addTeacherModal')">Terminus</button>
-                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Authorize Overdrive</button>
+                        onclick="closeModal('addTeacherModal')">ABORT_COMMISSION</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">AUTHORIZE_COMMISSION_OVERDRIVE</button>
                 </div>
             </form>
         </div>
@@ -1323,19 +1313,19 @@
 
     <div id="editTeacherModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">Operational Re-calibration</h2>
+            <h2 style="margin-bottom: 1.5rem;">CORE_LEAD_RE-CALIBRATION</h2>
             <form th:action="@{/edit-teacher}" method="post" onsubmit="showToast('Matrix synced!')">
                 <input type="hidden" name="id" id="editTId">
                 <div class="form-group"><label class="form-label">Alpha Designation</label><input type="text" name="firstName"
                         id="editTFName" class="form-input" required></div>
                 <div class="form-group"><label class="form-label">Omega Designation</label><input type="text" name="lastName"
                         id="editTLName" class="form-input" required></div>
-                <div class="form-group"><label class="form-label">Core Paradigm</label><input type="text" name="subject"
+                <div class="form-group"><label class="form-label">CORE_COMMAND_PARADIGM</label><input type="text" name="subject"
                         id="editTSubject" class="form-input" required></div>
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="button" class="btn" style="background: var(--bg-main);"
-                        onclick="closeModal('editTeacherModal')">Sever Link</button>
-                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">Initialize Re-hash</button>
+                        onclick="closeModal('editTeacherModal')">DISCONNECT_COMMAND_LINK</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--accent);">INITIATE_PARADIGM_RE-HASH</button>
                 </div>
             </form>
         </div>
@@ -1419,12 +1409,12 @@
             <div
                 style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-main); border-radius: 20px; border: 1px solid var(--border-color);">
                 <div style="font-size: 0.65rem; font-weight: 800; line-height: 1.6; color: var(--text-secondary);">
-                    Subject exhibits high heuristic velocity. Deployment authorized for Q2 synergetic protocols. 
-                    AUTHORITY: COLD_CORE_DIRECTIVE_88.
+                    SUBJECT_EXHIBITS_TERMINAL_HEURISTIC_VELOCITY. DEPLOYMENT_AUTHORIZED_FOR_V4_SYNERGETIC_PROTOCOLS. 
+                    AUTHORITY: CORE_DIRECTIVE_88_ALPHA.
                 </div>
             <button onclick="closeIDCard()"
                 style="width: 100%; margin-top: 2rem; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: none; font-weight: 800; cursor: pointer;">
-                DEACTIVATE SCANNER
+                DEACTIVATE_BIOMETRIC_SCANNER
                 <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.45rem; color: var(--text-secondary); opacity: 0.6; text-align: center; margin-top: 0.5rem; letter-spacing: 1px;">
                     VERSION: ALPHA_OMEGA // BUILD: 0XBEEF // CORE_ID: SENTIENT_NODE_00
                 </div>
@@ -1528,10 +1518,10 @@
             document.getElementById('current-time').innerText = timeStr;
 
             const hour = now.getHours();
-            let greet = "Lumina Core Authorization";
-            if (hour < 12) greet = "Core Sync Authorized: Alpha Cycle";
-            else if (hour < 18) greet = "Core Sync Authorized: Zen Cycle";
-            else greet = "Core Sync Authorized: Omega Cycle";
+            let greet = "CORE_AUTHORIZATION_PROTOCOL";
+            if (hour < 12) greet = "CORE_SYNC_ACTIVE: ALPHA_PHASE";
+            else if (hour < 18) greet = "CORE_SYNC_ACTIVE: ZENITH_PHASE";
+            else greet = "CORE_SYNC_ACTIVE: OMEGA_PHASE";
             document.getElementById('time-greeting').innerText = greet;
             
             // Random Neural Jitter
@@ -1541,7 +1531,7 @@
                 
                 // Randomly flicker threat level or integrity?
                 if (Math.random() > 0.95) {
-                    showToast("NEURAL_PULSE_DETECTED: ENCRYPTION_RE_SYNC... [STABLE]");
+                    showToast("NEURAL_PULSE_DETECTED: GLOBAL_ENCRYPTION_RE-HASHING... [STABLE]");
                 }
             }
         }
