@@ -486,7 +486,7 @@
                                             onclick="toggleAll(this)" style="cursor: pointer;"></th>
                                     <th>NEURAL_SIGNATURE_HASH_SEQUENCE</th>
                                     <th>SYNAPTIC_PERFORMANCE_INDEX [SPI_V4]</th>
-                                    <th style="text-align: right;">Operations</th>
+                                    <th style="text-align: right;">COMMAND_OPERATIONS</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -507,7 +507,7 @@
                                                 <div style="display: flex; align-items: center; gap: 0.5rem;">
                                                     <div th:text="${s.firstName + ' ' + s.lastName}"
                                                         style="font-weight: 900; font-size: 1.1rem; letter-spacing: -0.02em;">
-                                                        John Doe</div>
+                                                        ASSET_DESIGNATION_NODE</div>
                                                     <i th:if="${s.gpa == 4.0}" data-lucide="award"
                                                         style="width: 14px; color: #fbbf24; fill: #fbbf24;"></i>
                                                 </div>
@@ -538,7 +538,7 @@
                                                     </div>
                                                     <span
                                                         style="font-size: 0.65rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;"
-                                                        th:text="${s.attendance + '% RECORD'}">100% RECORD</span>
+                                                        th:text="${s.attendance + '% ATTENDANCE_RECORD'}">100%_ATTENDANCE_RECORD</span>
                                                 </div>
                                                 <div class="progress-container">
                                                     <div class="progress-bar"
@@ -552,7 +552,7 @@
                                         <div style="display: flex; align-items: center; gap: 8px;">
                                             <div th:class="${s.gpa >= 3.8 ? 'archetype-tag tag-strat' : (s.gpa >= 3.5 ? 'archetype-tag tag-tech' : 'archetype-tag tag-analyst')}"
                                                 th:text="${s.gpa >= 3.8 ? 'CORE_STRATEGIST' : (s.gpa >= 3.5 ? 'CORE_TECHNOLOGIST' : 'CORE_ANALYST')}">
-                                                Archetype</div>
+                                                ARCHETYPE_NODE</div>
                                             <div style="width: 6px; height: 6px; border-radius: 50%;"
                                                 th:styleappend="${s.attendance >= 90 ? 'background: #10b981;' : (s.attendance >= 75 ? 'background: #f59e0b;' : 'background: #ef4444;')}">
                                             </div>
@@ -570,14 +570,14 @@
                                     <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}"
                                         th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}"
                                         th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}"
-                                        onclick="openEditStudent(this)" title="Modify Dossier"
+                                        onclick="openEditStudent(this)" title="RECALIBRATE_ASSET_DOSSIER"
                                         style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 12px; cursor: pointer;"><i
                                             data-lucide="edit-3"
                                             style="width: 18px; color: var(--text-secondary);"></i></button>
                                     <form th:action="@{/delete-student}" method="post"
                                         onsubmit="return confirm('INITIATE_PERMANENT_DECOMMISSION?');" style="display:inline;">
                                         <input type="hidden" name="id" th:value="${s.id}">
-                                        <button type="submit" title="Decommission Asset"
+                                        <button type="submit" title="EXECUTE_PERMANENT_DECOMMISSION"
                                             style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i
                                                 data-lucide="trash-2" style="width: 18px; color: #ef4444;"></i></button>
                                     </form>
@@ -608,7 +608,7 @@
                         <tr>
                             <th>ASSET_COGNITIVE_DOSSIER</th>
                             <th>COMMAND_HEURISTIC_FOCUS</th>
-                            <th style="text-align: right;">Operations</th>
+                            <th style="text-align: right;">COMMAND_OPERATIONS</th>
                         </tr>
                     </thead>
                     <tbody>
