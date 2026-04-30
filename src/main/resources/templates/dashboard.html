@@ -155,7 +155,7 @@
                 ACCESS KEY: LMX-9981-QUANTUM [CLEARANCE: OMNI]</div>
             <div
                 style="font-size: 0.5rem; color: var(--primary); font-weight: 950; letter-spacing: 2px; margin-top: 4px; opacity: 0.7;">
-                SYSTEM_ID: LMX-88-ALPHA_PRIME</div>
+                SYSTEM_ID: LMX-88-ALPHA_STRATEGIC</div>
             <button class="nav-item"
                 style="width: 100%; border: none; background: none; cursor: pointer; margin-top: 1rem;"
                 onclick="toggleDarkMode()">
@@ -569,14 +569,14 @@
                                     <button class="action-btn" th:data-id="${s.id}" th:data-fname="${s.firstName}"
                                         th:data-lname="${s.lastName}" th:data-email="${s.email}" th:data-grade="${s.grade}"
                                         th:data-gpa="${s.gpa}" th:data-attendance="${s.attendance}"
-                                        onclick="openEditStudent(this)" title="RECALIBRATE_ASSET_DOSSIER"
+                                        onclick="openEditStudent(this)" title="INITIATE_STRATEGIC_RECALIBRATION"
                                         style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 12px; cursor: pointer;"><i
                                             data-lucide="edit-3"
                                             style="width: 18px; color: var(--text-secondary);"></i></button>
                                     <form th:action="@{/delete-student}" method="post"
                                         onsubmit="return confirm('INITIATE_PERMANENT_DECOMMISSION?');" style="display:inline;">
                                         <input type="hidden" name="id" th:value="${s.id}">
-                                        <button type="submit" title="EXECUTE_PERMANENT_DECOMMISSION"
+                                        <button type="submit" title="INITIATE_STRATEGIC_DECOMMISSION"
                                             style="background: #fffafa; border: 1px solid #fee2e2; padding: 10px; border-radius: 12px; cursor: pointer;"><i
                                                 data-lucide="trash-2" style="width: 18px; color: #ef4444;"></i></button>
                                     </form>
@@ -1340,7 +1340,7 @@
             style="padding: 1.5rem; height: 300px; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto;">
             <div
                 style="background: var(--bg-main); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-start; max-width: 80%; line-height: 1.5;">
-                EXECUTIVE_AUTHORIZATION_CONFIRMED. SYNERGETIC_ANALYSIS_COMPLETE. ARCHETYPE_VELOCITY: +18.2%_ACROSS_FRONTLINE_NODES. QUANTUM_INTEGRITY: 100%_HOLDING. COGNITIVE_OVERRIDE: ENABLED. RECOMMEND_IMMEDIATE_Q3_PROTOCOL_DEPLOYMENT.
+                EXECUTIVE_AUTHORIZATION_CONFIRMED. SYNERGETIC_ANALYSIS_COMPLETE. ARCHETYPE_VELOCITY: +18.2%_ACROSS_FRONTLINE_NODES. STRATEGIC_INTEGRITY: 100%_HOLDING. COGNITIVE_OVERRIDE: ENABLED. RECOMMEND_IMMEDIATE_Q3_PROTOCOL_DEPLOYMENT.
             </div>
             <div
                 style="background: var(--primary-glow); padding: 1rem; border-radius: 12px; font-size: 0.75rem; align-self: flex-end; max-width: 80%; line-height: 1.5; color: var(--primary); font-weight: 800;">
@@ -1378,7 +1378,7 @@
             <div id="id-avatar" class="id-avatar">ST</div>
             <div style="text-align: center;">
                 <h2 id="id-name"
-                    style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">ASSET_DESIGNATION_PRIME</h2>
+                    style="font-size: 1.75rem; font-weight: 950; letter-spacing: -1px; margin-bottom: 0.5rem;">ASSET_DESIGNATION_STRATEGIC</h2>
                 <div id="id-dept"
                     style="font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px;">
                     DIRECTORATE_RESEARCH_COMMAND_UNIT</div>
@@ -1395,7 +1395,7 @@
                         style="font-size: 0.6rem; font-weight: 900; color: var(--text-secondary); margin-bottom: 0.5rem;">
                         ID_HASH</div>
                     <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 800;">
-                        4B-A92-LMX_PRIME_HASH</div>
+                        4B-A92-LMX_STRATEGIC_HASH</div>
                 </div>
             </div>
             <div
