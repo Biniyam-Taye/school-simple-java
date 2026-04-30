@@ -130,7 +130,7 @@
         <div class="sidebar-footer">
             <div class="user-profile">
                 <div class="avatar"
-                    style="width: 36px; height: 36px; font-size: 0.8rem; background: var(--primary); color: white;">BT
+                    style="width: 36px; height: 36px; font-size: 0.8rem; background: var(--primary); color: white;">SC
                 </div>
                 <div class="user-info">
                     <h4>Biniyam Taye</h4>
@@ -1257,7 +1257,7 @@
 
     <div id="editStudentModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">ASSET_COGNITIVE_RECALIBRATION</h2>
+            <h2 style="margin-bottom: 1.5rem;">STRATEGIC_ASSET_RECALIBRATION</h2>
             <form th:action="@{/edit-student}" method="post" onsubmit="showToast('COGNITIVE_MATRIX_FINALIZED!')">
                 <input type="hidden" name="id" id="editSId">
                 <div class="form-group"><label class="form-label">PRIMARY_COGNITIVE_IDENTIFIER</label><input type="text" name="firstName"
@@ -1285,7 +1285,7 @@
 
     <div id="addTeacherModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">DIRECTORATE_LEAD_COMMISSIONING</h2>
+            <h2 style="margin-bottom: 1.5rem;">STRATEGIC_DIRECTIVE_COMMISSIONING</h2>
             <form th:action="@{/add-teacher}" th:object="${teacher}" method="post"
                 onsubmit="showToast('DIRECTORATE_LEAD_ASSET_COMMISSIONED_AND_ACTIVE.')">
                 <div class="form-group"><label class="form-label">LEAD_ASSET_DESIGNATION</label>
@@ -1307,7 +1307,7 @@
 
     <div id="editTeacherModal" class="modal">
         <div class="modal-content">
-            <h2 style="margin-bottom: 1.5rem;">CORE_LEAD_RE-CALIBRATION</h2>
+            <h2 style="margin-bottom: 1.5rem;">STRATEGIC_DIRECTIVE_RE-CALIBRATION</h2>
             <form th:action="@{/edit-teacher}" method="post" onsubmit="showToast('LEAD_MATRIX_RECALIBRATED_AND_SYNCED.')">
                 <input type="hidden" name="id" id="editTId">
                 <div class="form-group"><label class="form-label">ALPHA_GIVEN_ID</label><input type="text" name="firstName"
