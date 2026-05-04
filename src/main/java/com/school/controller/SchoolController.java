@@ -27,6 +27,7 @@ public class SchoolController {
         model.addAttribute("teachers", teachers);
         model.addAttribute("topScholars", studentService.getTopScholars(5));
         model.addAttribute("avgAttendance", studentService.getAverageAttendance());
+        model.addAttribute("dashboardTitle", studentService.getDashboardTitle());
         
         var gradeCounts = students.stream()
             .collect(java.util.stream.Collectors.groupingBy(Student::getGrade, java.util.stream.Collectors.counting()));

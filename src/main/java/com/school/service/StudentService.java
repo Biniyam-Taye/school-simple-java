@@ -13,6 +13,10 @@ import java.util.List;
 public class StudentService {
     private final StudentRepository studentRepository;
 
+    public String getDashboardTitle() {
+        return "STUDENT_COMMAND_CENTER";
+    }
+
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
@@ -32,17 +36,17 @@ public class StudentService {
     }
 
     public void enrollStudent(Student student) {
-        log.info("Onboarding new strategic scholar: {} {}", student.getFirstName(), student.getLastName());
+        log.info("ENROLLING_ASSET: {} {}", student.getFirstName(), student.getLastName());
         studentRepository.save(student);
     }
 
     public void archiveStudentRecord(Long id) {
-        log.warn("Terminating scholar record: ID {}", id);
+        log.warn("DECOMMISSIONING_ASSET: ID {}", id);
         studentRepository.deleteById(id);
     }
 
     public void updateAcademicFile(Student student) {
-        log.info("Processing performance metrics for scholar: {}", student.getId());
+        log.info("RECALIBRATING_ASSET_METRICS: {}", student.getId());
         studentRepository.save(student);
     }
 }
