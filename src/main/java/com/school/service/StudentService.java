@@ -14,14 +14,14 @@ public class StudentService {
     private final StudentRepository studentRepository;
 
     public String getDashboardTitle() {
-        return "STUDENT_OPERATIONS_HUB";
+        return "AFRINIA_ACADEMIC_COMMAND";
     }
 
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
 
-    public List<Student> getTopScholars(int limit) {
+    public List<Student> getTopPerformers(int limit) {
         return studentRepository.findAll().stream()
             .sorted((s1, s2) -> s2.getGpa().compareTo(s1.getGpa()))
             .limit(limit)
@@ -36,17 +36,17 @@ public class StudentService {
     }
 
     public void enrollStudent(Student student) {
-        log.info("ENROLLING_ASSET: {} {}", student.getFirstName(), student.getLastName());
+        log.info("ENROLLING_STUDENT: {} {}", student.getFirstName(), student.getLastName());
         studentRepository.save(student);
     }
 
     public void archiveStudentRecord(Long id) {
-        log.warn("DECOMMISSIONING_ASSET: ID {}", id);
+        log.warn("DELETING_STUDENT_RECORD: ID {}", id);
         studentRepository.deleteById(id);
     }
 
     public void updateAcademicFile(Student student) {
-        log.info("RECALIBRATING_ASSET_METRICS: {}", student.getId());
+        log.info("UPDATING_STUDENT_METRICS: {}", student.getId());
         studentRepository.save(student);
     }
 }

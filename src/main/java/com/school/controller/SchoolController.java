@@ -25,7 +25,7 @@ public class SchoolController {
         var teachers = teacherService.getAllTeachers();
         model.addAttribute("students", students);
         model.addAttribute("teachers", teachers);
-        model.addAttribute("topScholars", studentService.getTopScholars(5));
+        model.addAttribute("topScholars", studentService.getTopPerformers(5));
         model.addAttribute("avgAttendance", studentService.getAverageAttendance());
         model.addAttribute("dashboardTitle", studentService.getDashboardTitle());
         
