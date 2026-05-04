@@ -14,7 +14,7 @@ public class StudentService {
     private final StudentRepository studentRepository;
 
     public String getDashboardTitle() {
-        return "STUDENT_COMMAND_CENTER";
+        return "STUDENT_OPERATIONS_HUB";
     }
 
     public List<Student> getAllStudents() {
