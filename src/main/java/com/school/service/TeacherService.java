@@ -2,16 +2,19 @@ package com.school.service;
 
 import com.school.model.Teacher;
 import com.school.repository.TeacherRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Slf4j
-@RequiredArgsConstructor
 public class TeacherService {
+    private static final Logger log = LoggerFactory.getLogger(TeacherService.class);
     private final TeacherRepository teacherRepository;
+
+    public TeacherService(TeacherRepository teacherRepository) {
+        this.teacherRepository = teacherRepository;
+    }
 
     public List<Teacher> getAllTeachers() {
         return teacherRepository.findAll();

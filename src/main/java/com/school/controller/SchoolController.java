@@ -4,20 +4,23 @@ import com.school.model.Student;
 import com.school.model.Teacher;
 import com.school.service.StudentService;
 import com.school.service.TeacherService;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@Slf4j
-@RequiredArgsConstructor
 public class SchoolController {
-
+    private static final Logger log = LoggerFactory.getLogger(SchoolController.class);
     private final StudentService studentService;
     private final TeacherService teacherService;
+
+    public SchoolController(StudentService studentService, TeacherService teacherService) {
+        this.studentService = studentService;
+        this.teacherService = teacherService;
+    }
 
     @GetMapping("/")
     public String dashboard(Model model) {

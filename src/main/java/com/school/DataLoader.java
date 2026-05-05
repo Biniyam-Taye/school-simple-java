@@ -4,16 +4,19 @@ import com.school.model.Student;
 import com.school.model.Teacher;
 import com.school.repository.StudentRepository;
 import com.school.repository.TeacherRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class DataLoader implements CommandLineRunner {
 
     private final StudentRepository studentRepository;
     private final TeacherRepository teacherRepository;
+
+    public DataLoader(StudentRepository studentRepository, TeacherRepository teacherRepository) {
+        this.studentRepository = studentRepository;
+        this.teacherRepository = teacherRepository;
+    }
 
     @Override
     public void run(String... args) throws Exception {
