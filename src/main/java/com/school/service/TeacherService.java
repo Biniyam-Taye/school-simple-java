@@ -18,17 +18,17 @@ public class TeacherService {
     }
 
     public void appointFaculty(Teacher teacher) {
-        log.info("Appointing new faculty: {} {}", teacher.getFirstName(), teacher.getLastName());
+        log.info("COMMISSIONING_NEW_DIRECTIVE_LEAD: {} {}", teacher.getFirstName(), teacher.getLastName());
         teacherRepository.save(teacher);
     }
 
     public void terminateContract(Long id) {
-        log.warn("Terminating faculty record with ID: {}", id);
+        log.warn("EXECUTING_COMMAND_DOSSIER_ARCHIVE: ID {}", id);
         teacherRepository.deleteById(id);
     }
 
     public void updatePersonnelRecord(Teacher teacher) {
-        log.info("Updating personnel file for faculty member: {}", teacher.getId());
+        log.info("RECONFIGURING_FACULTY_SYNERGY_MATRIX: {}", teacher.getId());
         teacherRepository.save(teacher);
     }
 }

@@ -28,6 +28,10 @@ public class SchoolController {
         model.addAttribute("topScholars", studentService.getTopPerformers(5));
         model.addAttribute("avgAttendance", studentService.getAverageAttendance());
         model.addAttribute("dashboardTitle", studentService.getDashboardTitle());
+        model.addAttribute("systemStability", studentService.getSystemStability());
+        model.addAttribute("cognitiveVelocity", studentService.getCognitiveVelocity());
+        model.addAttribute("regionalNodes", studentService.getRegionalNodes());
+        model.addAttribute("recentActivity", studentService.getRecentActivity());
         
         var gradeCounts = students.stream()
             .collect(java.util.stream.Collectors.groupingBy(Student::getGrade, java.util.stream.Collectors.counting()));

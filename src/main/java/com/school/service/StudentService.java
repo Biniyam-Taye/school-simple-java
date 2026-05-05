@@ -14,7 +14,28 @@ public class StudentService {
     private final StudentRepository studentRepository;
 
     public String getDashboardTitle() {
-        return "AFRINIA_ACADEMIC_COMMAND";
+        return "LUMINA_SUPREME_COMMAND_ZENITH";
+    }
+
+    public String getSystemStability() {
+        return "99.9%_SYSTEM_INTEGRITY";
+    }
+
+    public String getCognitiveVelocity() {
+        return "184.2_CV_INDEX";
+    }
+
+    public String getRegionalNodes() {
+        return "08_REGIONAL_ACADEMIC_NODES";
+    }
+
+    public List<String> getRecentActivity() {
+        return List.of(
+            "CORE_OS_UPGRADE_SYNC_V4.2 [STABLE]",
+            "NEURAL_GRADIENT_OPTIMIZATION_COMPLETE",
+            "DIRECTORATE_IDENTITY_AUTHENTICATED [B. TAYE]",
+            "SECTOR_ALPHA_RESOURCE_REBALANCE_NOMINAL"
+        );
     }
 
     public List<Student> getAllStudents() {
@@ -36,17 +57,17 @@ public class StudentService {
     }
 
     public void enrollStudent(Student student) {
-        log.info("ENROLLING_STUDENT: {} {}", student.getFirstName(), student.getLastName());
+        log.info("INITIATING_ASSET_ONBOARDING: {} {}", student.getFirstName(), student.getLastName());
         studentRepository.save(student);
     }
 
     public void archiveStudentRecord(Long id) {
-        log.warn("DELETING_STUDENT_RECORD: ID {}", id);
+        log.warn("EXECUTING_RECORD_DECOMMISSION: ID {}", id);
         studentRepository.deleteById(id);
     }
 
     public void updateAcademicFile(Student student) {
-        log.info("UPDATING_STUDENT_METRICS: {}", student.getId());
+        log.info("RECALIBRATING_ASSET_SIGNATURE: {}", student.getId());
         studentRepository.save(student);
     }
 }
