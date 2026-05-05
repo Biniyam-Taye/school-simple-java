@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class TeacherService {
     private static final Logger log = LoggerFactory.getLogger(TeacherService.class);
-    private final TeacherRepository teacherRepository;
+    private TeacherRepository teacherRepository;
 
     public TeacherService(TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;

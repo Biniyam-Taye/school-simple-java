@@ -14,8 +14,8 @@ import java.util.List;
 @Controller
 public class SchoolController {
     private static final Logger log = LoggerFactory.getLogger(SchoolController.class);
-    private final StudentService studentService;
-    private final TeacherService teacherService;
+    private StudentService studentService;
+    private TeacherService teacherService;
 
     public SchoolController(StudentService studentService, TeacherService teacherService) {
         this.studentService = studentService;

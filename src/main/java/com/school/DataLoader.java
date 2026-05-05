@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    private final StudentRepository studentRepository;
-    private final TeacherRepository teacherRepository;
+    private StudentRepository studentRepository;
+    private TeacherRepository teacherRepository;
 
     public DataLoader(StudentRepository studentRepository, TeacherRepository teacherRepository) {
         this.studentRepository = studentRepository;
