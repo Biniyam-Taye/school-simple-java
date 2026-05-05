@@ -42,15 +42,15 @@ public class DataLoader implements CommandLineRunner {
         studentRepository.save(new Student(null, "Leon", "Kennedy", "l.kennedy@lumina.edu", "Senior (Elite)", 3.96, 98));
 
         // Seed Teachers: id, first, last, subject, department
-        teacherRepository.save(new Teacher(null, "Dr. Sebastian", "Wilde", "QUANTUM_GRID_DYNAMICS", "CORE_SCI_SECTOR"));
-        teacherRepository.save(new Teacher(null, "Ms. Evelyn", "Blackwood", "GLOBAL_STRATEGIC_INTEL", "DIRECTORATE_HUMANITIES"));
-        teacherRepository.save(new Teacher(null, "Director Leo", "Drake", "NEURAL_NETWORK_ARCHITECTURE", "TECH_OMNI_NODE"));
-        teacherRepository.save(new Teacher(null, "Prof. Julian", "Thorne", "EXECUTIVE_MACRO_STRATEGY", "FINANCIAL_INTELLIGENCE"));
-        teacherRepository.save(new Teacher(null, "Dr. Sarah", "Connor", "ROBOTIC_KINETIC_SYSTEMS", "CORE_SCI_SECTOR"));
-        teacherRepository.save(new Teacher(null, "Mr. Arthur", "Morgan", "HISTORICAL_RESONANCE_LOG", "DIRECTORATE_HUMANITIES"));
-        teacherRepository.save(new Teacher(null, "Ms. Diana", "Prince", "ANCIENT_TACTICAL_STUDIES", "DIRECTORATE_HUMANITIES"));
-        teacherRepository.save(new Teacher(null, "Dr. Bruce", "Wayne", "OPERATIONAL_RISK_MANAGEMENT", "FINANCIAL_INTELLIGENCE"));
-        teacherRepository.save(new Teacher(null, "Prof. Albus", "Dumbledore", "ETHICAL_LEADERSHIP_PROTOCOL", "DIRECTORATE_HUMANITIES"));
-        teacherRepository.save(new Teacher(null, "Ms. Ada", "Lovelace", "COMPUTATIONAL_LOGIC_MATRIX", "TECH_OMNI_NODE"));
+        teacherRepository.save(new Teacher(null, "Dr. Sebastian", "Wilde", "CHIEF_QUANTUM_DYNAMICS_ARCHITECT", "SECTOR_OMEGA_SCI"));
+        teacherRepository.save(new Teacher(null, "Ms. Evelyn", "Blackwood", "GLOBAL_INTELLIGENCE_ORCHESTRATOR", "SECTOR_GEO_INTEL"));
+        teacherRepository.save(new Teacher(null, "Director Leo", "Drake", "NEURAL_SYNAPSE_SYSTEMS_DIRECTOR", "SECTOR_NEURO_TECH"));
+        teacherRepository.save(new Teacher(null, "Prof. Julian", "Thorne", "MACRO_STRATEGIC_ECONOMICS_DEAN", "SECTOR_FIN_STRAT"));
+        teacherRepository.save(new Teacher(null, "Dr. Sarah", "Connor", "KINETIC_DYNAMICS_SYSTEMS_LEAD", "SECTOR_OMEGA_SCI"));
+        teacherRepository.save(new Teacher(null, "Mr. Arthur", "Morgan", "ARCHIVAL_RESONANCE_SPECIALIST", "SECTOR_GEO_INTEL"));
+        teacherRepository.save(new Teacher(null, "Ms. Diana", "Prince", "ANCIENT_TACTICAL_DIPLOMACY", "SECTOR_GEO_INTEL"));
+        teacherRepository.save(new Teacher(null, "Dr. Bruce", "Wayne", "OPERATIONAL_RISK_COMMANDER", "SECTOR_FIN_STRAT"));
+        teacherRepository.save(new Teacher(null, "Prof. Albus", "Dumbledore", "ETHICAL_GOVERNANCE_DIRECTOR", "SECTOR_GEO_INTEL"));
+        teacherRepository.save(new Teacher(null, "Ms. Ada", "Lovelace", "LOGICAL_MATRIX_ARCHITECT", "SECTOR_NEURO_TECH"));
     }
 }
