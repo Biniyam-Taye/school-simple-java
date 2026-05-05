@@ -5,7 +5,9 @@ import com.school.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -30,7 +32,7 @@ public class StudentService {
     }
 
     public List<String> getRecentActivity() {
-        return List.of(
+        return Arrays.asList(
             "CORE_OS_UPGRADE_SYNC_V4.2 [STABLE]",
             "NEURAL_GRADIENT_OPTIMIZATION_COMPLETE",
             "DIRECTORATE_IDENTITY_AUTHENTICATED [B. TAYE]",
@@ -46,11 +48,11 @@ public class StudentService {
         return studentRepository.findAll().stream()
             .sorted((s1, s2) -> s2.getGpa().compareTo(s1.getGpa()))
             .limit(limit)
-            .toList();
+            .collect(Collectors.toList());
     }
 
     public String getAverageAttendance() {
-        var students = studentRepository.findAll();
+        List<Student> students = studentRepository.findAll();
         double avg = students.isEmpty() ? 0 : 
             students.stream().mapToInt(Student::getAttendance).average().orElse(0.0);
         return String.format("%.1f", avg);

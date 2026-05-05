@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -21,8 +22,8 @@ public class SchoolController {
     @GetMapping("/")
     public String dashboard(Model model) {
         log.info("Interfacing with Executive Command Center...");
-        var students = studentService.getAllStudents();
-        var teachers = teacherService.getAllTeachers();
+        List<Student> students = studentService.getAllStudents();
+        List<Teacher> teachers = teacherService.getAllTeachers();
         model.addAttribute("students", students);
         model.addAttribute("teachers", teachers);
         model.addAttribute("topScholars", studentService.getTopPerformers(5));
@@ -33,7 +34,7 @@ public class SchoolController {
         model.addAttribute("regionalNodes", studentService.getRegionalNodes());
         model.addAttribute("recentActivity", studentService.getRecentActivity());
         
-        var gradeCounts = students.stream()
+        java.util.Map<String, Long> gradeCounts = students.stream()
             .collect(java.util.stream.Collectors.groupingBy(Student::getGrade, java.util.stream.Collectors.counting()));
         model.addAttribute("gradeCounts", gradeCounts);
 
