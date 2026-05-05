@@ -2,8 +2,6 @@ package com.school.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 
 @Entity
 public class Teacher {
