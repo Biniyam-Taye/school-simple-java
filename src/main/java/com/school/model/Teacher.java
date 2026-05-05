@@ -1,7 +1,6 @@
 package com.school.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 
 @Entity
 public class Teacher {
@@ -9,16 +8,9 @@ public class Teacher {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-    @NotBlank(message = "First name is mandatory")
 	private String firstName;
-
-    @NotBlank(message = "Last name is mandatory")
 	private String lastName;
-
-    @NotBlank(message = "Subject is mandatory")
 	private String subject;
-
-    @NotBlank(message = "Department is mandatory")
 	private String department;
 
     public Teacher() {}
