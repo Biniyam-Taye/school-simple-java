@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "ZENITH_CORE_COMMAND_INTELLIGENCE";
+        return "HYPERION_DIRECTORATE_COMMAND_MATRIX";
     }
 
     public String getSystemStability() {
