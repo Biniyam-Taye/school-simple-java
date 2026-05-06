@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "AETHER_STRATUM_SYNERGETIC_NEXUS";
+        return "OMEGA_CORE_RECURSIVE_SINGULARITY";
     }
 
     public String getSystemStability() {
