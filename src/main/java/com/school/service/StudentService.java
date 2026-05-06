@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "HYPERION_DIRECTORATE_COMMAND_MATRIX";
+        return "AETHER_STRATUM_SYNERGETIC_NEXUS";
     }
 
     public String getSystemStability() {
