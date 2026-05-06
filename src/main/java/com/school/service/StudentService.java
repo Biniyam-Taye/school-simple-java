@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "GENESIS_DIRECTORATE_ORIGIN_GRID";
+        return "CELESTIAL_STRATUM_COMMAND_ZENITH";
     }
 
     public String getSystemStability() {
