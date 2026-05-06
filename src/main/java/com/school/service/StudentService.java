@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "OMEGA_CORE_RECURSIVE_SINGULARITY";
+        return "PANTHEON_DIRECTORATE_ETERNAL_GRID";
     }
 
     public String getSystemStability() {
