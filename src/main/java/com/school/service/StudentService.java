@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "PANTHEON_DIRECTORATE_ETERNAL_GRID";
+        return "CELESTIAL_STRATUM_COMMAND_ZENITH";
     }
 
     public String getSystemStability() {
