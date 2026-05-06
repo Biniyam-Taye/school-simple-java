@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "CELESTIAL_STRATUM_COMMAND_ZENITH";
+        return "OBLIVION_CORE_RECURSIVE_NEXUS";
     }
 
     public String getSystemStability() {
