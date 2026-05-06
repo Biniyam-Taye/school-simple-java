@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public String getDashboardTitle() {
-        return "LUMINA_PRIME_DIRECTORATE_CONSOLE";
+        return "ZENITH_CORE_COMMAND_INTELLIGENCE";
     }
 
     public String getSystemStability() {
